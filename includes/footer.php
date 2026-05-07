@@ -3,7 +3,7 @@
         <div class="footer-grid">
             <div>
                 <a href="index.php" class="navbar-brand-custom" style="text-decoration:none">
-                    <div class="brand-icon"><i class="fas fa-store"></i></div>
+                    <div class="brand-icon"><img class="logo" src="assets/glow-cart.svg" alt="Habesha Market"> </div>
                     <span class="brand-text">Habesha Market</span>
                 </a>
                 <p class="footer-brand-text">Ethiopia's premier online marketplace connecting artisans, farmers and craftspeople with buyers across the country and beyond. Celebrating our rich cultural heritage.</p>
