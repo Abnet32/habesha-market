@@ -2,6 +2,19 @@
 header('Content-Type: application/json');
 require_once '../connection.php';
 
+if (!isset($con)) {
+    if (isset($conn)) {
+        $con = $conn;
+    } elseif (isset($mysqli)) {
+        $con = $mysqli;
+    }
+}
+
+if (!isset($con) || !($con instanceof mysqli)) {
+    echo json_encode([]);
+    exit;
+}
+
 $q = isset($_GET['q']) ? mysqli_real_escape_string($con, trim($_GET['q'])) : '';
 if (strlen($q) < 2) { echo json_encode([]); exit; }
 
