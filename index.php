@@ -36,7 +36,7 @@ $cats = mysqli_query($con, "SELECT c.*, COUNT(p.id) as product_count FROM catego
                     <i class="fas fa-coffee"></i> Explore Coffee
                 </a>
             </div>
-            <div class="hero-stats">
+            <!-- <div class="hero-stats">
                 <div class="stat-item">
                     <div class="stat-number">500+</div>
                     <div class="stat-label">Products</div>
@@ -49,7 +49,7 @@ $cats = mysqli_query($con, "SELECT c.*, COUNT(p.id) as product_count FROM catego
                     <div class="stat-number">50+</div>
                     <div class="stat-label">Artisans</div>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <div class="hero-visual">
