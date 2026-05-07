@@ -76,16 +76,16 @@ require 'includes/header.php';
         <div class="profile-sidebar animate-in">
             <div class="profile-header-card">
                 <div class="profile-avatar"><?= strtoupper(substr($user['full_name'], 0, 1)) ?></div>
-                <div style="font-weight:700; font-size:1rem;"><?= htmlspecialchars($user['full_name']) ?></div>
-                <div style="font-size:0.8rem; color:var(--text-muted); margin-top:3px;"><?= htmlspecialchars($user['email']) ?></div>
+                <div style="font-weight:700; font-size:1rem; color:white;"><?= htmlspecialchars($user['full_name']) ?></div>
+                <div style="font-size:0.8rem; color:white; margin-top:3px; "><?= htmlspecialchars($user['email']) ?></div>
                 <div style="display:flex; justify-content:center; gap:1.5rem; margin-top:1rem;">
                     <div style="text-align:center;">
                         <div style="font-weight:800; font-size:1.2rem; color:var(--secondary);"><?= $order_count ?></div>
-                        <div style="font-size:0.72rem; color:var(--text-muted);">Orders</div>
+                        <div style="font-size:0.72rem; color:white;">Orders</div>
                     </div>
                     <div style="text-align:center;">
                         <div style="font-weight:800; font-size:1.2rem; color:var(--secondary);"><?= $cart_count ?></div>
-                        <div style="font-size:0.72rem; color:var(--text-muted);">In Cart</div>
+                        <div style="font-size:0.72rem; color:white;">In Cart</div>
                     </div>
                 </div>
             </div>
@@ -192,7 +192,7 @@ require 'includes/header.php';
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="btn-outline-custom btn-accent" style="border:none; cursor:pointer; background:rgba(218,18,26,0.1); border:1.5px solid rgba(218,18,26,0.3);">
+                    <button type="submit" class="btn-primary-custom" style="border:none; cursor:pointer; margin-top:0.5rem;">
                         <i class="fas fa-key"></i> Change Password
                     </button>
                 </form>
