@@ -7,6 +7,29 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') { header('Location: ../products.php')
 
 require_once '../../connection.php';
 
+// Ensure $con is available (some connection files use different variable names)
+if (!isset($con)) {
+    if (isset($conn)) {
+        $con = $conn;
+    } elseif (isset($mysqli)) {
+        $con = $mysqli;
+    } elseif (isset($link)) {
+        $con = $link;
+    } else {
+        // Attempt to create a connection if common DB constants are defined
+        if (defined('DB_HOST') && defined('DB_USER') && defined('DB_NAME')) {
+            $dbpass = defined('DB_PASS') ? DB_PASS : '';
+            $con = mysqli_connect(DB_HOST, DB_USER, $dbpass, DB_NAME);
+        }
+    }
+}
+
+// Validate connection exists
+if (!isset($con) || $con === false || $con === null) {
+    header('Location: ../products.php?error=Database+connection+failed');
+    exit;
+}
+
 $action       = $_POST['action'] ?? '';
 $id           = (int)($_POST['id'] ?? 0);
 $name         = trim($_POST['name'] ?? '');
