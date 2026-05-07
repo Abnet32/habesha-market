@@ -1,7 +1,13 @@
 <?php
 $page_title = 'Edit Product';
 require_once 'includes/admin_header.php';
-require_once '../connection.php';
+require_once __DIR__ . '/../connection.php';
+
+// Ensure $con (mysqli connection) is available
+if (!isset($con) || !$con) {
+    header('Location: products.php?error=Database+connection+failed');
+    exit;
+}
 
 $id = (int)($_GET['id'] ?? 0);
 if ($id <= 0) { header('Location: products.php'); exit; }
