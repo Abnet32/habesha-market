@@ -46,7 +46,7 @@ $cats = mysqli_query($con, "SELECT c.*, COUNT(p.id) as product_count FROM catego
                 </div>
                 <div class="hero-orbit hero-orbit-2"></div>
                 <div class="hero-center-image">
-                    <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=600&q=80" alt="Ethiopian Coffee">
+                    <img src="assets/hero.png" alt="Ethiopian Coffee">
                 </div>
                 <div class="floating-card floating-card-1">
                     <div class="fc-icon green"><i class="fas fa-mug-hot"></i></div>
