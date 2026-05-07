@@ -6,7 +6,7 @@ require_once 'connection.php';
 global $con;
 
 // Fetch featured products (top rated)
-$featured = mysqli_query($con, "SELECT p.*, c.name as cat_name, c.slug as cat_slug FROM products p JOIN categories c ON p.category_id=c.id WHERE p.is_active=1 ORDER BY p.rating DESC, p.review_count DESC LIMIT 8");
+$featured = mysqli_query($con, "SELECT p.*, c.name as cat_name, c.slug as cat_slug FROM products p JOIN categories c ON p.category_id=c.id WHERE p.is_active=1 ORDER BY p.rating DESC, p.review_count DESC LIMIT 9");
 
 // Fetch categories with product count
 $cats = mysqli_query($con, "SELECT c.*, COUNT(p.id) as product_count FROM categories c LEFT JOIN products p ON p.category_id=c.id AND p.is_active=1 GROUP BY c.id ORDER BY c.sort_order");
@@ -106,7 +106,7 @@ $cats = mysqli_query($con, "SELECT c.*, COUNT(p.id) as product_count FROM catego
         </div>
         <div class="categories-grid animate-in">
             <?php
-            $cat_icons = ['coffee' => 'fas fa-mug-hot', 'fashion' => 'fas fa-shirt', 'spices' => 'fas fa-pepper', 'crafts' => 'fas fa-leaf', 'jewelry' => 'fas fa-ring', 'books' => 'fas fa-book'];
+            $cat_icons = ['coffee' => 'fas fa-mug-hot', 'fashion' => 'fas fa-shirt', 'spices' => 'fas fa-hotdog', 'crafts' => 'fas fa-leaf', 'jewelry' => 'fas fa-ring', 'books' => 'fas fa-book'];
             while ($cat = mysqli_fetch_assoc($cats)):
                 $icon_class = $cat['slug'] ?? 'coffee';
                 $fa_icon = $cat_icons[$cat['slug']] ?? 'fas fa-box';
