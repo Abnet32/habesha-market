@@ -3,6 +3,8 @@ $page_title = 'Checkout';
 if (session_status() === PHP_SESSION_NONE) session_start();
 if (!isset($_SESSION['user_id'])) { header('Location: login.php'); exit; }
 require_once 'connection.php';
+global $con;
+
 
 $uid = (int)$_SESSION['user_id'];
 $items = mysqli_query($con, "

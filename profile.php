@@ -3,6 +3,7 @@ $page_title = 'My Profile';
 if (session_status() === PHP_SESSION_NONE) session_start();
 if (!isset($_SESSION['user_id'])) { header('Location: login.php'); exit; }
 require_once 'connection.php';
+global $con;
 
 $uid = (int)$_SESSION['user_id'];
 $user = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM users WHERE id=$uid"));

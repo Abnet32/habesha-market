@@ -2,6 +2,7 @@
 $page_title = 'Shop';
 require 'includes/header.php';
 require_once 'connection.php';
+global $con;
 
 // Filters
 $category = isset($_GET['category']) ? mysqli_real_escape_string($con, $_GET['category']) : '';

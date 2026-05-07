@@ -1,6 +1,8 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) session_start();
 require_once 'connection.php';
+global $con;
+
 
 $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 $product = mysqli_fetch_assoc(mysqli_query($con, "

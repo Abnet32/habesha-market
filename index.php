@@ -3,6 +3,8 @@ $page_title = 'Home';
 require 'includes/header.php';
 require_once 'connection.php';
 
+global $con;
+
 // Fetch featured products (top rated)
 $featured = mysqli_query($con, "SELECT p.*, c.name as cat_name, c.slug as cat_slug FROM products p JOIN categories c ON p.category_id=c.id WHERE p.is_active=1 ORDER BY p.rating DESC, p.review_count DESC LIMIT 8");
 

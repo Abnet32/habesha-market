@@ -1,60 +1,67 @@
-# online-shopping-webvsite-in-php
+# Habesha Market (PHP + MariaDB)
 
-Shopping Cart System is the Simple shopping Solution. It’s a full-featured website and shopping cart system that bends over backwards to give you the flexibility you need to runyour online store.
+Habesha Market is a full-stack e-commerce course project for authentic Ethiopian products. The app includes storefront browsing, cart and checkout flows, profile management, and an admin dashboard for products, orders, and users.
 
-The basic concept of the application is to allow the customer to shop virtually using the Internet and allow customers to buy the items and articles of their desire from the store.
+## Stack
 
-The information pertaining to the products are stores on an RDBMS at the server side (store). The Server process the customers and the items are shipped to the address submitted by them. The details of the items are brought forward from the database for the customer view based on the selection through the menu and the database of all the products are updated at the end of each transaction.
+- PHP 8.2 (built-in server)
+- MariaDB/MySQL (MySQLi)
+- Vanilla JavaScript
+- Custom CSS theme (light aqua e-commerce style)
+- Font Awesome (CDN)
 
-What is Shopping Cart system ?
-Online shopping is a form of electronic shopping store where the buyer is directly online to the seller’s computer usually via the internet. There is no intermediary service. The sale and purchase transaction is
-completed electronically and interactively in real- time.
+## Quick Start
 
-The development of this new system contains the following activities, which try to develop on- line
-application by keeping the entire process in the view of database integration approach. User gets its eamil id and password to access their account.
+1. Run `bash start.sh`
+2. Open `http://localhost:5000`
 
-Administrator of Shopping Cart System has multiple features such as Add, Delete, Update shopping Items.
+`start.sh` initializes MariaDB data, creates the `habesha_market` database if missing, seeds core tables/data, and starts the PHP server using `router.php`.
 
-Features of shopping cart
-Secure registration and profile managementfacilities for Customers.
-Browsing through the e-Mall to see the itemsthat are there in each category of products likeApparel, Kitchen accessories,
-Bath accessories, Food items etc.
-Creating a Shopping cart so that customer canShop N number of items and checkout finally withthe entire shopping cart
-Customers should be able to mail the Shopabout the items they would like to see in theShop
-Secured mechanism for checking out from theShop( Credit card verification mechanism).Updates to customers about the Recent Items inthe Shop.
-Uploading Most Purchased Items in eachcategory of products in the Shop like Apparel,Kitchen accessories, Bath accessories,
-Food items etc.
-Brief overview of the technology
- 
+## Runtime Configuration
 
-HTML: HTML is used to create and save webdocument. E.g. Notepad/Notepad++
-CSS : (Cascading Style Sheets) Create attractiveLayout
-JavaScript: it is a programming language,commonly use with web browsers.
-Back end: PHP, MySQL
+- Database connection: `connection.php`
+- Default DB name: `habesha_market`
+- Socket fallback: `/tmp/mysql.sock`, then TCP
+- PHP server: `php -S 0.0.0.0:5000 -t . router.php`
 
-PHP: Hypertext Preprocessor (PHP) is atechnology that allows software developers tocreate
-dynamically generated web pages, in HTML, XML,or other document types, as per client request.
-PHP is open source software.
+## Main Project Structure
 
-MySQL: MySql is a database, widely used foraccessing querying, updating, and managing datain databases.
-Software Requirement(any one)
-WAMP Server
-XAMPP Server
-MAMP Server
-LAMP Server
-Installation Steps
-Download zip file and Unzip file on your local server.
-Put this file inside “c:/wamp/www/” .
-Database Configuration:
-Open phpmyadmin
-Create Database named “shop”.
-Import database shop.sql.
-Open Your browser put inside URL:
-“http://localhost/store/”
-To Login as admin put inside URL:”http://localhost/store”
-user login details:
-Login Id: yugeshverma@gmail.com
-Password:123456
+- `index.php`: Home page (hero, categories, featured products, testimonials)
+- `products.php`: Product listing with filter/search/sort
+- `product_detail.php`: Product details and reviews
+- `cart.php`: Cart management
+- `checkout.php`: Checkout and payment method submission
+- `orders.php`: User order history
+- `profile.php`: Account profile and password update
+- `login.php`, `signup.php`, `logout.php`: Authentication pages
+- `order_success.php`: Post-checkout confirmation
+- `actions/`: Form/action handlers (auth, cart, checkout)
+- `ajax/`: Async endpoints (`search`, `cart_action`, `validate_email`)
+- `admin/`: Admin dashboard and product/order/user management
+- `includes/`: Shared header/footer templates
+- `css/style.css`: Global theme and component styles
+- `js/main.js`: Client-side interactions, animations, AJAX hooks
+- `database/habesha_market.sql`: Current schema/data snapshot
 
+## Dependencies
 
-visit- https://projkectworlds.in
+- External CDN:
+  - Google Fonts (`Poppins`, `Playfair Display`)
+  - Font Awesome 6
+- No npm/build pipeline required.
+
+## Validation and Quality Checks
+
+- PHP syntax check:
+  - `find . -name '*.php' -print0 | xargs -0 -n1 php -l`
+- Startup script syntax check:
+  - `bash -n start.sh`
+
+## Cleanup and Theme Update Notes
+
+See `PROJECT_DOCUMENTATION.md` for:
+
+- file/folder cleanup decisions and removed artifacts,
+- dependency/reference analysis summary,
+- full documentation of design token and color scheme changes,
+- post-change testing results.

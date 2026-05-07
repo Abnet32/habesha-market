@@ -3,6 +3,7 @@ $page_title = 'My Orders';
 if (session_status() === PHP_SESSION_NONE) session_start();
 if (!isset($_SESSION['user_id'])) { header('Location: login.php'); exit; }
 require_once 'connection.php';
+global $con;
 
 $uid = (int)$_SESSION['user_id'];
 $orders = mysqli_query($con, "SELECT * FROM orders WHERE user_id=$uid ORDER BY created_at DESC");
