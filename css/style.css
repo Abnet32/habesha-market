@@ -144,7 +144,7 @@ body {
 
 .nav-links a:hover {
   color: var(--primary-light);
-  background: rgba(14, 165, 233, 0.08);
+  background: rgba(31, 122, 74, 0.06);
 }
 .nav-links a.active {
   color: var(--primary-light);
@@ -303,13 +303,13 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(14, 165, 233, 0.12);
-  border: 1px solid rgba(14, 165, 233, 0.3);
+  background: rgba(31, 122, 74, 0.06);
+  border: 1px solid rgba(31, 122, 74, 0.12);
   padding: 6px 16px;
   border-radius: 50px;
   font-size: 0.8rem;
   font-weight: 600;
-  color: var(--primary-light);
+  color: var(--primary);
   margin-bottom: 1.5rem;
   animation: fadeInDown 0.8s ease;
 }
@@ -317,7 +317,7 @@ body {
 .hero-badge .dot {
   width: 8px;
   height: 8px;
-  background: var(--primary-light);
+  background: var(--primary);
   border-radius: 50%;
   animation: pulse-dot 1.5s infinite;
 }
@@ -587,9 +587,9 @@ body {
 }
 
 .btn-outline-custom:hover {
-  border-color: var(--primary-light);
-  color: var(--primary-light);
-  background: rgba(14, 165, 233, 0.08);
+  border-color: var(--primary);
+  color: var(--primary);
+  background: rgba(31, 122, 74, 0.06);
   transform: translateY(-3px);
   text-decoration: none;
 }
@@ -627,13 +627,13 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(14, 165, 233, 0.1);
-  border: 1px solid rgba(14, 165, 233, 0.28);
+  background: rgba(31, 122, 74, 0.06);
+  border: 1px solid rgba(31, 122, 74, 0.12);
   padding: 5px 14px;
   border-radius: 50px;
   font-size: 0.78rem;
   font-weight: 600;
-  color: var(--primary-light);
+  color: var(--primary);
   margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -784,7 +784,7 @@ section {
 
 .product-img-wrapper {
   position: relative;
-  padding-top: 75%;
+  padding-top: 70%;
   overflow: hidden;
   background: var(--dark2);
 }
@@ -823,7 +823,7 @@ section {
 }
 .badge-hot {
   background: var(--secondary);
-  color: var(--dark);
+  color: var(--text-light);
 }
 
 .product-wishlist {
@@ -853,7 +853,7 @@ section {
 }
 
 .product-info {
-  padding: 1.2rem;
+  padding: 1.25rem;
 }
 
 .product-category-tag {
@@ -975,7 +975,7 @@ section {
 
 .search-input {
   width: 100%;
-  background: rgba(14, 165, 233, 0.06);
+  background: rgba(31, 122, 74, 0.04);
   border: 1.5px solid var(--glass-border);
   border-radius: 50px;
   padding: 0.75rem 1.2rem 0.75rem 3rem;
@@ -988,8 +988,8 @@ section {
 
 .search-input:focus {
   border-color: var(--primary);
-  background: rgba(14, 165, 233, 0.1);
-  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
+  background: rgba(31, 122, 74, 0.08);
+  box-shadow: 0 0 0 3px rgba(31, 122, 74, 0.12);
 }
 
 .search-input::placeholder {
@@ -1055,7 +1055,7 @@ section {
 }
 
 .live-result-item:hover {
-  background: rgba(14, 165, 233, 0.1);
+  background: rgba(31, 122, 74, 0.06);
   color: var(--text-light);
   text-decoration: none;
 }
@@ -1515,9 +1515,9 @@ section {
   color: #fb7185;
 }
 .alert-success {
-  background: rgba(14, 165, 233, 0.12);
-  border: 1px solid rgba(14, 165, 233, 0.3);
-  color: #67e8f9;
+  background: rgba(31, 122, 74, 0.12);
+  border: 1px solid rgba(31, 122, 74, 0.18);
+  color: var(--primary-dark);
 }
 .alert-info {
   background: rgba(6, 182, 212, 0.12);
@@ -1687,12 +1687,12 @@ section {
   color: var(--secondary);
 }
 .status-processing {
-  background: rgba(14, 165, 233, 0.15);
+  background: rgba(31, 122, 74, 0.15);
   color: var(--primary-light);
 }
 .status-delivered {
-  background: rgba(16, 185, 129, 0.15);
-  color: #6ee7b7;
+  background: rgba(31, 122, 74, 0.12);
+  color: var(--primary-dark);
 }
 .status-cancelled {
   background: rgba(225, 29, 72, 0.15);
