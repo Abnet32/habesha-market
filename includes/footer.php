@@ -51,9 +51,9 @@
                 &copy; <?= date('Y') ?> Habesha Market. All Rights Reserved. &nbsp;|&nbsp; Made with ❤️ in Ethiopia
             </div>
             <div class="footer-flag">
-                <div class="flag-stripe" style="background:#078ca7"></div>
-                <div class="flag-stripe" style="background:#0db2cf"></div>
-                <div class="flag-stripe" style="background:#56d8e8"></div>
+                <div class="flag-stripe" style="background:#155c38"></div>
+                <div class="flag-stripe" style="background:#d9a11a"></div>
+                <div class="flag-stripe" style="background:#b9392d"></div>
             </div>
             <div class="footer-bottom-text">
                 <a href="#" style="color:var(--text-muted);text-decoration:none;margin-right:1rem;">Privacy Policy</a>
