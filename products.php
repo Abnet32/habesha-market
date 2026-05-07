@@ -112,7 +112,7 @@ if (isset($_SESSION['user_id'])) {
     <!-- PRODUCTS GRID -->
     <?php if ($total === 0): ?>
         <div class="empty-state">
-            <div class="empty-icon"><i class="fas fa-search"></i></div>
+            <div class="empty-icon">🔍</div>
             <div class="empty-title">No products found</div>
             <div class="empty-desc">Try a different search or browse all categories.</div>
             <a href="products.php" class="btn-primary-custom"><span>Browse All</span></a>
