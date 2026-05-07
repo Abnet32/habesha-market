@@ -36,20 +36,6 @@ $cats = mysqli_query($con, "SELECT c.*, COUNT(p.id) as product_count FROM catego
                     <i class="fas fa-coffee"></i> Explore Coffee
                 </a>
             </div>
-            <!-- <div class="hero-stats">
-                <div class="stat-item">
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">Products</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">10K+</div>
-                    <div class="stat-label">Happy Customers</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">Artisans</div>
-                </div>
-            </div> -->
         </div>
 
         <div class="hero-visual">
@@ -63,14 +49,14 @@ $cats = mysqli_query($con, "SELECT c.*, COUNT(p.id) as product_count FROM catego
                     <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=600&q=80" alt="Ethiopian Coffee">
                 </div>
                 <div class="floating-card floating-card-1">
-                    <div class="fc-icon green">☕</div>
+                    <div class="fc-icon green"><i class="fas fa-mug-hot"></i></div>
                     <div class="fc-text">
                         <strong>Yirgacheffe Coffee</strong>
                         <span>Just ordered!</span>
                     </div>
                 </div>
                 <div class="floating-card floating-card-2">
-                    <div class="fc-icon yellow">⭐</div>
+                    <div class="fc-icon yellow"><i class="fas fa-star"></i></div>
                     <div class="fc-text">
                         <strong>4.9 / 5 Rating</strong>
                         <span>142 reviews</span>
@@ -86,27 +72,23 @@ $cats = mysqli_query($con, "SELECT c.*, COUNT(p.id) as product_count FROM catego
     <div class="container-custom">
         <div class="features-grid animate-in">
             <div class="feature-card delay-1">
-                <div class="feature-icon">🚚</div>
+                <div class="feature-icon"><i class="fas fa-truck"></i></div>
                 <div class="feature-title">Fast Delivery</div>
                 <div class="feature-desc">Delivering across all Ethiopian regions within 2–5 business days.</div>
             </div>
-            <div class="feature-card delay-2">
-                <div class="feature-icon">🔒</div>
-                <div class="feature-title">Secure Payments</div>
-                <div class="feature-desc">Cash on delivery, mobile money & bank transfer — all secure.</div>
-            </div>
+          
             <div class="feature-card delay-3">
-                <div class="feature-icon">✅</div>
+                <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
                 <div class="feature-title">Quality Assured</div>
                 <div class="feature-desc">Every product is verified for authenticity and quality.</div>
             </div>
             <div class="feature-card delay-4">
-                <div class="feature-icon">🤝</div>
+                <div class="feature-icon"><i class="fas fa-handshake"></i></div>
                 <div class="feature-title">Local Artisans</div>
                 <div class="feature-desc">We partner with 50+ local artisans and small businesses.</div>
             </div>
             <div class="feature-card delay-5">
-                <div class="feature-icon">↩️</div>
+                <div class="feature-icon"><i class="fas fa-undo"></i></div>
                 <div class="feature-title">Easy Returns</div>
                 <div class="feature-desc">Not happy? Return within 7 days, no questions asked.</div>
             </div>
@@ -118,19 +100,19 @@ $cats = mysqli_query($con, "SELECT c.*, COUNT(p.id) as product_count FROM catego
 <section class="section-padding">
     <div class="container-custom">
         <div class="section-header animate-in">
-            <div class="section-badge">🏷️ Browse by Category</div>
+            <div class="section-badge"><i class="fas fa-tag"></i> Browse by Category</div>
             <h2 class="section-title">Shop by <span class="accent">Category</span></h2>
             <p class="section-desc">From aromatic coffee to traditional handcrafts — find what speaks to your heart.</p>
         </div>
         <div class="categories-grid animate-in">
             <?php
-            $cat_emojis = ['coffee' => '☕', 'fashion' => '👗', 'spices' => '🌶️', 'crafts' => '🪴', 'jewelry' => '💍', 'books' => '📚'];
+            $cat_icons = ['coffee' => 'fas fa-mug-hot', 'fashion' => 'fas fa-shirt', 'spices' => 'fas fa-pepper', 'crafts' => 'fas fa-leaf', 'jewelry' => 'fas fa-ring', 'books' => 'fas fa-book'];
             while ($cat = mysqli_fetch_assoc($cats)):
                 $icon_class = $cat['slug'] ?? 'coffee';
-                $emoji = $cat_emojis[$cat['slug']] ?? '📦';
+                $fa_icon = $cat_icons[$cat['slug']] ?? 'fas fa-box';
             ?>
             <a href="products.php?category=<?= urlencode($cat['slug']) ?>" class="category-card">
-                <div class="cat-icon <?= $icon_class ?>"><?= $emoji ?></div>
+                <div class="cat-icon <?= $icon_class ?>"><i class="<?= $fa_icon ?>"></i></div>
                 <div class="cat-name"><?= htmlspecialchars($cat['name']) ?></div>
                 <div class="cat-count"><?= $cat['product_count'] ?> items</div>
             </a>
@@ -143,7 +125,7 @@ $cats = mysqli_query($con, "SELECT c.*, COUNT(p.id) as product_count FROM catego
 <section class="section-padding" style="padding-top:0">
     <div class="container-custom">
         <div class="section-header animate-in">
-            <div class="section-badge">⭐ Top Picks</div>
+            <div class="section-badge"><i class="fas fa-star"></i> Top Picks</div>
             <h2 class="section-title">Featured <span class="accent-green">Products</span></h2>
             <p class="section-desc">Handpicked bestsellers loved by our community of Ethiopian shoppers.</p>
         </div>
@@ -222,7 +204,7 @@ $cats = mysqli_query($con, "SELECT c.*, COUNT(p.id) as product_count FROM catego
 <section class="section-padding" style="padding-top:0">
     <div class="container-custom">
         <div class="section-header animate-in">
-            <div class="section-badge">💬 Customer Stories</div>
+            <div class="section-badge"><i class="fas fa-comments"></i> Customer Stories</div>
             <h2 class="section-title">What Our <span class="accent">Customers</span> Say</h2>
         </div>
         <div class="testimonials-grid">
@@ -267,11 +249,11 @@ $cats = mysqli_query($con, "SELECT c.*, COUNT(p.id) as product_count FROM catego
 <section class="section-padding" style="padding-top:0; padding-bottom:4rem">
     <div class="container-custom">
         <div class="animate-in" style="background: linear-gradient(135deg, rgba(7,137,48,0.15), rgba(252,221,9,0.08)); border: 1px solid rgba(7,137,48,0.25); border-radius: var(--radius); padding: 3rem 2rem; text-align:center;">
-            <div class="section-badge" style="margin-bottom:1rem;">📧 Newsletter</div>
-            <h2 style="font-family:'Playfair Display',serif; font-size:1.8rem; font-weight:800; margin-bottom:0.5rem;">Stay in the Loop</h2>
-            <p style="color:var(--text-muted); margin-bottom:1.5rem;">Get exclusive deals, new arrivals and Ethiopian cultural stories delivered to your inbox.</p>
-            <form style="display:flex; gap:1rem; max-width:480px; margin:0 auto; flex-wrap:wrap;" onsubmit="event.preventDefault(); showToast('Thank you for subscribing!','success')">
-                <input type="email" placeholder="Enter your email" required style="flex:1;min-width:220px;background:rgba(255,255,255,0.08);border:1.5px solid rgba(255,255,255,0.15);border-radius:50px;padding:0.8rem 1.2rem;color:var(--text-light);font-family:'Poppins',sans-serif;font-size:0.9rem;outline:none;">
+            <div class="section-badge newsletter-title"><i class="fas fa-envelope"></i> Newsletter</div>
+            <h2 class="newsletter-loop">Stay in the Loop</h2>
+            <p class="newsletter-subtitle">Get exclusive deals, new arrivals and Ethiopian cultural stories delivered to your inbox.</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Thank you for subscribing!','success')">
+                <input type="email" placeholder="Enter your email" required class="newsletter-input">
                 <button type="submit" class="btn-primary-custom" style="border:none;cursor:pointer;white-space:nowrap;">
                     <span><i class="fas fa-paper-plane"></i> Subscribe</span>
                 </button>
