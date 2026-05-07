@@ -33,7 +33,7 @@ require 'includes/header.php';
 
 <div class="page-hero">
     <div class="container-custom">
-        <div class="section-badge">🔒 Secure Checkout</div>
+        <div class="section-badge"><i class="fas fa-lock"></i> Secure Checkout</div>
         <h1 class="page-hero-title">Checkout</h1>
         <div class="breadcrumb-custom">
             <a href="index.php">Home</a> <i class="fas fa-chevron-right fa-xs"></i>
