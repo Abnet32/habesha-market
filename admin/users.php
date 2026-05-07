@@ -1,7 +1,16 @@
 <?php
 $page_title = 'Users';
-require_once 'includes/admin_header.php';
 require_once '../connection.php';
+require_once 'includes/admin_header.php';
+
+// Ensure $con is available. Some connection files may use $conn instead.
+if (!isset($con)) {
+    if (isset($conn)) {
+        $con = $conn;
+    } else {
+        die('Database connection not found.');
+    }
+}
 
 $users = mysqli_query($con,
     "SELECT u.*, COUNT(o.id) AS order_count, COALESCE(SUM(o.total_amount),0) AS total_spent
