@@ -31,7 +31,7 @@ require 'includes/header.php';
 
 <div class="page-hero">
     <div class="container-custom">
-        <div class="section-badge">🛒 Shopping Cart</div>
+        <div class="section-badge"><i class="fas fa-shopping-cart"></i> Shopping Cart</div>
         <h1 class="page-hero-title">My Cart</h1>
         <div class="breadcrumb-custom">
             <a href="index.php">Home</a> <i class="fas fa-chevron-right fa-xs"></i>
@@ -44,7 +44,7 @@ require 'includes/header.php';
 <div class="container-custom" style="padding-bottom:5rem">
     <?php if (empty($cart_data)): ?>
         <div class="empty-state">
-            <div class="empty-icon">🛒</div>
+            <div class="empty-icon"><i class="fas fa-shopping-cart"></i></div>
             <div class="empty-title">Your cart is empty</div>
             <div class="empty-desc">Looks like you haven't added anything yet. Browse our Ethiopian products!</div>
             <a href="products.php" class="btn-primary-custom"><span><i class="fas fa-store"></i> Start Shopping</span></a>
