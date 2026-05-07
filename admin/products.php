@@ -3,6 +3,10 @@ $page_title = 'Products';
 require_once 'includes/admin_header.php';
 require_once '../connection.php';
 
+if (!isset($con) || !$con) {
+    die('Database connection failed');
+}
+
 $success = $_GET['success'] ?? '';
 $error   = $_GET['error']   ?? '';
 
@@ -117,7 +121,7 @@ $total = mysqli_num_rows($products);
                     <a href="actions/delete_product.php?id=<?= $p['id'] ?>"
                        class="btn-sm delete"
                        onclick="return confirm('Delete \'<?= addslashes($p['name']) ?>\'? This cannot be undone.')">
-                        <i class="fas fa-trash"></i>
+                        <i class="fas fa-trash"> </i> Delete
                     </a>
                 </div>
             </td>
