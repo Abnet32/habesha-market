@@ -3,6 +3,19 @@ $page_title = 'Orders';
 require_once 'includes/admin_header.php';
 require_once '../connection.php';
 
+// Ensure $con is available (some connection files use different variable names)
+if (!isset($con)) {
+    if (isset($conn)) {
+        $con = $conn;
+    } elseif (isset($mysqli)) {
+        $con = $mysqli;
+    }
+}
+
+if (!isset($con)) {
+    die('Database connection not found.');
+}
+
 // Status update
 if (isset($_GET['set_status']) && isset($_GET['id'])) {
     $oid    = (int)$_GET['id'];
