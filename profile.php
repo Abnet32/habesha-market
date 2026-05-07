@@ -61,7 +61,7 @@ require 'includes/header.php';
 
 <div class="page-hero">
     <div class="container-custom">
-        <div class="section-badge">👤 Account</div>
+        <div class="section-badge"><i class="fas fa-user"></i> Account</div>
         <h1 class="page-hero-title">My Profile</h1>
         <div class="breadcrumb-custom">
             <a href="index.php">Home</a> <i class="fas fa-chevron-right fa-xs"></i>

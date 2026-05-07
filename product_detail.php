@@ -104,7 +104,7 @@ require 'includes/header.php';
                 <span style="color:var(--text-muted); font-size:0.85rem;">(<?= $product['review_count'] ?> reviews)</span>
                 <span style="color:var(--text-muted); font-size:0.85rem;">|</span>
                 <span style="font-size:0.85rem; color:<?= $product['stock'] > 0 ? 'var(--primary-light)' : 'var(--accent)' ?>;">
-                    <?= $product['stock'] > 0 ? "✅ In Stock ({$product['stock']} left)" : '❌ Out of Stock' ?>
+                    <?= $product['stock'] > 0 ? "<i class=\"fas fa-check-circle\" style=\"margin-right:4px;\"></i> In Stock ({$product['stock']} left)" : '<i class="fas fa-times-circle" style="margin-right:4px;"></i> Out of Stock' ?>
                 </span>
             </div>
 

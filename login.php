@@ -10,7 +10,7 @@ require 'includes/header.php';
 <div style="min-height:100vh; display:flex; align-items:center; justify-content:center; padding: 100px 1rem 3rem;">
     <div class="form-card animate-in">
         <div style="text-align:center; margin-bottom:0.5rem;">
-            <div style="font-size:3rem; margin-bottom:0.5rem;">🏪</div>
+            <div style="font-size:3rem; margin-bottom:0.5rem;"><i class="fas fa-store"></i></div>
             <h1 class="form-title">Welcome Back</h1>
             <p class="form-subtitle">Sign in to your Habesha Market account</p>
         </div>

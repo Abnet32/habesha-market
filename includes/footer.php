@@ -3,7 +3,7 @@
         <div class="footer-grid">
             <div>
                 <a href="index.php" class="navbar-brand-custom" style="text-decoration:none">
-                    <div class="brand-icon">🏪</div>
+                    <div class="brand-icon"><i class="fas fa-store"></i></div>
                     <span class="brand-text">Habesha Market</span>
                 </a>
                 <p class="footer-brand-text">Ethiopia's premier online marketplace connecting artisans, farmers and craftspeople with buyers across the country and beyond. Celebrating our rich cultural heritage.</p>
@@ -48,7 +48,7 @@
 
         <div class="footer-bottom">
             <div class="footer-bottom-text">
-                &copy; <?= date('Y') ?> Habesha Market. All Rights Reserved. &nbsp;|&nbsp; Made with ❤️ in Ethiopia
+                &copy; <?= date('Y') ?> Habesha Market. All Rights Reserved. &nbsp;|&nbsp; Made with <i class="fas fa-heart" style="color:var(--accent); font-size:0.85rem;"></i> in Ethiopia
             </div>
             <div class="footer-flag">
                 <div class="flag-stripe" style="background:#155c38"></div>

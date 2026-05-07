@@ -415,10 +415,14 @@ document.addEventListener("DOMContentLoaded", function () {
       container.className = "toast-container";
       document.body.appendChild(container);
     }
-    const icons = { success: "✅", error: "❌", info: "ℹ️" };
+    const icons = {
+      success: '<i class="fas fa-check-circle"></i>',
+      error: '<i class="fas fa-exclamation-circle"></i>',
+      info: '<i class="fas fa-info-circle"></i>',
+    };
     const toast = document.createElement("div");
     toast.className = `toast-msg ${type}`;
-    toast.innerHTML = `<span>${icons[type] || "ℹ️"}</span> ${msg}`;
+    toast.innerHTML = `<span>${icons[type] || '<i class="fas fa-info-circle"></i>'}</span> ${msg}`;
     container.appendChild(toast);
     setTimeout(() => toast.remove(), 3500);
   };

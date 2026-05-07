@@ -13,7 +13,7 @@ require 'includes/header.php';
 
 <div class="page-hero">
     <div class="container-custom">
-        <div class="section-badge">📦 Order History</div>
+        <div class="section-badge"><i class="fas fa-box"></i> Order History</div>
         <h1 class="page-hero-title">My Orders</h1>
         <div class="breadcrumb-custom">
             <a href="index.php">Home</a> <i class="fas fa-chevron-right fa-xs"></i>
@@ -25,7 +25,7 @@ require 'includes/header.php';
 <div class="container-custom" style="padding-bottom:5rem">
     <?php if (mysqli_num_rows($orders) === 0): ?>
         <div class="empty-state">
-            <div class="empty-icon">📦</div>
+            <div class="empty-icon"><i class="fas fa-box"></i></div>
             <div class="empty-title">No orders yet</div>
             <div class="empty-desc">You haven't placed any orders. Start shopping for authentic Ethiopian products!</div>
             <a href="products.php" class="btn-primary-custom"><span><i class="fas fa-store"></i> Shop Now</span></a>

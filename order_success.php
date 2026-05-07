@@ -12,10 +12,10 @@ require 'includes/header.php';
     <div style="text-align:center; max-width:550px;">
         <!-- Animated checkmark -->
         <div style="width:100px; height:100px; border-radius:50%; background:linear-gradient(135deg,var(--primary),var(--primary-light)); display:flex; align-items:center; justify-content:center; font-size:3rem; margin:0 auto 2rem; animation:float 3s ease-in-out infinite; box-shadow:0 20px 50px rgba(7,137,48,0.4);">
-            ✅
+            <i class="fas fa-check-circle" style="color:white;"></i>
         </div>
 
-        <div class="section-badge" style="margin-bottom:1rem;">🎉 Order Confirmed</div>
+        <div class="section-badge" style="margin-bottom:1rem;"><i class="fas fa-party-horn"></i> Order Confirmed</div>
         <h1 style="font-family:'Playfair Display',serif; font-size:2.2rem; font-weight:800; margin-bottom:0.8rem;">
             Thank You! <span style="background:linear-gradient(135deg,var(--secondary),#ff9500);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Your Order is Placed</span>
         </h1>

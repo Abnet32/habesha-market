@@ -41,7 +41,7 @@ if (isset($_SESSION['user_id'])) {
 
 <div class="page-hero">
     <div class="container-custom">
-        <div class="section-badge">🛍️ Ethiopian Products</div>
+        <div class="section-badge"><i class="fas fa-shopping-bag"></i> Ethiopian Products</div>
         <h1 class="page-hero-title">
             <?php if ($search): ?>
                 Results for "<span style="color:var(--secondary)"><?= htmlspecialchars($search) ?></span>"
@@ -94,11 +94,11 @@ if (isset($_SESSION['user_id'])) {
             </select>
 
             <select class="filter-select" id="sort-filter">
-                <option value="featured" <?= $sort === 'featured' ? 'selected' : '' ?>>⭐ Featured</option>
-                <option value="newest" <?= $sort === 'newest' ? 'selected' : '' ?>>🆕 Newest</option>
-                <option value="price_asc" <?= $sort === 'price_asc' ? 'selected' : '' ?>>💰 Price: Low to High</option>
-                <option value="price_desc" <?= $sort === 'price_desc' ? 'selected' : '' ?>>💎 Price: High to Low</option>
-                <option value="rating" <?= $sort === 'rating' ? 'selected' : '' ?>>🌟 Top Rated</option>
+                <option value="featured" <?= $sort === 'featured' ? 'selected' : '' ?>><i class="fas fa-star"></i> Featured</option>
+                <option value="newest" <?= $sort === 'newest' ? 'selected' : '' ?>><i class="fas fa-sparkles"></i> Newest</option>
+                <option value="price_asc" <?= $sort === 'price_asc' ? 'selected' : '' ?>><i class="fas fa-arrow-up"></i> Price: Low to High</option>
+                <option value="price_desc" <?= $sort === 'price_desc' ? 'selected' : '' ?>><i class="fas fa-arrow-down"></i> Price: High to Low</option>
+                <option value="rating" <?= $sort === 'rating' ? 'selected' : '' ?>><i class="fas fa-crown"></i> Top Rated</option>
             </select>
 
             <?php if ($search || $category): ?>
@@ -112,7 +112,7 @@ if (isset($_SESSION['user_id'])) {
     <!-- PRODUCTS GRID -->
     <?php if ($total === 0): ?>
         <div class="empty-state">
-            <div class="empty-icon">🔍</div>
+            <div class="empty-icon"><i class="fas fa-search"></i></div>
             <div class="empty-title">No products found</div>
             <div class="empty-desc">Try a different search or browse all categories.</div>
             <a href="products.php" class="btn-primary-custom"><span>Browse All</span></a>
