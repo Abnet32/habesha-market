@@ -99,17 +99,18 @@ body {
 .brand-icon {
   width: 42px;
   height: 42px;
-  border-radius: 12px;
-  background: linear-gradient(
+  /* border-radius: 12px; */
+  /* background: linear-gradient(
     135deg,
     var(--primary-dark),
     var(--primary-light)
-  );
+  ); */
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
-  box-shadow: 0 4px 15px rgba(14, 165, 233, 0.45);
+  /* box-shadow: 0 4px 15px rgba(14, 165, 233, 0.45); */
+  padding: 5px;
 }
 
 .brand-text {
@@ -122,6 +123,12 @@ body {
   letter-spacing: -0.3px;
 }
 
+.logo{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: none;
+}
 .nav-links {
   display: flex;
   align-items: center;
@@ -461,13 +468,13 @@ body {
 
 .hero-center-image {
   position: absolute;
-  inset: 60px;
+  /* inset: 60px; */
   border-radius: 50%;
   overflow: hidden;
-  border: 3px solid var(--glass-border);
-  box-shadow:
-    0 0 60px rgba(14, 165, 233, 0.35),
-    var(--shadow);
+  /* border: 3px solid var(--glass-border); */
+  /* box-shadow: */
+    /* 0 0 60px rgba(14, 165, 233, 0.35), */
+    /* var(--shadow); */
 }
 
 .hero-center-image img {
@@ -2456,9 +2463,6 @@ section {
 /* ============ SIMPLE ETHIOPIAN THEME OVERRIDES ============ */
 .navbar-custom,
 .navbar-custom.scrolled,
-.nav-links,
-.footer-custom,
-.footer-custom .footer-grid,
 .form-card,
 .search-section,
 .page-hero,
@@ -2601,7 +2605,7 @@ section {
   color: var(--primary);
 }
 
-.hero-center-image,
+/* .hero-center-image, */
 .floating-card,
 .search-section,
 .form-card,
@@ -2618,10 +2622,7 @@ section {
   border-radius: var(--radius);
 }
 
-.hero-center-image {
-  border: 3px solid rgba(31, 122, 74, 0.12);
-  box-shadow: var(--shadow);
-}
+
 
 .fc-icon.green {
   background: rgba(31, 122, 74, 0.12);
@@ -2933,12 +2934,10 @@ section {
 }
 
 .footer-custom,
-.footer-custom .footer-grid,
 .navbar-custom,
 .navbar-custom.scrolled,
-.nav-links,
-.footer-custom,
-.footer-custom .footer-grid,
+/* .nav-links, */
+
 .form-card,
 .search-section,
 .page-hero,
