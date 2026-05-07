@@ -31,7 +31,7 @@ if (isset($_SESSION['user_id'])) {
 <!-- NAVBAR -->
 <nav class="navbar-custom" id="main-navbar">
     <a href="index.php" class="navbar-brand-custom">
-        <div class="brand-icon"><i class="fas fa-shopping-cart"></i></div>
+        <div class="brand-icon"><img class="logo" src="assets/glow-cart.svg" alt="Habesha Market"> </div>
         <span class="brand-text">Habesha Market</span>
     </a>
 
