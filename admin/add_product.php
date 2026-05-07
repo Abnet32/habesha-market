@@ -1,7 +1,17 @@
 <?php
 $page_title = 'Add Product';
 require_once 'includes/admin_header.php';
-require_once '../connection.php';
+require_once __DIR__ . '/../connection.php';
+
+// Ensure $con is available (some connection files use different variable names)
+if (!isset($con)) {
+    if (isset($conn)) $con = $conn;
+    elseif (isset($mysqli)) $con = $mysqli;
+}
+
+if (!isset($con) || !$con) {
+    die('Database connection not available.');
+}
 
 $categories = mysqli_query($con, "SELECT * FROM categories ORDER BY name");
 $error   = $_GET['error']   ?? '';
