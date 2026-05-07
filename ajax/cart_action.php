@@ -3,6 +3,21 @@ header('Content-Type: application/json');
 if (session_status() === PHP_SESSION_NONE) session_start();
 require_once '../connection.php';
 
+if (!isset($con) && isset($conn)) {
+    $con = $conn;
+}
+
+// Ensure $con is defined and valid
+if (!isset($con) || !$con) {
+    // If an alternative variable exists use it, otherwise return error
+    if (isset($conn) && $conn) {
+        $con = $conn;
+    } else {
+        echo json_encode(['success' => false, 'message' => 'Database connection not found']);
+        exit;
+    }
+}
+
 function cart_count($con, $uid) {
     $r = mysqli_query($con, "SELECT SUM(quantity) as c FROM cart_items WHERE user_id=$uid");
     return (int)(mysqli_fetch_assoc($r)['c'] ?? 0);
@@ -24,18 +39,28 @@ $action = $_POST['action'] ?? '';
 if ($action === 'add') {
     $pid = (int)($_POST['product_id'] ?? 0);
     // Check product exists and has stock
-    $p = mysqli_fetch_assoc(mysqli_query($con, "SELECT id, stock FROM products WHERE id=$pid AND is_active=1"));
+    $stmt = mysqli_prepare($con, "SELECT id, stock FROM products WHERE id=? AND is_active=1");
+    mysqli_stmt_bind_param($stmt, 'i', $pid);
+    mysqli_stmt_execute($stmt);
+    $p = mysqli_fetch_assoc(mysqli_stmt_get_result($stmt));
     if (!$p) { echo json_encode(['success'=>false,'message'=>'Product not found']); exit; }
 
-    $existing = mysqli_fetch_assoc(mysqli_query($con, "SELECT id, quantity FROM cart_items WHERE user_id=$uid AND product_id=$pid"));
+    $stmt = mysqli_prepare($con, "SELECT id, quantity FROM cart_items WHERE user_id=? AND product_id=?");
+    mysqli_stmt_bind_param($stmt, 'ii', $uid, $pid);
+    mysqli_stmt_execute($stmt);
+    $existing = mysqli_fetch_assoc(mysqli_stmt_get_result($stmt));
     if ($existing) {
         if ($existing['quantity'] >= $p['stock']) {
             echo json_encode(['success'=>false,'message'=>'Max stock reached']);
             exit;
         }
-        mysqli_query($con, "UPDATE cart_items SET quantity=quantity+1 WHERE user_id=$uid AND product_id=$pid");
+        $stmt = mysqli_prepare($con, "UPDATE cart_items SET quantity=quantity+1 WHERE user_id=? AND product_id=?");
+        mysqli_stmt_bind_param($stmt, 'ii', $uid, $pid);
+        mysqli_stmt_execute($stmt);
     } else {
-        mysqli_query($con, "INSERT INTO cart_items (user_id, product_id, quantity) VALUES ($uid, $pid, 1)");
+        $stmt = mysqli_prepare($con, "INSERT INTO cart_items (user_id, product_id, quantity) VALUES (?, ?, 1)");
+        mysqli_stmt_bind_param($stmt, 'ii', $uid, $pid);
+        mysqli_stmt_execute($stmt);
     }
     echo json_encode(['success'=>true,'count'=>cart_count($con,$uid)]);
 
