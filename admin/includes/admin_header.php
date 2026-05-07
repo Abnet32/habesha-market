@@ -25,7 +25,7 @@ $admin_page = basename($_SERVER['PHP_SELF']);
 <!-- TOP NAVBAR -->
 <nav class="navbar-custom" id="main-navbar">
     <a href="../index.php" class="navbar-brand-custom">
-        <div class="brand-icon"><i class="fas fa-cog"></i></div>
+        <div class="brand-icon"><img class="logo" src="../assets/glow-cart.svg" alt="Habesha Market"></div>
         <span class="brand-text">HM Admin</span>
     </a>
     <ul class="nav-links">
