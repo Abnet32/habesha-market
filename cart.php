@@ -41,7 +41,7 @@ require 'includes/header.php';
     </div>
 </div>
 
-<div class="container-custom" style="padding-bottom:5rem">
+<div class="container-custom page-pad-bottom-5">
     <?php if (empty($cart_data)): ?>
         <div class="empty-state">
             <div class="empty-icon"><i class="fas fa-shopping-cart"></i></div>
@@ -74,7 +74,7 @@ require 'includes/header.php';
                                 <div class="cart-item-cat"><?= htmlspecialchars($item['cat_name']) ?></div>
                             </div>
                         </div>
-                        <div style="font-weight:600; font-size:0.9rem;">ETB <?= number_format($item['price'], 2) ?></div>
+                        <div class="text-85 font-medium">ETB <?= number_format($item['price'], 2) ?></div>
                         <div class="qty-control">
                             <button class="qty-btn" data-action="minus" data-id="<?= $item['cart_id'] ?>">
                                 <i class="fas fa-minus"></i>
@@ -84,7 +84,7 @@ require 'includes/header.php';
                                 <i class="fas fa-plus"></i>
                             </button>
                         </div>
-                        <div id="subtotal-<?= $item['cart_id'] ?>" style="font-weight:700; color:var(--secondary);">
+                        <div id="subtotal-<?= $item['cart_id'] ?>" class="summary-item-total">
                             ETB <?= number_format($item['line_total'], 2) ?>
                         </div>
                         <a href="actions/cart_remove.php?id=<?= $item['cart_id'] ?>" class="remove-btn"
@@ -95,7 +95,7 @@ require 'includes/header.php';
                     <?php endforeach; ?>
                 </div>
 
-                <div style="margin-top:1rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+                <div class="flex-between-wrap mt-1">
                     <a href="products.php" class="btn-outline-custom">
                         <i class="fas fa-arrow-left"></i> Continue Shopping
                     </a>
@@ -104,7 +104,7 @@ require 'includes/header.php';
 
             <!-- CART SUMMARY -->
             <div class="cart-summary">
-                <div class="summary-title"><i class="fas fa-receipt" style="color:var(--primary-light); margin-right:8px;"></i> Order Summary</div>
+                <div class="summary-title"><i class="fas fa-receipt summary-title-icon"></i> Order Summary</div>
 
                 <div class="summary-row">
                     <span>Subtotal (<?= count($cart_data) ?> items)</span>
@@ -124,14 +124,14 @@ require 'includes/header.php';
                     <span class="amount" id="cart-total">ETB <?= number_format($total, 2) ?></span>
                 </div>
 
-                <div style="margin-top:1.5rem; display:flex; flex-direction:column; gap:0.8rem;">
-                    <a href="checkout.php" class="btn-primary-custom" style="justify-content:center;">
+                <div class="flex-column-gap-08 mt-1-5">
+                    <a href="checkout.php" class="btn-primary-custom btn-full">
                         <span><i class="fas fa-lock"></i> Proceed to Checkout</span>
                     </a>
                 </div>
 
-                <div style="margin-top:1rem; padding:0.8rem; background:rgba(7,137,48,0.08); border-radius:var(--radius-sm); font-size:0.78rem; color:var(--text-muted); text-align:center;">
-                    <i class="fas fa-shield-alt" style="color:var(--primary-light);"></i>
+                <div class="summary-security-box">
+                    <i class="fas fa-shield-alt text-primary-light"></i>
                     Secure checkout &mdash; Cash on Delivery available
                 </div>
             </div>
