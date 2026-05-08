@@ -28,6 +28,11 @@ $admin_page = basename($_SERVER['PHP_SELF']);
         <div class="brand-icon"><img class="logo" src="../assets/glow-cart.svg" alt="Habesha Market"></div>
         <span class="brand-text">HM Admin</span>
     </a>
+    <button class="hamburger admin-hamburger" id="admin-sidebar-toggle" type="button">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
     <ul class="nav-links">
         <li><a href="../index.php" target="_blank"><i class="fas fa-external-link-alt"></i> View Site</a></li>
         <li><a href="../logout.php" class="nav-btn-logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
@@ -35,9 +40,9 @@ $admin_page = basename($_SERVER['PHP_SELF']);
 </nav>
 <div class="hero-stripe"><span></span><span></span><span></span></div>
 
-<div class="admin-layout">
+<div class="admin-layout" id="admin-layout">
     <!-- SIDEBAR -->
-    <aside class="admin-sidebar">
+    <aside class="admin-sidebar" id="admin-sidebar">
         <nav class="admin-nav">
             <div class="admin-nav-section">Dashboard</div>
             <a href="index.php" class="admin-nav-item <?= $admin_page === 'index.php' ? 'active' : '' ?>">
