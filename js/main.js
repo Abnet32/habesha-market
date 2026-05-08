@@ -26,6 +26,38 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // ===== ADMIN SIDEBAR TOGGLE =====
+  const adminSidebarToggle = document.getElementById("admin-sidebar-toggle");
+  const adminSidebar = document.getElementById("admin-sidebar");
+  const adminLayout = document.getElementById("admin-layout");
+  if (adminSidebarToggle && adminSidebar && adminLayout) {
+    adminSidebarToggle.addEventListener("click", () => {
+      adminSidebar.classList.toggle("open");
+      adminSidebarToggle.classList.toggle("open");
+      adminLayout.classList.toggle("sidebar-open");
+    });
+    // Close sidebar when clicking on a nav item
+    const adminNavItems = adminSidebar.querySelectorAll(".admin-nav-item");
+    adminNavItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        adminSidebar.classList.remove("open");
+        adminSidebarToggle.classList.remove("open");
+        adminLayout.classList.remove("sidebar-open");
+      });
+    });
+    // Close sidebar when clicking outside on mobile
+    document.addEventListener("click", (e) => {
+      if (
+        !adminSidebarToggle.contains(e.target) &&
+        !adminSidebar.contains(e.target)
+      ) {
+        adminSidebar.classList.remove("open");
+        adminSidebarToggle.classList.remove("open");
+        adminLayout.classList.remove("sidebar-open");
+      }
+    });
+  }
+
   // ===== PARTICLES (light aqua) =====
   const canvas = document.getElementById("particles-canvas");
   if (canvas) {
