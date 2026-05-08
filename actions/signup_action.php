@@ -2,6 +2,11 @@
 if (session_status() === PHP_SESSION_NONE) session_start();
 require_once '../connection.php';
 
+if (!isset($con)) {
+    $_SESSION['signup_error'] = 'Database connection failed.';
+    header('Location: ../signup.php'); exit;
+}
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') { header('Location: ../signup.php'); exit; }
 
 $full_name = trim($_POST['full_name'] ?? '');
