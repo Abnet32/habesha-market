@@ -64,7 +64,7 @@ $admin_page = basename($_SERVER['PHP_SELF']);
             <a href="../profile.php" class="admin-nav-item">
                 <i class="fas fa-user-cog"></i> My Profile
             </a>
-            <a href="../logout.php" class="admin-nav-item" style="color:#fb7185">
+            <a href="../logout.php" class="admin-nav-item admin-logout-link">
                 <i class="fas fa-sign-out-alt"></i> Logout
             </a>
         </nav>
