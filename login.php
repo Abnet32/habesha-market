@@ -7,10 +7,10 @@ unset($_SESSION['login_error']);
 require 'includes/header.php';
 ?>
 
-<div style="min-height:100vh; display:flex; align-items:center; justify-content:center; padding: 100px 1rem 3rem;">
+<div class="login-page">
     <div class="form-card animate-in">
-        <div style="text-align:center; margin-bottom:0.5rem;">
-            <div style="font-size:3rem; margin-bottom:0.5rem;"><i class="fas fa-store"></i></div>
+        <div class="auth-header">
+            <div class="auth-icon"><i class="fas fa-store"></i></div>
             <h1 class="form-title">Welcome Back</h1>
             <p class="form-subtitle">Sign in to your Habesha Market account</p>
         </div>
@@ -31,7 +31,7 @@ require 'includes/header.php';
         <form id="login-form" method="POST" action="actions/login_action.php">
             <div class="form-group-custom">
                 <label class="form-label-custom" for="login-email">
-                    <i class="fas fa-envelope" style="color:var(--primary-light); margin-right:5px;"></i> Email Address
+                    <i class="fas fa-envelope text-primary-light"></i> Email Address
                 </label>
                 <input type="email" id="login-email" name="email" class="form-control-custom"
                     placeholder="your@email.com" required autocomplete="email">
@@ -40,7 +40,7 @@ require 'includes/header.php';
 
             <div class="form-group-custom">
                 <label class="form-label-custom" for="login-password">
-                    <i class="fas fa-lock" style="color:var(--primary-light); margin-right:5px;"></i> Password
+                    <i class="fas fa-lock text-primary-light"></i> Password
                 </label>
                 <div class="password-toggle">
                     <input type="password" id="login-password" name="password" class="form-control-custom"
@@ -50,21 +50,21 @@ require 'includes/header.php';
                 <div class="field-msg" id="login-pass-msg"></div>
             </div>
 
-            <button type="submit" class="btn-primary-custom" style="width:100%; justify-content:center; border:none; cursor:pointer; margin-top:0.5rem;">
+            <button type="submit" class="btn-primary-custom auth-submit">
                 <span><i class="fas fa-sign-in-alt"></i> Sign In</span>
             </button>
         </form>
 
         <div class="form-divider"><span>or</span></div>
 
-        <div style="text-align:center; font-size:0.88rem; color:var(--text-muted);">
+        <div class="auth-footer">
             Don't have an account?
-            <a href="signup.php" style="color:var(--primary-light); font-weight:600; text-decoration:none;"> Create one free</a>
+            <a href="signup.php" class="auth-footer-link"> Create one free</a>
         </div>
 
-        <div style="margin-top:1.5rem; padding:1rem; background:rgba(252,221,9,0.06); border:1px solid rgba(252,221,9,0.15); border-radius:var(--radius-sm); font-size:0.8rem; color:var(--text-muted);">
-            <strong style="color:var(--secondary);">Demo accounts:</strong><br>
-            Email: <code style="color:var(--primary-light)">abebe@example.com</code> &nbsp;|&nbsp; Password: <code style="color:var(--primary-light)">password</code>
+        <div class="auth-note">
+            <strong class="auth-note-title">Demo accounts:</strong><br>
+            Email: <code class="auth-code">abebe@example.com</code> &nbsp;|&nbsp; Password: <code class="auth-code">password</code>
         </div>
     </div>
 </div>
