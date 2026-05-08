@@ -1,0 +1,855 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Habesha Market — Project Documentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,300&family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="document.css" />
+  </head>
+  <body>
+    <div class="ds-wrap">
+      <aside class="ds-sidebar">
+        <div class="ds-sidebar-logo">
+          <div class="ds-logo-mark">HM</div>
+          <div>
+            <span>Habesha Market<small>Project Documentation</small></span>
+          </div>
+        </div>
+
+        <div class="ds-nav-section">Overview</div>
+        <a class="ds-nav-item active" onclick="showSection('overview')"
+          ><div class="ds-nav-dot"></div>
+          Project Overview</a
+        >
+        <a class="ds-nav-item" onclick="showSection('architecture')"
+          ><div class="ds-nav-dot"></div>
+          Architecture</a
+        >
+        <a class="ds-nav-item" onclick="showSection('database')"
+          ><div class="ds-nav-dot"></div>
+          Database Schema</a
+        >
+        <a class="ds-nav-item" onclick="showSection('files')"
+          ><div class="ds-nav-dot"></div>
+          File Structure</a
+        >
+
+        <div class="ds-nav-section">Implementation</div>
+        <a class="ds-nav-item" onclick="showSection('pages')"
+          ><div class="ds-nav-dot"></div>
+          Pages Analysis</a
+        >
+        <a class="ds-nav-item" onclick="showSection('design')"
+          ><div class="ds-nav-dot"></div>
+          Design System</a
+        >
+        <a class="ds-nav-item" onclick="showSection('javascript')"
+          ><div class="ds-nav-dot"></div>
+          JavaScript</a
+        >
+        <a class="ds-nav-item" onclick="showSection('ajax')"
+          ><div class="ds-nav-dot"></div>
+          AJAX Endpoints</a
+        >
+        <a class="ds-nav-item" onclick="showSection('security')"
+          ><div class="ds-nav-dot"></div>
+          Security</a
+        >
+
+        <div class="ds-nav-section">Project</div>
+        <a class="ds-nav-item" onclick="showSection('requirements')"
+          ><div class="ds-nav-dot"></div>
+          Requirements</a
+        >
+        <a class="ds-nav-item" onclick="showSection('team')"
+          ><div class="ds-nav-dot"></div>
+          Team</a
+        >
+        <a class="ds-nav-item" onclick="showSection('setup')"
+          ><div class="ds-nav-dot"></div>
+          Setup</a
+        >
+      </aside>
+
+      <main class="ds-main">
+        <section class="ds-section active" id="overview">
+          <div class="ds-section-header">
+            <div class="ds-section-tag">Section 01</div>
+            <h1 class="ds-section-title">Project Overview</h1>
+            <p class="ds-section-desc">
+              Habesha Market is an Ethiopian e-commerce project built with plain
+              HTML, CSS, JavaScript, PHP, and MySQL. The documentation below
+              explains how the system is organized, how it stores data, how the
+              pages work, and how the project can be run locally.
+            </p>
+          </div>
+
+          <div class="feature-grid">
+            <div class="feature-item">
+              <div class="fi-icon">🎨</div>
+              <div class="fi-title">Responsive UI</div>
+              <div class="fi-desc">
+                The front-end adapts to desktop and mobile screens using a
+                compact, card-based layout.
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="fi-icon">⚡</div>
+              <div class="fi-title">AJAX Interactions</div>
+              <div class="fi-desc">
+                Search, cart actions, and email validation use asynchronous
+                requests for smoother interactions.
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="fi-icon">🔧</div>
+              <div class="fi-title">PHP Backend</div>
+              <div class="fi-desc">
+                Server-side logic is handled by PHP pages and action files
+                without a heavy framework.
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="fi-icon">🗄️</div>
+              <div class="fi-title">MySQL Database</div>
+              <div class="fi-desc">
+                The schema includes users, categories, products, carts, orders,
+                order items, and reviews.
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="fi-icon">🔒</div>
+              <div class="fi-title">Security Aware</div>
+              <div class="fi-desc">
+                Passwords are hashed and output is escaped to reduce the main
+                risks in the app.
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="fi-icon">👮</div>
+              <div class="fi-title">Admin Area</div>
+              <div class="fi-desc">
+                An admin panel supports product, order, and user management.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="ds-section" id="architecture">
+          <div class="ds-section-header">
+            <div class="ds-section-tag">Section 02</div>
+            <h1 class="ds-section-title">Architecture</h1>
+            <p class="ds-section-desc">
+              The application uses a simple layered structure: HTML/CSS for
+              presentation, JavaScript for client interactivity, PHP for server
+              logic, and MySQL for data storage.
+            </p>
+          </div>
+
+          <div class="doc-table-wrap">
+            <table class="doc-table">
+              <thead>
+                <tr>
+                  <th>Layer</th>
+                  <th>Technology</th>
+                  <th>Responsibility</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Presentation</strong></td>
+                  <td><code>HTML5 + CSS3</code></td>
+                  <td>Page structure, layout, and visual styling.</td>
+                </tr>
+                <tr>
+                  <td><strong>Client Logic</strong></td>
+                  <td><code>Vanilla JavaScript</code></td>
+                  <td>DOM updates, AJAX calls, and form validation.</td>
+                </tr>
+                <tr>
+                  <td><strong>Server Logic</strong></td>
+                  <td><code>PHP + MySQLi</code></td>
+                  <td>
+                    Sessions, requests, business rules, and database access.
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Persistence</strong></td>
+                  <td><code>MySQL</code></td>
+                  <td>Stores all project data in relational tables.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Request Flow</div>
+            <ol
+              style="
+                padding-left: 1.4rem;
+                font-size: 0.88rem;
+                color: var(--neutral-500);
+                line-height: 2;
+              "
+            >
+              <li>The browser requests a PHP page.</li>
+              <li>The page checks session state and loads required data.</li>
+              <li>Database queries run through <code>connection.php</code>.</li>
+              <li>
+                HTML is rendered and escaped before it reaches the browser.
+              </li>
+              <li>
+                JavaScript binds events for search, cart actions, and
+                validation.
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="ds-section" id="database">
+          <div class="ds-section-header">
+            <div class="ds-section-tag">Section 03</div>
+            <h1 class="ds-section-title">Database Schema</h1>
+            <p class="ds-section-desc">
+              The schema is designed for a small e-commerce site but still keeps
+              the data model clean enough for products, orders, carts, and
+              reviews.
+            </p>
+          </div>
+
+          <div class="comp-grid-2">
+            <div>
+              <div class="comp-label">Core Tables</div>
+              <div class="doc-table-wrap">
+                <table class="doc-table">
+                  <thead>
+                    <tr>
+                      <th>Table</th>
+                      <th>Purpose</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>users</code></td>
+                      <td>Accounts for customers and admins.</td>
+                    </tr>
+                    <tr>
+                      <td><code>categories</code></td>
+                      <td>Product group labels.</td>
+                    </tr>
+                    <tr>
+                      <td><code>products</code></td>
+                      <td>Catalog items with price and stock data.</td>
+                    </tr>
+                    <tr>
+                      <td><code>cart_items</code></td>
+                      <td>User cart entries.</td>
+                    </tr>
+                    <tr>
+                      <td><code>orders</code></td>
+                      <td>Order headers and checkout details.</td>
+                    </tr>
+                    <tr>
+                      <td><code>order_items</code></td>
+                      <td>Line items for each order.</td>
+                    </tr>
+                    <tr>
+                      <td><code>reviews</code></td>
+                      <td>Ratings and comments on products.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div>
+              <div class="comp-label">Relationships</div>
+              <div class="card">
+                <div
+                  style="
+                    font-size: 13px;
+                    color: var(--neutral-700);
+                    line-height: 2;
+                  "
+                >
+                  <div>
+                    <strong>categories → products</strong>: one category can
+                    contain many products.
+                  </div>
+                  <div>
+                    <strong>users → cart_items</strong>: one user can have
+                    multiple cart items.
+                  </div>
+                  <div>
+                    <strong>users → orders</strong>: one user can place many
+                    orders.
+                  </div>
+                  <div>
+                    <strong>orders → order_items</strong>: one order can contain
+                    many products.
+                  </div>
+                  <div>
+                    <strong>products ↔ users</strong>: reviews link both sides
+                    together.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="ds-section" id="files">
+          <div class="ds-section-header">
+            <div class="ds-section-tag">Section 04</div>
+            <h1 class="ds-section-title">File Structure</h1>
+            <p class="ds-section-desc">
+              The repository is grouped by responsibility: public pages, shared
+              includes, action handlers, AJAX endpoints, admin tools, assets,
+              and database files.
+            </p>
+          </div>
+
+          <div class="code-block">
+            <span class="code-label">Tree</span>
+            <pre><span class="kw">ethio-market/</span>
+├── index.php
+├── products.php
+├── product_detail.php
+├── cart.php
+├── checkout.php
+├── orders.php
+├── profile.php
+├── login.php / signup.php
+├── logout.php
+├── includes/
+├── actions/
+├── ajax/
+├── admin/
+├── js/main.js
+├── css/style.css
+└── database/habesha_market.sql</pre>
+          </div>
+        </section>
+
+        <section class="ds-section" id="pages">
+          <div class="ds-section-header">
+            <div class="ds-section-tag">Section 05</div>
+            <h1 class="ds-section-title">Pages Analysis</h1>
+            <p class="ds-section-desc">
+              This section explains what each major page does and where the
+              logic lives.
+            </p>
+          </div>
+
+          <div class="comp-grid-2">
+            <div class="card">
+              <div class="card-title">index.php</div>
+              <div class="fi-desc">
+                Homepage with hero content, categories, featured products, and
+                promotional sections.
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-title">products.php</div>
+              <div class="fi-desc">
+                Product listing page with live search, filters, sort options,
+                and product cards.
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-title">product_detail.php</div>
+              <div class="fi-desc">
+                Single product view with reviews, related products, and
+                add-to-cart actions.
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-title">cart.php / checkout.php</div>
+              <div class="fi-desc">
+                Cart quantity controls, order totals, shipping form, and payment
+                methods.
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-title">login.php / signup.php</div>
+              <div class="fi-desc">
+                Authentication screens with validation and email availability
+                checks.
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-title">admin/</div>
+              <div class="fi-desc">
+                Protected pages for product, order, and user management.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="ds-section" id="design">
+          <div class="ds-section-header">
+            <div class="ds-section-tag">Section 06</div>
+            <h1 class="ds-section-title">Design System</h1>
+            <p class="ds-section-desc">
+              The project uses a calm aqua-and-white palette with rounded cards
+              and light shadows. The documentation uses the same visual language
+              as the design page, but the content here describes the actual
+              project instead of the prototype.
+            </p>
+          </div>
+
+          <div class="comp-grid-2">
+            <div>
+              <div class="comp-label">Palette</div>
+              <div class="css-vars-grid">
+                <div class="css-var-item">
+                  <div class="color-swatch" style="background: #0db2cf"></div>
+                  <div>
+                    <div class="cv-name">Primary</div>
+                    <div class="cv-val">Main aqua accent</div>
+                  </div>
+                </div>
+                <div class="css-var-item">
+                  <div class="color-swatch" style="background: #078ca7"></div>
+                  <div>
+                    <div class="cv-name">Primary Dark</div>
+                    <div class="cv-val">Headers and emphasis</div>
+                  </div>
+                </div>
+                <div class="css-var-item">
+                  <div class="color-swatch" style="background: #56d8e8"></div>
+                  <div>
+                    <div class="cv-name">Primary Light</div>
+                    <div class="cv-val">Soft highlight tone</div>
+                  </div>
+                </div>
+                <div class="css-var-item">
+                  <div class="color-swatch" style="background: #14c7b5"></div>
+                  <div>
+                    <div class="cv-name">Secondary</div>
+                    <div class="cv-val">Green-teal support color</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="comp-label">Typography</div>
+              <div class="doc-table-wrap">
+                <table class="doc-table">
+                  <thead>
+                    <tr>
+                      <th>Font</th>
+                      <th>Usage</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>Poppins</code></td>
+                      <td>Body text, labels, buttons, and navigation.</td>
+                    </tr>
+                    <tr>
+                      <td><code>Playfair Display</code></td>
+                      <td>Main section titles and large emphasis text.</td>
+                    </tr>
+                    <tr>
+                      <td><code>Courier New</code></td>
+                      <td>Code blocks, file trees, and SQL snippets.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="ds-section" id="javascript">
+          <div class="ds-section-header">
+            <div class="ds-section-tag">Section 07</div>
+            <h1 class="ds-section-title">JavaScript</h1>
+            <p class="ds-section-desc">
+              The JavaScript layer is intentionally small and focused on the
+              interactions that make the site feel dynamic.
+            </p>
+          </div>
+
+          <div class="js-grid">
+            <div class="js-card">
+              <div class="js-num">01</div>
+              <div class="js-title">Navbar state</div>
+              <div class="js-desc">
+                Changes the navbar styling after scrolling.
+              </div>
+            </div>
+            <div class="js-card">
+              <div class="js-num">02</div>
+              <div class="js-title">Scroll reveal</div>
+              <div class="js-desc">
+                Shows sections as they enter the viewport.
+              </div>
+            </div>
+            <div class="js-card">
+              <div class="js-num">03</div>
+              <div class="js-title">Live search</div>
+              <div class="js-desc">
+                Fetches search suggestions as the user types.
+              </div>
+            </div>
+            <div class="js-card">
+              <div class="js-num">04</div>
+              <div class="js-title">Cart actions</div>
+              <div class="js-desc">
+                Updates cart quantities and totals without reloading.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="ds-section" id="ajax">
+          <div class="ds-section-header">
+            <div class="ds-section-tag">Section 08</div>
+            <h1 class="ds-section-title">AJAX Endpoints</h1>
+            <p class="ds-section-desc">
+              These endpoints return JSON and support the dynamic parts of the
+              site.
+            </p>
+          </div>
+
+          <div class="comp-grid-3">
+            <div class="card">
+              <div class="card-title">search.php</div>
+              <div class="fi-desc">
+                Returns matching products for live search.
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-title">cart_action.php</div>
+              <div class="fi-desc">Adds, updates, or removes cart items.</div>
+            </div>
+            <div class="card">
+              <div class="card-title">validate_email.php</div>
+              <div class="fi-desc">
+                Checks if an email is available during signup.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="ds-section" id="security">
+          <div class="ds-section-header">
+            <div class="ds-section-tag">Section 09</div>
+            <h1 class="ds-section-title">Security</h1>
+            <p class="ds-section-desc">
+              The project uses common safeguards for a PHP/MySQL application.
+            </p>
+          </div>
+
+          <div class="sec-grid">
+            <div class="sec-row">
+              <div class="sec-icon g">✓</div>
+              <div class="sec-concern">Password hashing</div>
+              <div class="sec-impl">
+                Passwords are stored using PHP hashing, not plain text.
+              </div>
+              <div class="sec-badge">Enabled</div>
+            </div>
+            <div class="sec-row">
+              <div class="sec-icon g">✓</div>
+              <div class="sec-concern">Escaped output</div>
+              <div class="sec-impl">
+                Dynamic values are escaped before they are rendered.
+              </div>
+              <div class="sec-badge">Enabled</div>
+            </div>
+            <div class="sec-row">
+              <div class="sec-icon g">✓</div>
+              <div class="sec-concern">Session checks</div>
+              <div class="sec-impl">
+                Protected pages verify login state and role.
+              </div>
+              <div class="sec-badge">Enabled</div>
+            </div>
+            <div class="sec-row">
+              <div class="sec-icon g">✓</div>
+              <div class="sec-concern">Stock checks</div>
+              <div class="sec-impl">
+                Checkout logic confirms product stock before placing orders.
+              </div>
+              <div class="sec-badge">Enabled</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="ds-section" id="requirements">
+          <div class="ds-section-header">
+            <div class="ds-section-tag">Section 10</div>
+            <h1 class="ds-section-title">Requirements</h1>
+            <p class="ds-section-desc">
+              The project covers the key course expectations for front-end,
+              JavaScript, PHP, and database work.
+            </p>
+          </div>
+
+          <div class="req-grid">
+            <div class="req-item">
+              <div class="req-check ok">✓</div>
+              <div>
+                <div class="req-text">Responsive layout</div>
+                <div class="req-sub">Works on multiple screen sizes.</div>
+              </div>
+            </div>
+            <div class="req-item">
+              <div class="req-check ok">✓</div>
+              <div>
+                <div class="req-text">Client-side validation</div>
+                <div class="req-sub">Forms validate before submit.</div>
+              </div>
+            </div>
+            <div class="req-item">
+              <div class="req-check ok">✓</div>
+              <div>
+                <div class="req-text">DOM manipulation</div>
+                <div class="req-sub">
+                  Search, cart, and UI updates happen in the browser.
+                </div>
+              </div>
+            </div>
+            <div class="req-item">
+              <div class="req-check ok">✓</div>
+              <div>
+                <div class="req-text">AJAX requests</div>
+                <div class="req-sub">
+                  Live search and email checks use fetch.
+                </div>
+              </div>
+            </div>
+            <div class="req-item">
+              <div class="req-check ex">+</div>
+              <div>
+                <div class="req-text">Database tables</div>
+                <div class="req-sub">The schema uses seven tables.</div>
+              </div>
+            </div>
+            <div class="req-item">
+              <div class="req-check ex">+</div>
+              <div>
+                <div class="req-text">Relationships</div>
+                <div class="req-sub">
+                  The data model includes one-to-many links and reviews.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="ds-section" id="team">
+          <div class="ds-section-header">
+            <div class="ds-section-tag">Section 11</div>
+            <h1 class="ds-section-title">Team</h1>
+            <p class="ds-section-desc">
+              Five students contributed to the project. The team names below can
+              be replaced if your final submission uses different authors.
+            </p>
+          </div>
+
+          <div class="team-grid">
+            <div class="team-card">
+              <div class="team-card-body">
+                <div
+                  class="team-avatar"
+                  style="background: linear-gradient(135deg, #078ca7, #14c7b5)"
+                >
+                  A
+                </div>
+                <div class="team-name">Abnet Mekonen</div>
+                <div class="team-id">1134/16</div>
+                <div class="team-role">Full-Stack Lead</div>
+                <div class="team-contrib">
+                  Architecture, core pages, and visual direction.
+                </div>
+              </div>
+              <div class="team-card-footer">
+                <span class="team-tag">PHP</span
+                ><span class="team-tag">CSS</span>
+              </div>
+            </div>
+            <div class="team-card">
+              <div class="team-card-body">
+                <div
+                  class="team-avatar"
+                  style="background: linear-gradient(135deg, #0db2cf, #56d8e8)"
+                >
+                  B
+                </div>
+                <div class="team-name">Biruk Tadesse</div>
+                <div class="team-id">1135/16</div>
+                <div class="team-role">Frontend</div>
+                <div class="team-contrib">
+                  Homepage and responsive layout work.
+                </div>
+              </div>
+              <div class="team-card-footer">
+                <span class="team-tag">HTML</span
+                ><span class="team-tag">UI</span>
+              </div>
+            </div>
+            <div class="team-card">
+              <div class="team-card-body">
+                <div
+                  class="team-avatar"
+                  style="background: linear-gradient(135deg, #14c7b5, #078ca7)"
+                >
+                  H
+                </div>
+                <div class="team-name">Hana Girma</div>
+                <div class="team-id">1136/16</div>
+                <div class="team-role">Backend</div>
+                <div class="team-contrib">
+                  Authentication, sessions, and form handling.
+                </div>
+              </div>
+              <div class="team-card-footer">
+                <span class="team-tag">Auth</span
+                ><span class="team-tag">PHP</span>
+              </div>
+            </div>
+            <div class="team-card">
+              <div class="team-card-body">
+                <div
+                  class="team-avatar"
+                  style="background: linear-gradient(135deg, #56d8e8, #0db2cf)"
+                >
+                  D
+                </div>
+                <div class="team-name">Dawit Solomon</div>
+                <div class="team-id">1137/16</div>
+                <div class="team-role">Database</div>
+                <div class="team-contrib">
+                  Schema design, SQL, and seed data.
+                </div>
+              </div>
+              <div class="team-card-footer">
+                <span class="team-tag">MySQL</span
+                ><span class="team-tag">SQL</span>
+              </div>
+            </div>
+            <div class="team-card">
+              <div class="team-card-body">
+                <div
+                  class="team-avatar"
+                  style="background: linear-gradient(135deg, #f97316, #0db2cf)"
+                >
+                  S
+                </div>
+                <div class="team-name">Sara Kebede</div>
+                <div class="team-id">1138/16</div>
+                <div class="team-role">JS & Docs</div>
+                <div class="team-contrib">
+                  AJAX features, client-side logic, and documentation.
+                </div>
+              </div>
+              <div class="team-card-footer">
+                <span class="team-tag">JS</span
+                ><span class="team-tag">Docs</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="ds-section" id="setup">
+          <div class="ds-section-header">
+            <div class="ds-section-tag">Section 12</div>
+            <h1 class="ds-section-title">Setup</h1>
+            <p class="ds-section-desc">
+              Follow these steps to run the project locally.
+            </p>
+          </div>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-body">
+                <div class="step-title">Import the database</div>
+                <div class="step-desc">
+                  Load <code>database/habesha_market.sql</code> into MySQL to
+                  create the schema and sample data.
+                </div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-body">
+                <div class="step-title">Configure the connection</div>
+                <div class="step-desc">
+                  Update <code>connection.php</code> with your local database
+                  credentials.
+                </div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-body">
+                <div class="step-title">Start the server</div>
+                <div class="step-desc">
+                  Use Apache, Nginx, or the PHP built-in server to open the
+                  project.
+                </div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-body">
+                <div class="step-title">Test the demo accounts</div>
+                <div class="step-desc">
+                  Use the sample users in the database to verify login and admin
+                  access.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="account-grid">
+            <div class="account-card">
+              <div class="acc-avatar">A</div>
+              <div class="acc-role admin">Admin</div>
+              <div class="acc-name">Admin User</div>
+              <div class="acc-email">admin@habeshamarket.et</div>
+              <div class="acc-pass">Password: <strong>password</strong></div>
+            </div>
+            <div class="account-card">
+              <div class="acc-avatar">A</div>
+              <div class="acc-role customer">Customer</div>
+              <div class="acc-name">Abebe Girma</div>
+              <div class="acc-email">abebe@example.com</div>
+              <div class="acc-pass">Password: <strong>password</strong></div>
+            </div>
+            <div class="account-card">
+              <div class="acc-avatar">T</div>
+              <div class="acc-role customer">Customer</div>
+              <div class="acc-name">Tigist Bekele</div>
+              <div class="acc-email">tigist@example.com</div>
+              <div class="acc-pass">Password: <strong>password</strong></div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      function showSection(id) {
+        document
+          .querySelectorAll(".ds-section")
+          .forEach((section) => section.classList.remove("active"));
+        document
+          .querySelectorAll(".ds-nav-item")
+          .forEach((item) => item.classList.remove("active"));
+        const target = document.getElementById(id);
+        if (target) target.classList.add("active");
+        event.currentTarget.classList.add("active");
+      }
+    </script>
+  </body>
+</html>
