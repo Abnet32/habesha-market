@@ -36,12 +36,12 @@ $total = mysqli_num_rows($orders);
 $success = $_GET['success'] ?? '';
 ?>
 
-<?php if ($success): ?><div class="alert-custom alert-success" style="margin-bottom:1.5rem"><i class="fas fa-check-circle"></i> Order status updated.</div><?php endif; ?>
+<?php if ($success): ?><div class="alert-custom alert-success admin-alert-spacing"><i class="fas fa-check-circle"></i> Order status updated.</div><?php endif; ?>
 
 <div class="admin-page-header">
     <div>
         <h1 class="admin-page-title">Orders</h1>
-        <p style="color:var(--text-muted);font-size:0.88rem;margin-top:4px"><?= $total ?> total orders</p>
+        <p class="admin-page-note"><?= $total ?> total orders</p>
     </div>
 </div>
 
@@ -62,16 +62,16 @@ $success = $_GET['success'] ?? '';
         <tbody>
         <?php while ($o = mysqli_fetch_assoc($orders)): ?>
         <tr>
-            <td><strong style="color:var(--primary-light)">#<?= $o['id'] ?></strong></td>
+            <td><strong class="admin-link-inline font-semibold">#<?= $o['id'] ?></strong></td>
             <td><?= htmlspecialchars($o['full_name']) ?></td>
-            <td style="font-size:0.8rem;color:var(--text-muted)"><?= htmlspecialchars($o['email']) ?></td>
+            <td class="text-80 table-cell-muted"><?= htmlspecialchars($o['email']) ?></td>
             <td>ETB <?= number_format($o['total_amount'], 2) ?></td>
-            <td style="font-size:0.82rem"><?= htmlspecialchars($o['payment_method'] ?? '—') ?></td>
+            <td class="text-82"><?= htmlspecialchars($o['payment_method'] ?? '—') ?></td>
             <td><span class="order-status status-<?= $o['status'] ?>"><?= ucfirst($o['status']) ?></span></td>
-            <td style="font-size:0.8rem;color:var(--text-muted)"><?= date('M d, Y H:i', strtotime($o['created_at'])) ?></td>
+            <td class="text-80 table-cell-muted"><?= date('M d, Y H:i', strtotime($o['created_at'])) ?></td>
             <td>
                 <select onchange="window.location='orders.php?id=<?= $o['id'] ?>&set_status='+this.value"
-                        class="filter-select" style="font-size:0.78rem;padding:0.3rem 0.8rem;min-width:130px">
+                        class="filter-select admin-filter-status">
                     <?php foreach (['pending','processing','delivered','cancelled'] as $s): ?>
                     <option value="<?= $s ?>" <?= $o['status'] === $s ? 'selected' : '' ?>><?= ucfirst($s) ?></option>
                     <?php endforeach; ?>
@@ -80,7 +80,7 @@ $success = $_GET['success'] ?? '';
         </tr>
         <?php endwhile; ?>
         <?php if ($total === 0): ?>
-        <tr><td colspan="8" style="text-align:center;padding:2.5rem;color:var(--text-muted)">No orders yet.</td></tr>
+        <tr><td colspan="8" class="table-empty-cell">No orders yet.</td></tr>
         <?php endif; ?>
         </tbody>
     </table>
