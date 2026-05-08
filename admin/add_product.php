@@ -25,15 +25,15 @@ unset($_SESSION['old_input']);
 <div class="admin-page-header">
     <div>
         <h1 class="admin-page-title">Add New Product</h1>
-        <p style="color:var(--text-muted);font-size:0.88rem;margin-top:4px">Fill in the details below to add a product to the catalogue.</p>
+        <p class="admin-page-note">Fill in the details below to add a product to the catalogue.</p>
     </div>
-    <a href="products.php" class="btn-outline-custom" style="font-size:0.88rem;padding:0.55rem 1.3rem">
+    <a href="products.php" class="btn-outline-custom admin-form-tight-btn">
         <i class="fas fa-arrow-left"></i> Back to Products
     </a>
 </div>
 
-<?php if ($error):   ?><div class="alert-custom alert-error"   style="margin-bottom:1.5rem"><i class="fas fa-exclamation-circle"></i> <?= htmlspecialchars($error) ?></div><?php endif; ?>
-<?php if ($success): ?><div class="alert-custom alert-success" style="margin-bottom:1.5rem"><i class="fas fa-check-circle"></i> Product added successfully! <a href="products.php" style="color:var(--primary-light)">View all products</a>.</div><?php endif; ?>
+<?php if ($error):   ?><div class="alert-custom alert-error admin-alert-spacing"><i class="fas fa-exclamation-circle"></i> <?= htmlspecialchars($error) ?></div><?php endif; ?>
+<?php if ($success): ?><div class="alert-custom alert-success admin-alert-spacing"><i class="fas fa-check-circle"></i> Product added successfully! <a href="products.php" class="admin-link-inline">View all products</a>.</div><?php endif; ?>
 
 <div class="admin-form-wrap">
     <form method="POST" action="actions/save_product.php">
@@ -41,7 +41,7 @@ unset($_SESSION['old_input']);
 
         <div class="admin-form-grid">
             <!-- Name -->
-            <div class="form-group-custom" style="grid-column:span 2">
+            <div class="form-group-custom admin-form-fullspan">
                 <label class="form-label-custom">Product Name *</label>
                 <input type="text" name="name" class="form-control-custom" required
                        placeholder="e.g. Premium Yirgacheffe Coffee Beans"
@@ -82,7 +82,7 @@ unset($_SESSION['old_input']);
 
             <!-- Original Price -->
             <div class="form-group-custom">
-                <label class="form-label-custom">Original Price (ETB) <span style="color:var(--text-muted);font-weight:400">(optional, for strikethrough)</span></label>
+                <label class="form-label-custom">Original Price (ETB) <span class="text-muted font-medium">(optional, for strikethrough)</span></label>
                 <input type="number" name="original_price" step="0.01" min="0" class="form-control-custom"
                        placeholder="600.00"
                        value="<?= htmlspecialchars($old['original_price'] ?? '') ?>">
@@ -97,16 +97,16 @@ unset($_SESSION['old_input']);
             </div>
 
             <!-- Image URL -->
-            <div class="form-group-custom" style="grid-column:span 2">
+            <div class="form-group-custom admin-form-fullspan">
                 <label class="form-label-custom">Image URL *</label>
                 <input type="url" name="image_url" class="form-control-custom" required
                        placeholder="https://images.unsplash.com/..."
                        value="<?= htmlspecialchars($old['image_url'] ?? '') ?>">
-                <div class="field-msg" style="color:var(--text-muted)">Use any direct image link (Unsplash, Pexels, etc.)</div>
+                <div class="field-msg text-muted">Use any direct image link (Unsplash, Pexels, etc.)</div>
             </div>
 
             <!-- Description -->
-            <div class="form-group-custom" style="grid-column:span 2">
+            <div class="form-group-custom admin-form-fullspan">
                 <label class="form-label-custom">Description *</label>
                 <textarea name="description" class="form-control-custom" rows="4" required
                           placeholder="Write a compelling product description..."><?= htmlspecialchars($old['description'] ?? '') ?></textarea>
@@ -114,13 +114,12 @@ unset($_SESSION['old_input']);
         </div>
 
         <!-- Image Preview -->
-        <div id="img-preview-wrap" style="margin-bottom:1.5rem;display:none">
+        <div id="img-preview-wrap" class="admin-preview-wrap" hidden>
             <label class="form-label-custom">Image Preview</label>
-            <img id="img-preview" src="" alt="Preview"
-                 style="max-width:220px;max-height:180px;border-radius:var(--radius-sm);border:1px solid var(--glass-border);object-fit:cover">
+            <img id="img-preview" src="" alt="Preview" class="admin-preview-img">
         </div>
 
-        <div style="display:flex;gap:1rem;flex-wrap:wrap">
+        <div class="admin-btn-row">
             <button type="submit" class="btn-primary-custom">
                 <i class="fas fa-plus-circle"></i> <span>Add Product</span>
             </button>
@@ -138,11 +137,11 @@ function updatePreview() {
     const url = imgInput.value.trim();
     if (url.startsWith('http')) {
         preview.src = url;
-        previewWrap.style.display = 'block';
-        preview.onerror = () => { previewWrap.style.display = 'none'; };
-        preview.onload  = () => { previewWrap.style.display = 'block'; };
+        previewWrap.hidden = false;
+        preview.onerror = () => { previewWrap.hidden = true; };
+        preview.onload  = () => { previewWrap.hidden = false; };
     } else {
-        previewWrap.style.display = 'none';
+        previewWrap.hidden = true;
     }
 }
 
