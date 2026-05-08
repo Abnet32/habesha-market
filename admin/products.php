@@ -15,13 +15,28 @@ $where = 'WHERE p.is_active=1';
 $cat_filter = isset($_GET['cat']) ? (int)$_GET['cat'] : 0;
 if ($cat_filter > 0) $where .= " AND p.category_id=$cat_filter";
 
+// Pagination setup
+$per_page = 10;
+$current_page = isset($_GET['page']) ? max(1, (int)$_GET['page']) : 1;
+$offset = ($current_page - 1) * $per_page;
+
+// Get total count for pagination
+$count_result = mysqli_query($con,
+    "SELECT COUNT(*) as total FROM products p
+     $where"
+);
+$count_row = mysqli_fetch_assoc($count_result);
+$total = $count_row['total'];
+$total_pages = ceil($total / $per_page);
+
+// Get products for current page
 $products = mysqli_query($con,
     "SELECT p.*, c.name AS cat_name
      FROM products p LEFT JOIN categories c ON p.category_id=c.id
-     $where ORDER BY p.id DESC"
+     $where ORDER BY p.id DESC
+     LIMIT $per_page OFFSET $offset"
 );
 $categories = mysqli_query($con, "SELECT * FROM categories ORDER BY name");
-$total = mysqli_num_rows($products);
 ?>
 
 <?php if ($success === 'added'):   ?><div class="alert-custom alert-success admin-alert-spacing"><i class="fas fa-check-circle"></i> Product added successfully.</div><?php endif; ?>
@@ -138,5 +153,59 @@ $total = mysqli_num_rows($products);
         </tbody>
     </table>
 </div>
+
+<!-- PAGINATION -->
+<?php if ($total_pages > 1): ?>
+<div class="pagination-container">
+    <div class="pagination-info">
+        Showing <?= ($offset + 1) ?> to <?= min($offset + $per_page, $total) ?> of <?= $total ?> products
+    </div>
+    <div class="pagination-nav">
+        <?php
+        $cat_param = $cat_filter > 0 ? '&cat=' . $cat_filter : '';
+        ?>
+        <?php if ($current_page > 1): ?>
+            <a href="products.php?page=<?= $current_page - 1 ?><?= $cat_param ?>" class="btn-pagination">
+                <i class="fas fa-chevron-left"></i> Previous
+            </a>
+        <?php endif; ?>
+
+        <div class="pagination-pages">
+            <?php
+            $start_page = max(1, $current_page - 2);
+            $end_page = min($total_pages, $current_page + 2);
+
+            if ($start_page > 1):
+                echo '<a href="products.php?page=1' . $cat_param . '" class="btn-page">1</a>';
+                if ($start_page > 2):
+                    echo '<span class="pagination-dots">...</span>';
+                endif;
+            endif;
+
+            for ($p = $start_page; $p <= $end_page; $p++):
+                if ($p === $current_page):
+                    echo '<span class="btn-page active">' . $p . '</span>';
+                else:
+                    echo '<a href="products.php?page=' . $p . $cat_param . '" class="btn-page">' . $p . '</a>';
+                endif;
+            endfor;
+
+            if ($end_page < $total_pages):
+                if ($end_page < $total_pages - 1):
+                    echo '<span class="pagination-dots">...</span>';
+                endif;
+                echo '<a href="products.php?page=' . $total_pages . $cat_param . '" class="btn-page">' . $total_pages . '</a>';
+            endif;
+            ?>
+        </div>
+
+        <?php if ($current_page < $total_pages): ?>
+            <a href="products.php?page=<?= $current_page + 1 ?><?= $cat_param ?>" class="btn-pagination">
+                Next <i class="fas fa-chevron-right"></i>
+            </a>
+        <?php endif; ?>
+    </div>
+</div>
+<?php endif; ?>
 
 <?php require_once 'includes/admin_footer.php'; ?>
