@@ -47,28 +47,28 @@ $low_stock = mysqli_query($con,
 <!-- STAT CARDS -->
 <div class="stat-cards">
     <div class="stat-card">
-        <div class="stat-card-icon blue"><i class="fas fa-box-open" style="color:#38bdf8"></i></div>
+        <div class="stat-card-icon blue"><i class="fas fa-box-open admin-stats-icon-blue"></i></div>
         <div>
             <div class="stat-card-value"><?= number_format($stats['products']) ?></div>
             <div class="stat-card-label">Active Products</div>
         </div>
     </div>
     <div class="stat-card">
-        <div class="stat-card-icon cyan"><i class="fas fa-receipt" style="color:#67e8f9"></i></div>
+        <div class="stat-card-icon cyan"><i class="fas fa-receipt admin-stats-icon-cyan"></i></div>
         <div>
             <div class="stat-card-value"><?= number_format($stats['orders']) ?></div>
             <div class="stat-card-label">Total Orders</div>
         </div>
     </div>
     <div class="stat-card">
-        <div class="stat-card-icon purple"><i class="fas fa-users" style="color:#c4b5fd"></i></div>
+        <div class="stat-card-icon purple"><i class="fas fa-users admin-stats-icon-purple"></i></div>
         <div>
             <div class="stat-card-value"><?= number_format($stats['users']) ?></div>
             <div class="stat-card-label">Customers</div>
         </div>
     </div>
     <div class="stat-card">
-        <div class="stat-card-icon red"><i class="fas fa-coins" style="color:#fda4af"></i></div>
+        <div class="stat-card-icon red"><i class="fas fa-coins admin-stats-icon-red"></i></div>
         <div>
             <div class="stat-card-value">ETB <?= number_format($stats['revenue']) ?></div>
             <div class="stat-card-label">Total Revenue</div>
@@ -76,11 +76,11 @@ $low_stock = mysqli_query($con,
     </div>
 </div>
 
-<div style="display:grid;grid-template-columns:1fr 320px;gap:1.5rem;align-items:start">
+<div class="admin-grid-two">
 
     <!-- RECENT ORDERS -->
     <div>
-        <h2 style="font-size:1.1rem;font-weight:700;margin-bottom:1rem">Recent Orders</h2>
+        <h2 class="admin-heading">Recent Orders</h2>
         <div class="admin-table">
             <table>
                 <thead>
@@ -95,7 +95,7 @@ $low_stock = mysqli_query($con,
                 <tbody>
                     <?php while ($o = mysqli_fetch_assoc($recent_orders)): ?>
                     <tr>
-                        <td><strong style="color:var(--primary-light)">#<?= $o['id'] ?></strong></td>
+                        <td><strong class="admin-link-inline font-semibold">#<?= $o['id'] ?></strong></td>
                         <td><?= htmlspecialchars($o['full_name']) ?></td>
                         <td>ETB <?= number_format($o['total_amount'], 2) ?></td>
                         <td>
@@ -109,8 +109,8 @@ $low_stock = mysqli_query($con,
                 </tbody>
             </table>
         </div>
-        <div style="margin-top:1rem">
-            <a href="orders.php" class="btn-outline-custom" style="font-size:0.85rem;padding:0.5rem 1.2rem">
+        <div class="admin-divider">
+            <a href="orders.php" class="btn-outline-custom admin-filter-compact">
                 View All Orders <i class="fas fa-arrow-right"></i>
             </a>
         </div>
@@ -118,31 +118,31 @@ $low_stock = mysqli_query($con,
 
     <!-- LOW STOCK -->
     <div>
-        <h2 style="font-size:1.1rem;font-weight:700;margin-bottom:1rem">
-            <i class="fas fa-exclamation-triangle" style="color:#fbbf24;margin-right:6px"></i>Low Stock Alert
+        <h2 class="admin-heading">
+            <i class="fas fa-exclamation-triangle text-secondary mr-6"></i>Low Stock Alert
         </h2>
-        <div style="display:flex;flex-direction:column;gap:0.6rem">
+        <div class="admin-low-stock-list">
             <?php
             $has_low = false;
             while ($p = mysqli_fetch_assoc($low_stock)):
                 $has_low = true;
             ?>
-            <div style="background:var(--glass);border:1px solid <?= $p['stock']==0 ? 'rgba(225,29,72,0.4)' : 'rgba(251,191,36,0.3)' ?>;border-radius:var(--radius-sm);padding:0.8rem 1rem;display:flex;justify-content:space-between;align-items:center">
-                <span style="font-size:0.88rem;font-weight:600"><?= htmlspecialchars($p['name']) ?></span>
-                <span style="font-size:0.8rem;font-weight:700;color:<?= $p['stock']==0 ? '#fb7185' : '#fbbf24' ?>">
+            <div class="admin-low-stock-card <?= $p['stock']==0 ? 'admin-low-stock-card-out stock-out' : 'admin-low-stock-card-warning stock-low' ?> flex-between-wrap">
+                <span class="text-88 font-medium"><?= htmlspecialchars($p['name']) ?></span>
+                <span class="text-80 admin-stock-state <?= $p['stock']==0 ? 'stock-out' : 'stock-low' ?>">
                     <?= $p['stock'] === '0' ? 'Out of stock' : $p['stock'] . ' left' ?>
                 </span>
             </div>
             <?php endwhile; ?>
             <?php if (!$has_low): ?>
-            <div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius-sm);padding:1rem;text-align:center;color:var(--text-muted);font-size:0.88rem">
-                <i class="fas fa-check-circle" style="color:#6ee7b7;margin-right:6px"></i>All products are well stocked
+            <div class="admin-low-stock-card admin-low-stock-card-ok">
+                <i class="fas fa-check-circle stock-good mr-6"></i>All products are well stocked
             </div>
             <?php endif; ?>
         </div>
 
-        <div style="margin-top:1.5rem">
-            <a href="products.php" class="btn-outline-custom" style="font-size:0.85rem;padding:0.5rem 1.2rem;width:100%;justify-content:center">
+        <div class="mt-1-5">
+            <a href="products.php" class="btn-outline-custom admin-filter-compact w-full btn-inline-flex">
                 <i class="fas fa-box-open"></i> Manage Products
             </a>
         </div>
