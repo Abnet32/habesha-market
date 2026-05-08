@@ -43,9 +43,9 @@ require 'includes/header.php';
     </div>
 </div>
 
-<div class="container-custom" style="padding-bottom:5rem">
+<div class="container-custom page-pad-bottom-5">
     <?php if ($error): ?>
-        <div class="alert-custom alert-error" style="max-width:900px; margin:0 auto 1.5rem;">
+        <div class="alert-custom alert-error max-w-900 mb-1-5">
             <i class="fas fa-exclamation-circle"></i> <?= htmlspecialchars($error) ?>
         </div>
     <?php endif; ?>
@@ -55,12 +55,12 @@ require 'includes/header.php';
             <!-- LEFT: SHIPPING & PAYMENT -->
             <div>
                 <!-- Shipping Info -->
-                <div class="form-card" style="max-width:none; margin-bottom:1.5rem;">
+                <div class="form-card max-w-none mb-1-5">
                     <div class="checkout-section-title">
                         <i class="fas fa-map-marker-alt"></i> Shipping Information
                     </div>
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
-                        <div class="form-group-custom" style="grid-column:1/-1">
+                    <div class="grid-2">
+                        <div class="form-group-custom grid-full">
                             <label class="form-label-custom">Full Name</label>
                             <input type="text" name="full_name" class="form-control-custom"
                                 value="<?= htmlspecialchars($user['full_name']) ?>" required>
@@ -78,12 +78,12 @@ require 'includes/header.php';
                                 <?php endforeach; ?>
                             </select>
                         </div>
-                        <div class="form-group-custom" style="grid-column:1/-1">
+                        <div class="form-group-custom grid-full">
                             <label class="form-label-custom">Delivery Address</label>
                             <textarea name="address" class="form-control-custom" rows="2" required
                                 placeholder="Kebele, Sub-city, landmark..."><?= htmlspecialchars($user['address'] ?? '') ?></textarea>
                         </div>
-                        <div class="form-group-custom" style="grid-column:1/-1">
+                        <div class="form-group-custom grid-full">
                             <label class="form-label-custom">Order Notes (optional)</label>
                             <textarea name="notes" class="form-control-custom" rows="2" placeholder="Special instructions for delivery..."></textarea>
                         </div>
@@ -91,25 +91,23 @@ require 'includes/header.php';
                 </div>
 
                 <!-- Payment -->
-                <div class="form-card" style="max-width:none;">
+                <div class="form-card max-w-none">
                     <div class="checkout-section-title">
                         <i class="fas fa-credit-card"></i> Payment Method
                     </div>
-                    <div style="display:flex; flex-direction:column; gap:0.8rem;">
+                    <div class="payment-options">
                         <?php $methods = [
                             ['cash_on_delivery', '💵', 'Cash on Delivery', 'Pay when your order arrives'],
                             ['bank_transfer', '🏦', 'Bank Transfer (CBE / Awash)', 'Transfer to our account & send receipt'],
                             ['mobile_money', '📱', 'Mobile Money (M-Birr / HelloCash)', 'Transfer via mobile payment app']
                         ]; foreach ($methods as $i => [$val, $icon, $label, $desc]): ?>
-                        <label style="display:flex; align-items:center; gap:14px; padding:1rem 1.2rem; border:1.5px solid var(--glass-border); border-radius:var(--radius-sm); cursor:pointer; transition:all 0.3s;"
-                               onmouseover="this.style.borderColor='var(--primary)'"
-                               onmouseout="this.style.borderColor=(document.getElementById('pm<?= $i ?>').checked?'var(--primary)':'var(--glass-border)')">
+                        <label class="payment-option">
                             <input type="radio" id="pm<?= $i ?>" name="payment_method" value="<?= $val ?>" <?= $i === 0 ? 'checked' : '' ?>
-                                   onchange="document.querySelectorAll('[name=payment_method]').forEach((r,j)=>{r.closest('label').style.borderColor=j==<?= $i ?>?'var(--primary)':'var(--glass-border)'})">
-                            <span style="font-size:1.5rem"><?= $icon ?></span>
+                                   onchange="document.querySelectorAll('.payment-option').forEach((label)=>label.classList.remove('selected')); this.closest('label').classList.add('selected');">
+                            <span class="payment-option-icon"><?= $icon ?></span>
                             <div>
-                                <div style="font-weight:700; font-size:0.9rem;"><?= $label ?></div>
-                                <div style="font-size:0.78rem; color:var(--text-muted);"><?= $desc ?></div>
+                                <div class="payment-option-title"><?= $label ?></div>
+                                <div class="payment-option-desc"><?= $desc ?></div>
                             </div>
                         </label>
                         <?php endforeach; ?>
@@ -118,19 +116,19 @@ require 'includes/header.php';
             </div>
 
             <!-- RIGHT: ORDER SUMMARY -->
-            <div class="cart-summary" style="position:sticky; top:90px;">
-                <div class="summary-title"><i class="fas fa-shopping-bag" style="color:var(--primary-light); margin-right:8px;"></i> Order Summary</div>
+            <div class="cart-summary sticky-top-90">
+                <div class="summary-title"><i class="fas fa-shopping-bag summary-title-icon"></i> Order Summary</div>
 
                 <?php foreach ($cart as $item): ?>
-                <div style="display:flex; gap:10px; margin-bottom:1rem; padding-bottom:1rem; border-bottom:1px solid rgba(255,255,255,0.05);">
+                <div class="summary-item">
                     <img src="<?= htmlspecialchars($item['image_url']) ?>"
-                         style="width:50px; height:50px; border-radius:8px; object-fit:cover; background:var(--dark2);"
+                         class="summary-image"
                          onerror="this.src='https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=100&q=60'">
-                    <div style="flex:1">
-                        <div style="font-size:0.85rem; font-weight:600;"><?= htmlspecialchars($item['name']) ?></div>
-                        <div style="font-size:0.78rem; color:var(--text-muted);">Qty: <?= $item['quantity'] ?></div>
+                    <div class="summary-item-main">
+                        <div class="summary-item-name"><?= htmlspecialchars($item['name']) ?></div>
+                        <div class="summary-item-meta">Qty: <?= $item['quantity'] ?></div>
                     </div>
-                    <div style="font-size:0.88rem; font-weight:700; color:var(--secondary);">
+                    <div class="summary-item-total">
                         ETB <?= number_format($item['line_total'], 2) ?>
                     </div>
                 </div>
@@ -149,12 +147,12 @@ require 'includes/header.php';
                     <span class="amount">ETB <?= number_format($total, 2) ?></span>
                 </div>
 
-                <div style="margin-top:1.5rem;">
-                    <button type="submit" class="btn-primary-custom" style="width:100%; justify-content:center; border:none; cursor:pointer; font-size:1rem; padding:1rem 2rem;">
+                <div class="mt-1-5">
+                    <button type="submit" class="btn-primary-custom btn-full checkout-submit">
                         <span><i class="fas fa-check-circle"></i> Place Order</span>
                     </button>
                 </div>
-                <div style="margin-top:0.8rem; text-align:center; font-size:0.78rem; color:var(--text-muted);">
+                <div class="text-center text-78 text-muted mt-0-5">
                     <i class="fas fa-lock"></i> Your information is secure and encrypted
                 </div>
             </div>
