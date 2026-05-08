@@ -68,7 +68,7 @@ $cats = mysqli_query($con, "SELECT c.*, COUNT(p.id) as product_count FROM catego
 </section>
 
 <!-- FEATURES STRIP -->
-<section class="section-padding" style="padding: 3rem 0;">
+<section class="section-padding page-pad-3">
     <div class="container-custom">
         <div class="features-grid animate-in">
             <div class="feature-card delay-1">
@@ -122,7 +122,7 @@ $cats = mysqli_query($con, "SELECT c.*, COUNT(p.id) as product_count FROM catego
 </section>
 
 <!-- FEATURED PRODUCTS -->
-<section class="section-padding" style="padding-top:0">
+<section class="section-padding page-pad-top-0">
     <div class="container-custom">
         <div class="section-header animate-in">
             <div class="section-badge"><i class="fas fa-star"></i> Top Picks</div>
@@ -166,7 +166,7 @@ $cats = mysqli_query($con, "SELECT c.*, COUNT(p.id) as product_count FROM catego
             </div>
             <?php endwhile; ?>
         </div>
-        <div style="text-align:center; margin-top:2.5rem;" class="animate-in">
+        <div class="hero-cta-center animate-in">
             <a href="products.php" class="btn-primary-custom">
                 <span><i class="fas fa-store"></i> View All Products</span>
             </a>
@@ -175,7 +175,7 @@ $cats = mysqli_query($con, "SELECT c.*, COUNT(p.id) as product_count FROM catego
 </section>
 
 <!-- COUNTER SECTION -->
-<section class="section-padding" style="padding-top:0">
+<section class="section-padding page-pad-top-0">
     <div class="container-custom">
         <div class="counter-section animate-in">
             <div class="counter-grid">
@@ -201,7 +201,7 @@ $cats = mysqli_query($con, "SELECT c.*, COUNT(p.id) as product_count FROM catego
 </section>
 
 <!-- TESTIMONIALS -->
-<section class="section-padding" style="padding-top:0">
+<section class="section-padding page-pad-top-0">
     <div class="container-custom">
         <div class="section-header animate-in">
             <div class="section-badge"><i class="fas fa-comments"></i> Customer Stories</div>
@@ -209,7 +209,7 @@ $cats = mysqli_query($con, "SELECT c.*, COUNT(p.id) as product_count FROM catego
         </div>
         <div class="testimonials-grid">
             <div class="testimonial-card animate-in delay-1">
-                <div class="stars" style="margin-bottom:1rem;">★★★★★</div>
+                <div class="stars hero-star-row">★★★★★</div>
                 <p class="testimonial-text">I ordered Yirgacheffe coffee and it arrived perfectly packaged. The aroma is incredible — it tastes exactly like the coffee ceremony at my grandmother's house. Truly authentic!</p>
                 <div class="testimonial-author">
                     <div class="author-avatar">A</div>
@@ -220,7 +220,7 @@ $cats = mysqli_query($con, "SELECT c.*, COUNT(p.id) as product_count FROM catego
                 </div>
             </div>
             <div class="testimonial-card animate-in delay-2">
-                <div class="stars" style="margin-bottom:1rem;">★★★★★</div>
+                <div class="stars hero-star-row">★★★★★</div>
                 <p class="testimonial-text">The Habesha Kemis I bought for my sister's wedding was absolutely stunning. The quality of the weaving and the Tibeb patterns were exceptional. Will definitely order again!</p>
                 <div class="testimonial-author">
                     <div class="author-avatar">T</div>
@@ -231,7 +231,7 @@ $cats = mysqli_query($con, "SELECT c.*, COUNT(p.id) as product_count FROM catego
                 </div>
             </div>
             <div class="testimonial-card animate-in delay-3">
-                <div class="stars" style="margin-bottom:1rem;">★★★★☆</div>
+                <div class="stars hero-star-row">★★★★☆</div>
                 <p class="testimonial-text">The berbere spice blend is exactly what I've been looking for! My family always complained that the spices we found in diaspora stores were not authentic. This is the real deal.</p>
                 <div class="testimonial-author">
                     <div class="author-avatar">M</div>
@@ -246,15 +246,15 @@ $cats = mysqli_query($con, "SELECT c.*, COUNT(p.id) as product_count FROM catego
 </section>
 
 <!-- NEWSLETTER -->
-<section class="section-padding" style="padding-top:0; padding-bottom:4rem">
+<section class="section-padding page-pad-top-0-bottom-4">
     <div class="container-custom">
-        <div class="animate-in" style="background: linear-gradient(135deg, rgba(7,137,48,0.15), rgba(252,221,9,0.08)); border: 1px solid rgba(7,137,48,0.25); border-radius: var(--radius); padding: 3rem 2rem; text-align:center;">
+        <div class="animate-in newsletter-panel">
             <div class="section-badge newsletter-title"><i class="fas fa-envelope"></i> Newsletter</div>
             <h2 class="newsletter-loop">Stay in the Loop</h2>
             <p class="newsletter-subtitle">Get exclusive deals, new arrivals and Ethiopian cultural stories delivered to your inbox.</p>
             <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Thank you for subscribing!','success')">
                 <input type="email" placeholder="Enter your email" required class="newsletter-input">
-                <button type="submit" class="btn-primary-custom" style="border:none;cursor:pointer;white-space:nowrap;">
+                <button type="submit" class="btn-primary-custom newsletter-subscribe-button">
                     <span><i class="fas fa-paper-plane"></i> Subscribe</span>
                 </button>
             </form>
