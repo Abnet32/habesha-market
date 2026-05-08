@@ -3,6 +3,14 @@ if (session_status() === PHP_SESSION_NONE) session_start();
 if (!isset($_SESSION['user_id'])) { header('Location: ../login.php'); exit; }
 require_once '../connection.php';
 
+if (!isset($con)) {
+    if (isset($conn)) {
+        $con = $conn;
+    } else {
+        die('Database connection failed');
+    }
+}
+
 $cart_id = (int)($_GET['id'] ?? 0);
 $uid = (int)$_SESSION['user_id'];
 
