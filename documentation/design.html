@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Habesha Market — Design System & Prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,300&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="design.css">
+</head>
+<body>
+<div class="ds-wrap">
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="ds-sidebar">
+    <div class="ds-sidebar-logo">
+      <div class="ds-logo-mark">H</div>
+      <div>
+        <span>Habesha Market<small>Design System v1.0</small></span>
+      </div>
+    </div>
+
+    <div class="ds-nav-section">Foundation</div>
+    <a class="ds-nav-item active" onclick="showSection('colors')"><div class="ds-nav-dot"></div> Colors</a>
+    <a class="ds-nav-item" onclick="showSection('typography')"><div class="ds-nav-dot"></div> Typography</a>
+    <a class="ds-nav-item" onclick="showSection('spacing')"><div class="ds-nav-dot"></div> Spacing & Grid</a>
+    <a class="ds-nav-item" onclick="showSection('icons')"><div class="ds-nav-dot"></div> Iconography</a>
+
+    <div class="ds-nav-section">Components</div>
+    <a class="ds-nav-item" onclick="showSection('buttons')"><div class="ds-nav-dot"></div> Buttons</a>
+    <a class="ds-nav-item" onclick="showSection('forms')"><div class="ds-nav-dot"></div> Forms & Inputs</a>
+    <a class="ds-nav-item" onclick="showSection('cards')"><div class="ds-nav-dot"></div> Cards</a>
+    <a class="ds-nav-item" onclick="showSection('badges')"><div class="ds-nav-dot"></div> Badges & Tags</a>
+    <a class="ds-nav-item" onclick="showSection('nav')"><div class="ds-nav-dot"></div> Navigation</a>
+    <a class="ds-nav-item" onclick="showSection('tables')"><div class="ds-nav-dot"></div> Tables</a>
+    <a class="ds-nav-item" onclick="showSection('feedback')"><div class="ds-nav-dot"></div> Feedback</a>
+
+    <div class="ds-nav-section">Screens</div>
+    <a class="ds-nav-item" onclick="showSection('screen-home')"><div class="ds-nav-dot"></div> Homepage</a>
+    <a class="ds-nav-item" onclick="showSection('screen-shop')"><div class="ds-nav-dot"></div> Shop / Products</a>
+    <a class="ds-nav-item" onclick="showSection('screen-cart')"><div class="ds-nav-dot"></div> Cart & Checkout</a>
+    <a class="ds-nav-item" onclick="showSection('screen-auth')"><div class="ds-nav-dot"></div> Auth Screens</a>
+    <a class="ds-nav-item" onclick="showSection('screen-profile')"><div class="ds-nav-dot"></div> Profile & Orders</a>
+    <a class="ds-nav-item" onclick="showSection('screen-admin')"><div class="ds-nav-dot"></div> Admin Dashboard</a>
+
+    <div class="ds-nav-section">Specs</div>
+    <a class="ds-nav-item" onclick="showSection('accessibility')"><div class="ds-nav-dot"></div> Accessibility</a>
+    <a class="ds-nav-item" onclick="showSection('motion')"><div class="ds-nav-dot"></div> Motion & Interactions</a>
+  </aside>
+
+  <!-- ── MAIN ── -->
+  <main class="ds-main">
+
+    <!-- ─────────────────── COLORS ─────────────────── -->
+    <section class="ds-section active" id="colors">
+      <div class="ds-section-header">
+        <div class="ds-section-tag">Foundation</div>
+        <h1 class="ds-section-title">Color System</h1>
+        <p class="ds-section-desc">A palette rooted in Ethiopia's natural landscape — forest greens, warm earthy ambers, and clean neutrals. These colors carry cultural resonance while meeting WCAG AA contrast standards.</p>
+      </div>
+
+      <div class="h3">Primary Brand</div>
+      <div class="sg-grid" style="grid-template-columns: repeat(5,1fr);">
+        <div class="sg-color-swatch">
+          <div class="sg-swatch-block" style="background:#2C6B3D;"></div>
+          <div class="sg-swatch-info"><div class="sg-swatch-name">Green 600</div><div class="sg-swatch-hex">#2C6B3D · Primary</div></div>
+        </div>
+        <div class="sg-color-swatch">
+          <div class="sg-swatch-block" style="background:#1A4226;"></div>
+          <div class="sg-swatch-info"><div class="sg-swatch-name">Green 800</div><div class="sg-swatch-hex">#1A4226 · Deep</div></div>
+        </div>
+        <div class="sg-color-swatch">
+          <div class="sg-swatch-block" style="background:#4A9B5E;"></div>
+          <div class="sg-swatch-info"><div class="sg-swatch-name">Green 400</div><div class="sg-swatch-hex">#4A9B5E · Light</div></div>
+        </div>
+        <div class="sg-color-swatch">
+          <div class="sg-swatch-block" style="background:#A8D4B3;"></div>
+          <div class="sg-swatch-info"><div class="sg-swatch-name">Green 200</div><div class="sg-swatch-hex">#A8D4B3 · Tint</div></div>
+        </div>
+        <div class="sg-color-swatch">
+          <div class="sg-swatch-block" style="background:#F0F7F2;"></div>
+          <div class="sg-swatch-info"><div class="sg-swatch-name">Green 50</div><div class="sg-swatch-hex">#F0F7F2 · Surface</div></div>
+        </div>
+      </div>
+
+      <div class="h3" style="margin-top:1.5rem;">Accent — Ethiopian Amber</div>
+      <div class="sg-grid" style="grid-template-columns: repeat(4,1fr);">
+        <div class="sg-color-swatch">
+          <div class="sg-swatch-block" style="background:#F5C842;"></div>
+          <div class="sg-swatch-info"><div class="sg-swatch-name">Amber 200</div><div class="sg-swatch-hex">#F5C842 · Primary</div></div>
+        </div>
+        <div class="sg-color-swatch">
+          <div class="sg-swatch-block" style="background:#E8A800;"></div>
+          <div class="sg-swatch-info"><div class="sg-swatch-name">Amber 400</div><div class="sg-swatch-hex">#E8A800 · Hover</div></div>
+        </div>
+        <div class="sg-color-swatch">
+          <div class="sg-swatch-block" style="background:#B07E00;"></div>
+          <div class="sg-swatch-info"><div class="sg-swatch-name">Amber 600</div><div class="sg-swatch-hex">#B07E00 · Text</div></div>
+        </div>
+        <div class="sg-color-swatch">
+          <div class="sg-swatch-block" style="background:#FDF6E8;"></div>
+          <div class="sg-swatch-info"><div class="sg-swatch-name">Amber 50</div><div class="sg-swatch-hex">#FDF6E8 · Surface</div></div>
+        </div>
+      </div>
+
+      <div class="h3" style="margin-top:1.5rem;">Neutrals</div>
+      <div class="sg-grid" style="grid-template-columns: repeat(6,1fr);">
+        <div class="sg-color-swatch"><div class="sg-swatch-block" style="background:#1C1B17;"></div><div class="sg-swatch-info"><div class="sg-swatch-name">Neutral 900</div><div class="sg-swatch-hex">#1C1B17</div></div></div>
+        <div class="sg-color-swatch"><div class="sg-swatch-block" style="background:#3A3830;"></div><div class="sg-swatch-info"><div class="sg-swatch-name">Neutral 700</div><div class="sg-swatch-hex">#3A3830</div></div></div>
+        <div class="sg-color-swatch"><div class="sg-swatch-block" style="background:#6E6B62;"></div><div class="sg-swatch-info"><div class="sg-swatch-name">Neutral 500</div><div class="sg-swatch-hex">#6E6B62</div></div></div>
+        <div class="sg-color-swatch"><div class="sg-swatch-block" style="background:#9E9B91;"></div><div class="sg-swatch-info"><div class="sg-swatch-name">Neutral 400</div><div class="sg-swatch-hex">#9E9B91</div></div></div>
+        <div class="sg-color-swatch"><div class="sg-swatch-block" style="background:#E8E6DF;"></div><div class="sg-swatch-info"><div class="sg-swatch-name">Neutral 200</div><div class="sg-swatch-hex">#E8E6DF</div></div></div>
+        <div class="sg-color-swatch"><div class="sg-swatch-block" style="background:#FAFAF8;"></div><div class="sg-swatch-info"><div class="sg-swatch-name">Neutral 50</div><div class="sg-swatch-hex">#FAFAF8</div></div></div>
+      </div>
+
+      <div class="h3" style="margin-top:1.5rem;">Semantic</div>
+      <div class="sg-grid" style="grid-template-columns: repeat(4,1fr);">
+        <div class="sg-color-swatch"><div class="sg-swatch-block" style="background:#166534;"></div><div class="sg-swatch-info"><div class="sg-swatch-name">Success</div><div class="sg-swatch-hex">#166534 · Delivered</div></div></div>
+        <div class="sg-color-swatch"><div class="sg-swatch-block" style="background:#B07E00;"></div><div class="sg-swatch-info"><div class="sg-swatch-name">Warning</div><div class="sg-swatch-hex">#B07E00 · Pending</div></div></div>
+        <div class="sg-color-swatch"><div class="sg-swatch-block" style="background:#D94F3D;"></div><div class="sg-swatch-info"><div class="sg-swatch-name">Error</div><div class="sg-swatch-hex">#D94F3D · Error</div></div></div>
+        <div class="sg-color-swatch"><div class="sg-swatch-block" style="background:#2563EB;"></div><div class="sg-swatch-info"><div class="sg-swatch-name">Info</div><div class="sg-swatch-hex">#2563EB · Info</div></div></div>
+      </div>
+    </section>
+
+    <!-- ─────────────────── TYPOGRAPHY ─────────────────── -->
+    <section class="ds-section" id="typography">
+      <div class="ds-section-header">
+        <div class="ds-section-tag">Foundation</div>
+        <h1 class="ds-section-title">Typography</h1>
+        <p class="ds-section-desc">Two typefaces in careful harmony. Fraunces brings editorial warmth and cultural character to headings. DM Sans delivers clean, highly legible interface text.</p>
+      </div>
+
+      <div class="comp-group">
+        <div class="comp-label">Display — Fraunces (Optical Size 9–144)</div>
+        <div style="font-family:'Fraunces',serif;font-size:52px;font-weight:300;line-height:1;color:var(--neutral-900);margin-bottom:.5rem;">Habesha Market</div>
+        <div style="font-family:'Fraunces',serif;font-size:52px;font-weight:500;font-style:italic;line-height:1;color:var(--green-600);margin-bottom:1.5rem;">Authentic Ethiopian</div>
+        <div class="sg-swatch-hex" style="margin-bottom:2rem;">Fraunces · Optical size adaptive · Weights 300, 500, 700 · Optical italic ✦</div>
+
+        <div class="comp-label">Headings Scale</div>
+        <div class="sg-type-row"><div class="sg-type-label">H1 / 40px / Fraunces 500</div><div style="font-family:'Fraunces',serif;font-size:40px;font-weight:500;">Discover Ethiopian Products</div></div>
+        <div class="sg-type-row"><div class="sg-type-label">H2 / 32px / Fraunces 500</div><div style="font-family:'Fraunces',serif;font-size:32px;font-weight:500;">Shop by Category</div></div>
+        <div class="sg-type-row"><div class="sg-type-label">H3 / 24px / Fraunces 500</div><div style="font-family:'Fraunces',serif;font-size:24px;font-weight:500;">Featured Products</div></div>
+        <div class="sg-type-row"><div class="sg-type-label">H4 / 18px / DM Sans 600</div><div style="font-size:18px;font-weight:600;">Habesha Kemis (White Classic)</div></div>
+        <div class="sg-type-row"><div class="sg-type-label">H5 / 15px / DM Sans 600</div><div style="font-size:15px;font-weight:600;">Ethiopian Coffee Ceremony Set</div></div>
+
+        <div class="comp-label" style="margin-top:2rem;">Body & Interface</div>
+        <div class="sg-type-row"><div class="sg-type-label">Body Large / 16px / 400</div><div style="font-size:16px;line-height:1.7;max-width:500px;color:var(--neutral-700);">From the highlands of Yirgacheffe to the markets of Addis Ababa — shop handcrafted goods, organic coffee, traditional fashion and more.</div></div>
+        <div class="sg-type-row"><div class="sg-type-label">Body / 14px / 400</div><div style="font-size:14px;line-height:1.6;color:var(--neutral-600);">Premium single-origin coffee from Yirgacheffe, Sidama region. Known for its bright floral aroma and wine-like characteristics.</div></div>
+        <div class="sg-type-row"><div class="sg-type-label">Caption / 12px / 400</div><div style="font-size:12px;color:var(--neutral-500);">4.9 (142 reviews) · Ethiopian Coffee · Hot</div></div>
+        <div class="sg-type-row"><div class="sg-type-label">Label / 11px / 600 / Uppercase</div><div style="font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--neutral-500);">Shop by category</div></div>
+        <div class="sg-type-row"><div class="sg-type-label">Price / 18px / 700</div><div style="font-size:18px;font-weight:700;color:var(--green-600);">ETB 2,500.00 <span style="font-size:13px;text-decoration:line-through;color:var(--neutral-400);font-weight:400;">ETB 3,200.00</span></div></div>
+      </div>
+    </section>
+
+    <!-- ─────────────────── SPACING ─────────────────── -->
+    <section class="ds-section" id="spacing">
+      <div class="ds-section-header">
+        <div class="ds-section-tag">Foundation</div>
+        <h1 class="ds-section-title">Spacing & Grid</h1>
+        <p class="ds-section-desc">An 8px base grid creates visual rhythm. Border radii progress from pill to card, giving different interactive affordances clear meaning.</p>
+      </div>
+
+      <div class="comp-grid-2">
+        <div>
+          <div class="comp-label">Spacing Scale</div>
+          <div class="spacing-row"><div class="spacing-block" style="width:4px;"></div><div class="spacing-code">space-1</div><div class="spacing-px">4px · micro gaps</div></div>
+          <div class="spacing-row"><div class="spacing-block" style="width:8px;"></div><div class="spacing-code">space-2</div><div class="spacing-px">8px · icon-text gap</div></div>
+          <div class="spacing-row"><div class="spacing-block" style="width:12px;"></div><div class="spacing-code">space-3</div><div class="spacing-px">12px · card internal</div></div>
+          <div class="spacing-row"><div class="spacing-block" style="width:16px;"></div><div class="spacing-code">space-4</div><div class="spacing-px">16px · form fields</div></div>
+          <div class="spacing-row"><div class="spacing-block" style="width:20px;"></div><div class="spacing-code">space-5</div><div class="spacing-px">20px · section inner</div></div>
+          <div class="spacing-row"><div class="spacing-block" style="width:24px;"></div><div class="spacing-code">space-6</div><div class="spacing-px">24px · card padding</div></div>
+          <div class="spacing-row"><div class="spacing-block" style="width:32px;"></div><div class="spacing-code">space-8</div><div class="spacing-px">32px · large gaps</div></div>
+          <div class="spacing-row"><div class="spacing-block" style="width:48px;"></div><div class="spacing-code">space-12</div><div class="spacing-px">48px · section header</div></div>
+          <div class="spacing-row"><div class="spacing-block" style="width:64px;"></div><div class="spacing-code">space-16</div><div class="spacing-px">64px · hero padding</div></div>
+        </div>
+        <div>
+          <div class="comp-label">Border Radii</div>
+          <div style="display:flex;flex-direction:column;gap:14px;">
+            <div style="display:flex;align-items:center;gap:14px;">
+              <div style="width:60px;height:36px;background:var(--green-200);border-radius:6px;"></div>
+              <div><code style="font-size:12px;">radius-sm · 6px</code><div class="text-xs text-muted mt-1">Chips, small tags</div></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;">
+              <div style="width:60px;height:36px;background:var(--green-200);border-radius:10px;"></div>
+              <div><code style="font-size:12px;">radius-md · 10px</code><div class="text-xs text-muted mt-1">Inputs, small cards</div></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;">
+              <div style="width:60px;height:36px;background:var(--green-200);border-radius:16px;"></div>
+              <div><code style="font-size:12px;">radius-lg · 16px</code><div class="text-xs text-muted mt-1">Product cards, panels</div></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;">
+              <div style="width:60px;height:36px;background:var(--green-200);border-radius:24px;"></div>
+              <div><code style="font-size:12px;">radius-xl · 24px</code><div class="text-xs text-muted mt-1">Feature cards, modals</div></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;">
+              <div style="width:60px;height:36px;background:var(--green-200);border-radius:9999px;"></div>
+              <div><code style="font-size:12px;">radius-full</code><div class="text-xs text-muted mt-1">Buttons, badges</div></div>
+            </div>
+          </div>
+
+          <div class="comp-label" style="margin-top:2rem;">Breakpoints</div>
+          <div style="font-size:13px;color:var(--neutral-600);line-height:2;">
+            <code>sm</code> — 640px · single column<br>
+            <code>md</code> — 768px · 2-col grid<br>
+            <code>lg</code> — 1024px · 3-col grid<br>
+            <code>xl</code> — 1280px · full layout<br>
+            <code>2xl</code> — 1536px · max-w 1400px
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────── ICONS ─────────────────── -->
+    <section class="ds-section" id="icons">
+      <div class="ds-section-header">
+        <div class="ds-section-tag">Foundation</div>
+        <h1 class="ds-section-title">Iconography</h1>
+        <p class="ds-section-desc">Custom-designed icons at 24×24px using a 1.5px stroke weight, with a distinctive Ethiopian cultural influence on category icons. General UI uses Phosphor Icons (Regular weight).</p>
+      </div>
+
+      <div class="comp-label">Category Icons</div>
+      <div class="icon-grid" style="margin-bottom:2rem;">
+        <div class="icon-item">☕<span>Coffee</span></div>
+        <div class="icon-item">👗<span>Fashion</span></div>
+        <div class="icon-item">🌶️<span>Spices</span></div>
+        <div class="icon-item">🧺<span>Handcrafts</span></div>
+        <div class="icon-item">💍<span>Jewelry</span></div>
+        <div class="icon-item">📚<span>Books</span></div>
+      </div>
+
+      <div class="comp-label">UI Icons (24px / 1.5px stroke)</div>
+      <div class="icon-grid">
+        <div class="icon-item">🛒<span>Cart</span></div>
+        <div class="icon-item">🔍<span>Search</span></div>
+        <div class="icon-item">👤<span>Profile</span></div>
+        <div class="icon-item">🏠<span>Home</span></div>
+        <div class="icon-item">📦<span>Orders</span></div>
+        <div class="icon-item">❤️<span>Wishlist</span></div>
+        <div class="icon-item">⭐<span>Rating</span></div>
+        <div class="icon-item">🚚<span>Delivery</span></div>
+        <div class="icon-item">✅<span>Quality</span></div>
+        <div class="icon-item">↩️<span>Returns</span></div>
+        <div class="icon-item">⚙️<span>Admin</span></div>
+        <div class="icon-item">🔔<span>Alert</span></div>
+      </div>
+    </section>
+
+    <!-- ─────────────────── BUTTONS ─────────────────── -->
+    <section class="ds-section" id="buttons">
+      <div class="ds-section-header">
+        <div class="ds-section-tag">Components</div>
+        <h1 class="ds-section-title">Buttons</h1>
+        <p class="ds-section-desc">Full pill radius for all interactive buttons reinforces the market's approachable, friendly character. CTA hierarchy flows: Primary → Amber → Outline → Ghost → Danger.</p>
+      </div>
+
+      <div class="comp-frame">
+        <div class="comp-frame-bar"><div class="comp-frame-dot"></div><div class="comp-frame-dot"></div><div class="comp-frame-dot"></div><div class="comp-frame-label">Buttons · All States</div></div>
+        <div class="comp-frame-body">
+          <div class="comp-group">
+            <div class="comp-label">Variants</div>
+            <div class="flex gap-3" style="flex-wrap:wrap;margin-bottom:1.5rem;">
+              <button class="btn btn-primary btn-lg">Shop Now</button>
+              <button class="btn btn-amber btn-lg">Sign Up</button>
+              <button class="btn btn-outline btn-lg">Explore Coffee</button>
+              <button class="btn btn-ghost btn-lg">Learn More</button>
+              <button class="btn btn-danger btn-lg">Delete</button>
+            </div>
+
+            <div class="comp-label">Sizes</div>
+            <div class="flex gap-3" style="align-items:center;flex-wrap:wrap;margin-bottom:1.5rem;">
+              <button class="btn btn-primary btn-lg">Large Button</button>
+              <button class="btn btn-primary btn-md">Medium Button</button>
+              <button class="btn btn-primary btn-sm">Small Button</button>
+            </div>
+
+            <div class="comp-label">With Icons</div>
+            <div class="flex gap-3" style="flex-wrap:wrap;margin-bottom:1.5rem;">
+              <button class="btn btn-primary btn-md">🛒 Add to Cart</button>
+              <button class="btn btn-outline btn-md">← Back to Products</button>
+              <button class="btn btn-amber btn-md">✦ Add Product</button>
+              <button class="btn btn-ghost btn-md">🔍 Search</button>
+              <button class="btn btn-ghost btn-icon"><span>🔍</span></button>
+              <button class="btn btn-primary btn-icon">🛒</button>
+            </div>
+
+            <div class="comp-label">Loading / Disabled</div>
+            <div class="flex gap-3" style="flex-wrap:wrap;">
+              <button class="btn btn-primary btn-md" style="opacity:.5;cursor:not-allowed;">Placing Order…</button>
+              <button class="btn btn-outline btn-md" style="opacity:.4;cursor:not-allowed;">Out of Stock</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────── FORMS ─────────────────── -->
+    <section class="ds-section" id="forms">
+      <div class="ds-section-header">
+        <div class="ds-section-tag">Components</div>
+        <h1 class="ds-section-title">Forms & Inputs</h1>
+        <p class="ds-section-desc">Clean, accessible form elements with generous tap targets (min 44px height). Ethiopian city dropdown, phone number with +251 prefix, and real-time email availability check.</p>
+      </div>
+
+      <div class="comp-grid-2">
+        <div>
+          <div class="comp-label">Text Input</div>
+          <div class="field-group">
+            <label class="field-label">Full Name</label>
+            <input class="field-input" type="text" placeholder="Abebe Girma" value="">
+          </div>
+
+          <div class="field-group">
+            <label class="field-label">Email Address</label>
+            <input class="field-input" type="email" placeholder="abebe@example.com" value="test@gmail.com" style="border-color:var(--green-400);">
+            <span class="field-hint" style="color:var(--green-600);">✓ Email is available</span>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label">Email (error state)</label>
+            <input class="field-input" type="email" value="invalid@" style="border-color:#D94F3D;">
+            <span class="field-hint" style="color:#D94F3D;">✗ Please enter a valid email</span>
+          </div>
+
+          <div class="comp-label" style="margin-top:1.5rem;">Select</div>
+          <div class="field-group">
+            <label class="field-label">City</label>
+            <select class="field-input field-select">
+              <option>Addis Ababa</option>
+              <option>Dire Dawa</option>
+              <option>Hawassa</option>
+              <option>Mekelle</option>
+              <option>Bahir Dar</option>
+              <option>Adama</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label">Category</label>
+            <select class="field-input field-select">
+              <option>— Select Category —</option>
+              <option>Ethiopian Coffee</option>
+              <option>Traditional Fashion</option>
+              <option>Spices & Food</option>
+              <option>Handcrafts</option>
+              <option>Jewelry</option>
+              <option>Books & Education</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <div class="comp-label">Phone Input</div>
+          <div class="field-group">
+            <label class="field-label">Phone Number</label>
+            <div style="display:flex;gap:0;">
+              <div style="padding:10px 12px;background:var(--neutral-100);border:1.5px solid var(--neutral-200);border-right:none;border-radius:10px 0 0 10px;font-size:14px;color:var(--neutral-500);white-space:nowrap;">🇪🇹 +251</div>
+              <input class="field-input" type="tel" placeholder="911 000 000" style="border-radius:0 10px 10px 0;">
+            </div>
+          </div>
+
+          <div class="comp-label" style="margin-top:1rem;">Password</div>
+          <div class="field-group">
+            <label class="field-label">Password</label>
+            <div style="position:relative;">
+              <input class="field-input" type="password" value="mypassword123" style="padding-right:44px;">
+              <button style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--neutral-400);cursor:pointer;font-size:16px;">👁</button>
+            </div>
+            <span class="field-hint">Minimum 8 characters</span>
+          </div>
+
+          <div class="comp-label" style="margin-top:1rem;">Textarea</div>
+          <div class="field-group">
+            <label class="field-label">Delivery Address</label>
+            <textarea class="field-input" rows="3" placeholder="Kebele, Sub-city, landmark..." style="resize:vertical;"></textarea>
+          </div>
+
+          <div class="comp-label" style="margin-top:1rem;">Checkbox</div>
+          <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+            <input type="checkbox" id="terms" style="margin-top:2px;width:16px;height:16px;accent-color:var(--green-600);">
+            <label for="terms" style="font-size:13px;color:var(--neutral-700);">I agree to the <a href="#" style="color:var(--green-600);">Terms of Service</a> and <a href="#" style="color:var(--green-600);">Privacy Policy</a>.</label>
+          </div>
+
+          <div class="comp-label">Search Bar</div>
+          <div style="position:relative;">
+            <span style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--neutral-400);font-size:16px;">🔍</span>
+            <input class="field-input" type="search" placeholder="Search coffee, habesha kemis, berbere..." style="padding-left:40px;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────── CARDS ─────────────────── -->
+    <section class="ds-section" id="cards">
+      <div class="ds-section-header">
+        <div class="ds-section-tag">Components</div>
+        <h1 class="ds-section-title">Cards</h1>
+        <p class="ds-section-desc">Product cards, feature tiles, stat panels, and order summaries — each with clearly defined elevation and interaction states.</p>
+      </div>
+
+      <div class="comp-label">Product Cards</div>
+      <div class="comp-grid" style="margin-bottom:2rem;">
+        <!-- Card 1 -->
+        <div class="product-card">
+          <div class="product-card-img-placeholder"><span>☕</span></div>
+          <div class="product-card-badge-wrap"><span class="badge badge-hot">🔥 Hot</span></div>
+          <div class="wishlist-btn">♡</div>
+          <div class="product-card-body">
+            <div class="product-card-cat">Ethiopian Coffee</div>
+            <div class="product-card-name">Yirgacheffe Single Origin Coffee</div>
+            <div class="product-card-stars">⭐⭐⭐⭐⭐ <span class="product-card-rating-val">4.9 (142)</span></div>
+            <div class="product-card-footer">
+              <div><span class="product-card-price">ETB 450</span><span class="product-card-price-orig">ETB 600</span></div>
+              <button class="cart-btn">🛒</button>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="product-card">
+          <div class="product-card-img-placeholder" style="background:linear-gradient(135deg,#f0e6d3,#e8d5b0)"><span>👗</span></div>
+          <div class="product-card-badge-wrap"><span class="badge badge-new">✦ New</span></div>
+          <div class="wishlist-btn">♡</div>
+          <div class="product-card-body">
+            <div class="product-card-cat">Traditional Fashion</div>
+            <div class="product-card-name">Habesha Kemis (White Classic)</div>
+            <div class="product-card-stars">⭐⭐⭐⭐⭐ <span class="product-card-rating-val">4.9 (78)</span></div>
+            <div class="product-card-footer">
+              <div><span class="product-card-price">ETB 2,500</span><span class="product-card-price-orig">ETB 3,200</span></div>
+              <button class="cart-btn">🛒</button>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="product-card">
+          <div class="product-card-img-placeholder" style="background:linear-gradient(135deg,#f5e8d0,#e8c88a)"><span>🌶️</span></div>
+          <div class="product-card-badge-wrap"><span class="badge badge-sale">Sale</span></div>
+          <div class="wishlist-btn">♡</div>
+          <div class="product-card-body">
+            <div class="product-card-cat">Spices & Food</div>
+            <div class="product-card-name">Berbere Spice Blend (Premium)</div>
+            <div class="product-card-stars">⭐⭐⭐⭐⭐ <span class="product-card-rating-val">4.8 (203)</span></div>
+            <div class="product-card-footer">
+              <div><span class="product-card-price">ETB 150</span><span class="product-card-price-orig">ETB 200</span></div>
+              <button class="cart-btn">🛒</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="comp-label">Stat Cards (Admin Dashboard)</div>
+      <div class="comp-grid" style="margin-bottom:2rem;">
+        <div class="stat-card"><div class="stat-icon-wrap stat-icon-green">📦</div><div><div class="stat-value">21</div><div class="stat-label">Active Products</div></div></div>
+        <div class="stat-card"><div class="stat-icon-wrap stat-icon-amber">📋</div><div><div class="stat-value">1</div><div class="stat-label">Total Orders</div></div></div>
+        <div class="stat-card"><div class="stat-icon-wrap stat-icon-blue">👥</div><div><div class="stat-value">2</div><div class="stat-label">Customers</div></div></div>
+        <div class="stat-card"><div class="stat-icon-wrap stat-icon-red">💰</div><div><div class="stat-value" style="color:var(--green-600);">ETB 3,000</div><div class="stat-label">Total Revenue</div></div></div>
+      </div>
+
+      <div class="comp-label">Feature Tiles (Homepage)</div>
+      <div class="comp-grid" style="margin-bottom:2rem;">
+        <div class="feature-tile"><div class="feature-icon" style="background:var(--green-100);">🚚</div><div class="feature-title">Fast Delivery</div><div class="feature-desc">Delivering across all Ethiopian regions within 2–5 business days.</div></div>
+        <div class="feature-tile"><div class="feature-icon" style="background:var(--amber-50);">✅</div><div class="feature-title">Quality Assured</div><div class="feature-desc">Every product is vetted for authenticity and quality.</div></div>
+        <div class="feature-tile"><div class="feature-icon" style="background:#EBF2FF;">🎨</div><div class="feature-title">Local Artisans</div><div class="feature-desc">We partner with 50+ local artisans and small businesses.</div></div>
+        <div class="feature-tile"><div class="feature-icon" style="background:#FEE8E8;">↩️</div><div class="feature-title">Easy Returns</div><div class="feature-desc">Not happy? Return within 7 days, no questions asked.</div></div>
+      </div>
+    </section>
+
+    <!-- ─────────────────── BADGES ─────────────────── -->
+    <section class="ds-section" id="badges">
+      <div class="ds-section-header">
+        <div class="ds-section-tag">Components</div>
+        <h1 class="ds-section-title">Badges & Tags</h1>
+        <p class="ds-section-desc">Contextual labels communicate product status, order states, and user roles at a glance.</p>
+      </div>
+
+      <div class="comp-label">Product Badges</div>
+      <div class="flex gap-2" style="flex-wrap:wrap;margin-bottom:1.5rem;">
+        <span class="badge badge-hot">🔥 Hot</span>
+        <span class="badge badge-new">✦ New</span>
+        <span class="badge badge-sale">Sale</span>
+        <span class="badge" style="background:var(--neutral-100);color:var(--neutral-500);">None</span>
+      </div>
+
+      <div class="comp-label">Order Status</div>
+      <div class="flex gap-2" style="flex-wrap:wrap;margin-bottom:1.5rem;">
+        <span class="badge badge-delivered">✓ Delivered</span>
+        <span class="badge badge-pending">⏳ Pending</span>
+        <span class="badge badge-processing">⚙ Processing</span>
+        <span class="badge" style="background:#FEE8E8;color:#A83528;">✕ Cancelled</span>
+        <span class="badge" style="background:#EBF2FF;color:#1A3A8B;">🚚 Shipped</span>
+      </div>
+
+      <div class="comp-label">User Roles</div>
+      <div class="flex gap-2" style="flex-wrap:wrap;margin-bottom:1.5rem;">
+        <span class="badge badge-admin">Admin</span>
+        <span class="badge badge-customer">Customer</span>
+      </div>
+
+      <div class="comp-label">Rating Stars</div>
+      <div style="margin-bottom:1.5rem;">
+        <div class="flex gap-3 mb-2"><span class="stars-full">★★★★★</span><span style="font-size:13px;color:var(--neutral-500);">5.0 · Exceptional</span></div>
+        <div class="flex gap-3 mb-2"><span class="stars-full">★★★★</span><span class="stars-empty">★</span><span style="font-size:13px;color:var(--neutral-500);">4.0 · Very Good</span></div>
+        <div class="flex gap-3 mb-2"><span class="stars-full">★★★</span><span class="stars-empty">★★</span><span style="font-size:13px;color:var(--neutral-500);">3.0 · Good</span></div>
+      </div>
+    </section>
+
+    <!-- ─────────────────── NAVIGATION ─────────────────── -->
+    <section class="ds-section" id="nav">
+      <div class="ds-section-header">
+        <div class="ds-section-tag">Components</div>
+        <h1 class="ds-section-title">Navigation</h1>
+        <p class="ds-section-desc">Two navigation contexts: a customer-facing site navbar and an admin panel layout. Both use the same brand anchor but communicate distinct contexts.</p>
+      </div>
+
+      <div class="comp-label">Customer Navbar</div>
+      <div class="comp-frame" style="margin-bottom:2rem;">
+        <div class="comp-frame-bar"><div class="comp-frame-dot"></div><div class="comp-frame-dot"></div><div class="comp-frame-dot"></div><div class="comp-frame-label">navbar.php · authenticated</div></div>
+        <div class="nav-demo">
+          <div class="nav-logo">
+            <div class="nav-logo-mark">H</div>
+            <span class="nav-logo-text">Habesha Market</span>
+          </div>
+          <div class="nav-links">
+            <a class="nav-link" href="#">🏠 Home</a>
+            <a class="nav-link active" href="#">🛍 Shop</a>
+            <a class="nav-link" href="#">📦 Orders</a>
+          </div>
+          <div class="nav-actions">
+            <span style="font-size:13px;color:var(--neutral-500);">Admin User</span>
+            <button class="btn btn-ghost btn-sm">🛒 Cart <span class="nav-cart-badge">2</span></button>
+            <button class="btn btn-primary btn-sm">⚙️ Admin</button>
+            <button class="btn btn-ghost btn-sm" style="border-color:var(--red-400);color:var(--red-400);">↩ Logout</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="comp-label">Breadcrumb</div>
+      <div class="comp-frame">
+        <div class="comp-frame-bar"><div class="comp-frame-dot"></div><div class="comp-frame-dot"></div><div class="comp-frame-dot"></div></div>
+        <div class="comp-frame-body">
+          <div class="breadcrumb" style="margin-bottom:1rem;">
+            <a href="#">Home</a><span class="breadcrumb-sep">›</span>
+            <a href="#">Shop</a><span class="breadcrumb-sep">›</span>
+            <span class="breadcrumb-current">Cart</span>
+          </div>
+          <div class="breadcrumb">
+            <a href="#">Home</a><span class="breadcrumb-sep">›</span>
+            <a href="#">Shop</a><span class="breadcrumb-sep">›</span>
+            <a href="#">Cart</a><span class="breadcrumb-sep">›</span>
+            <span class="breadcrumb-current">Checkout</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────── TABLES ─────────────────── -->
+    <section class="ds-section" id="tables">
+      <div class="ds-section-header">
+        <div class="ds-section-tag">Components</div>
+        <h1 class="ds-section-title">Tables</h1>
+        <p class="ds-section-desc">Used in admin contexts for products, orders, and users. Compact rows with thumbnail support, status badges, and inline action buttons.</p>
+      </div>
+
+      <div class="comp-label">Products Table</div>
+      <div class="table-wrap" style="margin-bottom:2rem;">
+        <table class="ds-table">
+          <thead><tr><th>#</th><th>Image</th><th>Name</th><th>Category</th><th>Price (ETB)</th><th>Stock</th><th>Badge</th><th>Rating</th><th>Actions</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="td-bold">1</td>
+              <td><div class="td-img">☕</div></td>
+              <td class="td-bold">Yirgacheffe Single Origin Coffee</td>
+              <td><span style="color:var(--green-600);font-size:12px;font-weight:500;">Ethiopian Coffee</span></td>
+              <td><b>450.00</b><br><span style="text-decoration:line-through;font-size:11px;color:var(--neutral-400);">600.00</span></td>
+              <td>84</td>
+              <td><span class="badge badge-hot" style="font-size:10px;">Hot</span></td>
+              <td>⭐ 4.9 (142)</td>
+              <td><div class="flex gap-2"><button class="btn btn-outline btn-sm">✏ Edit</button><button class="btn btn-danger btn-sm">🗑</button></div></td>
+            </tr>
+            <tr>
+              <td class="td-bold">5</td>
+              <td><div class="td-img">👗</div></td>
+              <td class="td-bold">Habesha Kemis (White Classic)</td>
+              <td><span style="color:var(--green-600);font-size:12px;font-weight:500;">Traditional Fashion</span></td>
+              <td><b>2,500.00</b><br><span style="text-decoration:line-through;font-size:11px;color:var(--neutral-400);">3,200.00</span></td>
+              <td>39</td>
+              <td><span class="badge badge-hot" style="font-size:10px;">Hot</span></td>
+              <td>⭐ 4.9 (78)</td>
+              <td><div class="flex gap-2"><button class="btn btn-outline btn-sm">✏ Edit</button><button class="btn btn-danger btn-sm">🗑</button></div></td>
+            </tr>
+            <tr>
+              <td class="td-bold">8</td>
+              <td><div class="td-img">🌶️</div></td>
+              <td class="td-bold">Berbere Spice Blend (Premium)</td>
+              <td><span style="color:var(--green-600);font-size:12px;font-weight:500;">Spices & Food</span></td>
+              <td><b>150.00</b></td>
+              <td>200</td>
+              <td><span class="badge badge-hot" style="font-size:10px;">Hot</span></td>
+              <td>⭐ 4.8 (203)</td>
+              <td><div class="flex gap-2"><button class="btn btn-outline btn-sm">✏ Edit</button><button class="btn btn-danger btn-sm">🗑</button></div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="comp-label">Users Table</div>
+      <div class="table-wrap">
+        <table class="ds-table">
+          <thead><tr><th>#</th><th>Full Name</th><th>Email</th><th>Phone</th><th>Role</th><th>Orders</th><th>Total Spent</th><th>Registered</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><div class="flex-center gap-2"><div class="avatar avatar-sm avatar-green">A</div><span class="td-bold">Admin User</span></div></td>
+              <td style="font-size:12px;">admin@habeshamarket.et</td>
+              <td style="font-size:12px;">+251 911 000 001</td>
+              <td><span class="badge badge-admin">Admin</span></td>
+              <td>1</td>
+              <td class="td-bold" style="color:var(--green-600);">ETB 3,000</td>
+              <td style="font-size:12px;">May 08, 2026</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><div class="flex-center gap-2"><div class="avatar avatar-sm avatar-amber">A</div><span class="td-bold">Abebe Girma</span></div></td>
+              <td style="font-size:12px;">abebe@example.com</td>
+              <td style="font-size:12px;">+251 912 345 678</td>
+              <td><span class="badge badge-customer">Customer</span></td>
+              <td>0</td>
+              <td>ETB 0.00</td>
+              <td style="font-size:12px;">May 08, 2026</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ─────────────────── FEEDBACK ─────────────────── -->
+    <section class="ds-section" id="feedback">
+      <div class="ds-section-header">
+        <div class="ds-section-tag">Components</div>
+        <h1 class="ds-section-title">Feedback & Notifications</h1>
+        <p class="ds-section-desc">Toasts, alerts, and inline validation messages for success, warning, error, and informational states.</p>
+      </div>
+
+      <div class="comp-label">Alert Banners</div>
+      <div style="max-width:520px;margin-bottom:2rem;">
+        <div class="notification notif-success"><span class="notification-icon">✓</span><div><div class="notification-title">Order placed successfully!</div><div class="notification-desc">Your order #HM-669807A1 has been placed. Estimated delivery: 2–5 days.</div></div></div>
+        <div class="notification notif-warning"><span class="notification-icon">⚠</span><div><div class="notification-title">Low stock alert</div><div class="notification-desc">Lalibela Cross Pendant has only 5 units remaining.</div></div></div>
+        <div class="notification notif-error"><span class="notification-icon">✕</span><div><div class="notification-title">Payment failed</div><div class="notification-desc">Unable to process your order. Please check your payment details.</div></div></div>
+        <div class="notification notif-info"><span class="notification-icon">ℹ</span><div><div class="notification-title">Email not available</div><div class="notification-desc">This email is already registered. Please log in instead.</div></div></div>
+      </div>
+
+      <div class="comp-label">Pagination</div>
+      <div class="pagination">
+        <div class="page-btn">←</div>
+        <div class="page-btn active">1</div>
+        <div class="page-btn">2</div>
+        <div class="page-btn">3</div>
+        <div class="page-btn dots">…</div>
+        <div class="page-btn">7</div>
+        <div class="page-btn">→</div>
+      </div>
+    </section>
+
+    <!-- ─────────────────── SCREEN: HOME ─────────────────── -->
+    <section class="ds-section" id="screen-home">
+      <div class="ds-section-header">
+        <div class="ds-section-tag">Screen · Homepage</div>
+        <h1 class="ds-section-title">Homepage</h1>
+        <p class="ds-section-desc">The hero anchors the brand narrative. Category grid provides instant navigation. Featured products showcase the top picks from each category.</p>
+      </div>
+
+      <div class="comp-frame">
+        <div class="comp-frame-bar"><div class="comp-frame-dot"></div><div class="comp-frame-dot"></div><div class="comp-frame-dot"></div><div class="comp-frame-label">index.php · Desktop 1280px</div></div>
+
+        <!-- Navbar -->
+        <div class="nav-demo" style="border-bottom:1px solid var(--neutral-200);">
+          <div class="nav-logo">
+            <div class="nav-logo-mark">H</div>
+            <span class="nav-logo-text">Habesha Market</span>
+          </div>
+          <div class="nav-links">
+            <a class="nav-link active" href="#">🏠 Home</a>
+            <a class="nav-link" href="#">🛍 Shop</a>
+          </div>
+          <div class="nav-actions">
+            <button class="btn btn-ghost btn-sm">→ Login</button>
+            <button class="btn btn-amber btn-sm">👤 Sign Up</button>
+          </div>
+        </div>
+
+        <!-- Hero -->
+        <div class="hero-preview">
+          <div>
+            <div class="hero-eyebrow">🇪🇹 #1 Ethiopian Online Marketplace</div>
+            <h2 class="hero-title">Discover <em>Authentic Ethiopian</em> Products</h2>
+            <p class="hero-subtitle">From the highlands of Yirgacheffe to the markets of Addis Ababa — shop handcrafted goods, organic coffee, traditional fashion and more, delivered across Ethiopia.</p>
+            <div class="hero-btns">
+              <button class="btn btn-primary btn-lg">🛍 Shop Now</button>
+              <button class="btn btn-outline btn-lg">☕ Explore Coffee</button>
+            </div>
+          </div>
+          <div class="hero-card">
+            <div class="hero-card-img">☕</div>
+            <div class="hero-card-title">Yirgacheffe Coffee</div>
+            <div class="rating-bar"><span class="rating-stars">★★★★★</span><span class="rating-val">4.9</span><span class="rating-count">(142 reviews)</span></div>
+            <div style="font-size:13px;color:var(--green-600);font-weight:700;">ETB 450 <span style="font-size:11px;text-decoration:line-through;color:var(--neutral-400);font-weight:400;">ETB 600</span></div>
+            <button class="btn btn-primary btn-md" style="width:100%;">🛒 Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Features -->
+        <div style="padding:2rem 2.5rem;background:var(--white);border-bottom:1px solid var(--neutral-100);">
+          <div class="comp-grid">
+            <div class="feature-tile"><div class="feature-icon" style="background:var(--green-100);">🚚</div><div class="feature-title">Fast Delivery</div><div class="feature-desc">2–5 business days.</div></div>
+            <div class="feature-tile"><div class="feature-icon" style="background:var(--amber-50);">✅</div><div class="feature-title">Quality Assured</div><div class="feature-desc">Vetted for authenticity.</div></div>
+            <div class="feature-tile"><div class="feature-icon" style="background:#EBF2FF;">🎨</div><div class="feature-title">Local Artisans</div><div class="feature-desc">50+ local partners.</div></div>
+            <div class="feature-tile"><div class="feature-icon" style="background:#FEE8E8;">↩️</div><div class="feature-title">Easy Returns</div><div class="feature-desc">7-day return policy.</div></div>
+          </div>
+        </div>
+
+        <!-- Categories -->
+        <div style="padding:2rem 2.5rem;border-bottom:1px solid var(--neutral-100);">
+          <div class="section-hrow">
+            <div style="text-align:center;width:100%;">
+              <div class="ds-section-tag">Browse</div>
+              <div style="font-family:'Fraunces',serif;font-size:28px;font-weight:500;margin:.25rem 0;">Shop by <span style="color:var(--green-600);">Category</span></div>
+            </div>
+          </div>
+          <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:1.5rem;">
+            <div class="cat-pill"><div class="cat-icon">☕</div><div class="cat-name">Ethiopian Coffee</div><div class="cat-count">4 items</div></div>
+            <div class="cat-pill"><div class="cat-icon">👗</div><div class="cat-name">Traditional Fashion</div><div class="cat-count">3 items</div></div>
+            <div class="cat-pill"><div class="cat-icon">🌶️</div><div class="cat-name">Spices & Food</div><div class="cat-count">5 items</div></div>
+            <div class="cat-pill"><div class="cat-icon">🧺</div><div class="cat-name">Handcrafts</div><div class="cat-count">3 items</div></div>
+            <div class="cat-pill"><div class="cat-icon">💍</div><div class="cat-name">Jewelry</div><div class="cat-count">3 items</div></div>
+            <div class="cat-pill"><div class="cat-icon">📚</div><div class="cat-name">Books & Education</div><div class="cat-count">3 items</div></div>
+          </div>
+        </div>
+
+        <!-- Featured Products -->
+        <div style="padding:2rem 2.5rem;">
+          <div style="text-align:center;margin-bottom:1.5rem;">
+            <div class="ds-section-tag">Top Picks</div>
+            <div style="font-family:'Fraunces',serif;font-size:28px;font-weight:500;margin:.25rem 0;">Featured <span style="color:var(--green-600);">Products</span></div>
+            <div style="font-size:14px;color:var(--neutral-500);">Handpicked bestsellers loved by our community of Ethiopian shoppers.</div>
+          </div>
+          <div class="comp-grid">
+            <div class="product-card">
+              <div class="product-card-img-placeholder"><span>☕</span></div>
+              <div class="product-card-badge-wrap"><span class="badge badge-hot">🔥 Hot</span></div>
+              <div class="wishlist-btn">♡</div>
+              <div class="product-card-body">
+                <div class="product-card-cat">Ethiopian Coffee</div>
+                <div class="product-card-name">Yirgacheffe Single Origin</div>
+                <div class="product-card-stars">⭐⭐⭐⭐⭐ <span class="product-card-rating-val">4.9</span></div>
+                <div class="product-card-footer"><div><span class="product-card-price">ETB 450</span></div><button class="cart-btn">🛒</button></div>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-card-img-placeholder" style="background:linear-gradient(135deg,#f0e6d3,#e8d5b0)"><span>👗</span></div>
+              <div class="product-card-badge-wrap"><span class="badge badge-hot">🔥 Hot</span></div>
+              <div class="wishlist-btn">♡</div>
+              <div class="product-card-body">
+                <div class="product-card-cat">Traditional Fashion</div>
+                <div class="product-card-name">Habesha Kemis (White Classic)</div>
+                <div class="product-card-stars">⭐⭐⭐⭐⭐ <span class="product-card-rating-val">4.9</span></div>
+                <div class="product-card-footer"><div><span class="product-card-price">ETB 2,500</span></div><button class="cart-btn">🛒</button></div>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-card-img-placeholder" style="background:linear-gradient(135deg,#e8d5b0,#d4b88a)"><span>📚</span></div>
+              <div class="product-card-badge-wrap"><span class="badge badge-hot">🔥 Hot</span></div>
+              <div class="wishlist-btn">♡</div>
+              <div class="product-card-body">
+                <div class="product-card-cat">Books & Education</div>
+                <div class="product-card-name">Ethiopian Cookbook: Traditional Recipes</div>
+                <div class="product-card-stars">⭐⭐⭐⭐⭐ <span class="product-card-rating-val">4.9</span></div>
+                <div class="product-card-footer"><div><span class="product-card-price">ETB 350</span></div><button class="cart-btn">🛒</button></div>
+              </div>
+            </div>
+          </div>
+          <div style="text-align:center;margin-top:1.5rem;">
+            <button class="btn btn-outline btn-md">View All Products →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────── SCREEN: SHOP ─────────────────── -->
+    <section class="ds-section" id="screen-shop">
+      <div class="ds-section-header">
+        <div class="ds-section-tag">Screen · Shop</div>
+        <h1 class="ds-section-title">Shop / Products Listing</h1>
+        <p class="ds-section-desc">Filter bar with category and sort controls. 3-column responsive grid with product cards. Clean search and category filtering.</p>
+      </div>
+
+      <div class="comp-frame">
+        <div class="comp-frame-bar"><div class="comp-frame-dot"></div><div class="comp-frame-dot"></div><div class="comp-frame-dot"></div><div class="comp-frame-label">products.php · 21 products</div></div>
+        <div style="padding:1.5rem 2rem 0;">
+          <div class="ds-section-tag" style="text-align:center;">Ethiopian Products</div>
+          <div style="font-family:'Fraunces',serif;font-size:28px;font-weight:500;text-align:center;margin:.25rem 0 .5rem;">Our Shop</div>
+          <div style="text-align:center;font-size:13px;color:var(--neutral-500);margin-bottom:1.25rem;">21 products found</div>
+          <div class="breadcrumb" style="margin-bottom:1.25rem;">
+            <a href="#">Home</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Shop</span>
+          </div>
+          <!-- Filter Bar -->
+          <div style="display:flex;gap:10px;margin-bottom:1.5rem;flex-wrap:wrap;">
+            <div style="flex:1;min-width:200px;position:relative;">
+              <span style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--neutral-400);">🔍</span>
+              <input class="field-input" style="padding-left:36px;" placeholder="Search coffee, habesha kemis, berbere...">
+            </div>
+            <select class="field-input field-select" style="width:160px;">
+              <option>All Categories</option>
+              <option>Ethiopian Coffee</option>
+              <option>Traditional Fashion</option>
+              <option>Spices & Food</option>
+              <option>Handcrafts</option>
+              <option>Jewelry</option>
+              <option>Books & Education</option>
+            </select>
+            <select class="field-input field-select" style="width:130px;">
+              <option>Featured</option>
+              <option>Price: Low → High</option>
+              <option>Price: High → Low</option>
+              <option>Best Rating</option>
+            </select>
+          </div>
+          <!-- Product grid -->
+          <div class="comp-grid" style="padding-bottom:1.5rem;">
+            <div class="product-card"><div class="product-card-img-placeholder" style="background:linear-gradient(135deg,#f5e8d0,#e8c88a)"><span>🌶️</span></div><div class="product-card-badge-wrap"><span class="badge badge-hot">🔥 Hot</span></div><div class="wishlist-btn">♡</div><div class="product-card-body"><div class="product-card-cat">Spices & Food</div><div class="product-card-name">Ethiopian Traditional Food (Beyaynetu)</div><div class="product-card-stars">⭐⭐⭐⭐⭐ <span class="product-card-rating-val">5.0 (1)</span></div><div class="product-card-footer"><div><span class="product-card-price">ETB 450</span><span class="product-card-price-orig">ETB 600</span></div><button class="cart-btn">🛒</button></div></div></div>
+            <div class="product-card"><div class="product-card-img-placeholder"><span>☕</span></div><div class="product-card-badge-wrap"><span class="badge badge-hot">🔥 Hot</span></div><div class="wishlist-btn">♡</div><div class="product-card-body"><div class="product-card-cat">Ethiopian Coffee</div><div class="product-card-name">Yirgacheffe Single Origin Coffee</div><div class="product-card-stars">⭐⭐⭐⭐⭐ <span class="product-card-rating-val">4.9 (142)</span></div><div class="product-card-footer"><div><span class="product-card-price">ETB 450</span><span class="product-card-price-orig">ETB 600</span></div><button class="cart-btn">🛒</button></div></div></div>
+            <div class="product-card"><div class="product-card-img-placeholder" style="background:linear-gradient(135deg,#f0e6d3,#e8d5b0)"><span>👗</span></div><div class="product-card-badge-wrap"><span class="badge badge-hot">🔥 Hot</span></div><div class="wishlist-btn">♡</div><div class="product-card-body"><div class="product-card-cat">Traditional Fashion</div><div class="product-card-name">Habesha Kemis (White Classic)</div><div class="product-card-stars">⭐⭐⭐⭐⭐ <span class="product-card-rating-val">4.9 (78)</span></div><div class="product-card-footer"><div><span class="product-card-price">ETB 2,500</span><span class="product-card-price-orig">ETB 3,200</span></div><button class="cart-btn">🛒</button></div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────── SCREEN: CART & CHECKOUT ─────────────────── -->
+    <section class="ds-section" id="screen-cart">
+      <div class="ds-section-header">
+        <div class="ds-section-tag">Screen · Cart & Checkout</div>
+        <h1 class="ds-section-title">Cart & Checkout</h1>
+        <p class="ds-section-desc">Two-panel checkout layout with Ethiopian payment methods: Cash on Delivery, Bank Transfer (CBE/Awash), and Mobile Money (M-Birr/HelloCash).</p>
+      </div>
+
+      <div class="comp-grid-2">
+        <!-- Cart -->
+        <div>
+          <div class="comp-label">Shopping Cart</div>
+          <div class="form-card" style="max-width:100%;">
+            <div style="font-family:'Fraunces',serif;font-size:20px;font-weight:500;margin-bottom:1.25rem;text-align:center;">My Cart</div>
+            <!-- Cart items -->
+            <div style="border-bottom:1px solid var(--neutral-100);padding-bottom:12px;margin-bottom:12px;">
+              <div class="order-item">
+                <div class="order-item-img">👗</div>
+                <div style="flex:1;">
+                  <div class="order-item-name">Habesha Kemis (White Classic)</div>
+                  <div class="order-item-qty" style="color:var(--green-600);font-size:11px;">Traditional Fashion</div>
+                  <div style="font-size:14px;font-weight:600;margin-top:2px;">ETB 2,500.00</div>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <button style="width:26px;height:26px;border-radius:50%;border:1.5px solid var(--neutral-200);background:none;cursor:pointer;font-size:14px;">−</button>
+                  <span style="font-size:14px;font-weight:500;min-width:20px;text-align:center;">1</span>
+                  <button style="width:26px;height:26px;border-radius:50%;border:1.5px solid var(--neutral-200);background:none;cursor:pointer;font-size:14px;">+</button>
+                </div>
+                <button style="width:28px;height:28px;border-radius:50%;background:#FEE8E8;border:none;color:var(--red-400);cursor:pointer;font-size:12px;margin-left:8px;">✕</button>
+              </div>
+              <div class="order-item">
+                <div class="order-item-img">☕</div>
+                <div style="flex:1;">
+                  <div class="order-item-name">Yirgacheffe Single Origin Coffee</div>
+                  <div class="order-item-qty" style="color:var(--green-600);font-size:11px;">Ethiopian Coffee</div>
+                  <div style="font-size:14px;font-weight:600;margin-top:2px;">ETB 450.00</div>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <button style="width:26px;height:26px;border-radius:50%;border:1.5px solid var(--neutral-200);background:none;cursor:pointer;font-size:14px;">−</button>
+                  <span style="font-size:14px;font-weight:500;min-width:20px;text-align:center;">1</span>
+                  <button style="width:26px;height:26px;border-radius:50%;border:1.5px solid var(--neutral-200);background:none;cursor:pointer;font-size:14px;">+</button>
+                </div>
+                <button style="width:28px;height:28px;border-radius:50%;background:#FEE8E8;border:none;color:var(--red-400);cursor:pointer;font-size:12px;margin-left:8px;">✕</button>
+              </div>
+            </div>
+            <!-- Summary -->
+            <div class="order-total-row"><span>Subtotal (2 items)</span><span>ETB 2,950.00</span></div>
+            <div class="order-total-row"><span>Shipping</span><span>ETB 50.00</span></div>
+            <div class="order-total-row"><span>Tax</span><span>Included</span></div>
+            <div class="order-total-row total"><span>Total</span><span class="val">ETB 3,000.00</span></div>
+            <button class="btn btn-primary btn-lg" style="width:100%;margin-top:1rem;">🔒 Proceed to Checkout</button>
+            <div style="text-align:center;font-size:12px;color:var(--neutral-400);margin-top:8px;">🛡 Secure checkout — Cash on Delivery available</div>
+          </div>
+        </div>
+
+        <!-- Checkout -->
+        <div>
+          <div class="comp-label">Checkout Form</div>
+          <div class="form-card" style="max-width:100%;">
+            <div style="font-family:'Fraunces',serif;font-size:20px;font-weight:500;margin-bottom:1.25rem;">Checkout</div>
+
+            <div style="font-size:13px;font-weight:600;color:var(--neutral-700);margin-bottom:.75rem;">📍 Shipping Information</div>
+            <div class="grid-2">
+              <div class="field-group"><label class="field-label">Full Name</label><input class="field-input" placeholder="Your full name"></div>
+              <div class="field-group"><label class="field-label">Phone Number</label><input class="field-input" value="+251911000001"></div>
+            </div>
+            <div class="field-group"><label class="field-label">City</label><select class="field-input field-select"><option>Addis Ababa</option></select></div>
+            <div class="field-group"><label class="field-label">Delivery Address</label><textarea class="field-input" rows="2" placeholder="Kebele, Sub-city, landmark..."></textarea></div>
+
+            <div style="font-size:13px;font-weight:600;color:var(--neutral-700);margin:1rem 0 .75rem;">💳 Payment Method</div>
+            <div class="payment-option selected"><div class="payment-radio checked"></div><span>💵</span> Cash on Delivery — Pay when your order arrives</div>
+            <div class="payment-option"><div class="payment-radio"></div><span>🏦</span> Bank Transfer (CBE / Awash)</div>
+            <div class="payment-option"><div class="payment-radio"></div><span>📱</span> Mobile Money (M-Birr / HelloCash)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────── SCREEN: AUTH ─────────────────── -->
+    <section class="ds-section" id="screen-auth">
+      <div class="ds-section-header">
+        <div class="ds-section-tag">Screen · Authentication</div>
+        <h1 class="ds-section-title">Login & Sign Up</h1>
+        <p class="ds-section-desc">Centered auth forms with brand-forward heading style. Real-time email availability check on signup. Demo credentials shown for testing.</p>
+      </div>
+
+      <div class="comp-grid-2">
+        <!-- Login -->
+        <div>
+          <div class="comp-label">Login</div>
+          <div class="form-card">
+            <div style="text-align:center;margin-bottom:1.5rem;">
+              <div style="font-size:40px;margin-bottom:.5rem;">🏪</div>
+              <div style="font-family:'Fraunces',serif;font-size:24px;font-weight:500;">Welcome Back</div>
+              <div style="font-size:13px;color:var(--neutral-500);margin-top:4px;">Sign in to your Habesha Market account</div>
+            </div>
+            <div class="field-group"><label class="field-label">✉ Email Address</label><input class="field-input" placeholder="your@email.com" type="email"></div>
+            <div class="field-group"><label class="field-label">🔒 Password</label><div style="position:relative;"><input class="field-input" type="password" placeholder="Enter your password" style="padding-right:44px;"><button style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--neutral-400);cursor:pointer;">👁</button></div></div>
+            <button class="btn btn-primary btn-lg" style="width:100%;margin-top:.5rem;">→ Sign In</button>
+            <div class="ds-divider-label"><span>or</span></div>
+            <div style="text-align:center;font-size:13px;color:var(--neutral-500);">Don't have an account? <a href="#" style="color:var(--green-600);font-weight:600;">Create one free</a></div>
+            <div style="background:var(--amber-50);border:1px solid #F5C842;border-radius:var(--radius-md);padding:10px 14px;margin-top:1rem;font-size:12px;">
+              <div style="font-weight:600;color:var(--amber-600);margin-bottom:3px;">Demo accounts:</div>
+              <div style="color:var(--neutral-600);">Email: <code style="color:var(--green-600);">abebe@example.com</code> | Password: <code style="color:var(--green-600);">password</code></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Signup -->
+        <div>
+          <div class="comp-label">Sign Up</div>
+          <div class="form-card">
+            <div style="text-align:center;margin-bottom:1.5rem;">
+              <div style="font-size:36px;margin-bottom:.5rem;">⭐</div>
+              <div style="font-family:'Fraunces',serif;font-size:22px;font-weight:500;">Create Account</div>
+              <div style="font-size:12px;color:var(--neutral-500);margin-top:4px;">Join thousands of Ethiopian shoppers</div>
+            </div>
+            <div class="field-group"><label class="field-label">👤 Full Name</label><input class="field-input" value="Abebe Girma"></div>
+            <div class="grid-2">
+              <div class="field-group"><label class="field-label">✉ Email</label><input class="field-input" type="email" value="test@gmail.com" style="border-color:var(--green-400);"><span class="field-hint" style="color:var(--green-600);">✓ Email is available.</span></div>
+              <div class="field-group"><label class="field-label">📱 Phone</label><input class="field-input" value="+251 911 000 000"></div>
+            </div>
+            <div class="field-group"><label class="field-label">📍 City</label><select class="field-input field-select"><option>Addis Ababa</option></select></div>
+            <div class="field-group"><label class="field-label">🏠 Address</label><input class="field-input" placeholder="Kebele, Sub-city, or Woreda"></div>
+            <div class="grid-2">
+              <div class="field-group"><label class="field-label">🔒 Password</label><input class="field-input" type="password" value="••••••••••••••"></div>
+              <div class="field-group"><label class="field-label">🔒 Confirm</label><input class="field-input" type="password" placeholder="Repeat password"></div>
+            </div>
+            <div style="display:flex;gap:8px;align-items:flex-start;margin-bottom:1rem;font-size:12px;color:var(--neutral-600);">
+              <input type="checkbox" style="margin-top:2px;accent-color:var(--green-600);">
+              <span>I agree to the <a href="#" style="color:var(--green-600);">Terms of Service</a> and <a href="#" style="color:var(--green-600);">Privacy Policy</a>.</span>
+            </div>
+            <button class="btn btn-primary btn-md" style="width:100%;">👤 Create My Account</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────── SCREEN: PROFILE ─────────────────── -->
+    <section class="ds-section" id="screen-profile">
+      <div class="ds-section-header">
+        <div class="ds-section-tag">Screen · Account</div>
+        <h1 class="ds-section-title">Profile & Orders</h1>
+        <p class="ds-section-desc">User account management with sidebar navigation. My Profile, My Orders, and My Cart accessible from the same panel.</p>
+      </div>
+
+      <div class="comp-grid-2">
+        <!-- Profile -->
+        <div>
+          <div class="comp-label">Profile Sidebar</div>
+          <div class="profile-sidebar-card">
+            <div class="profile-avatar">A</div>
+            <div class="profile-name">Admin User</div>
+            <div class="profile-email">admin@habeshamarket.et</div>
+            <div class="profile-stats">
+              <div class="profile-stat"><b>1</b> Orders</div>
+              <div class="profile-stat"><b>2</b> In Cart</div>
+            </div>
+            <div style="margin-top:1rem;text-align:left;">
+              <div class="profile-menu-item active">👤 My Profile</div>
+              <div class="profile-menu-item">📦 My Orders</div>
+              <div class="profile-menu-item">🛒 My Cart</div>
+              <div class="profile-menu-item" style="color:var(--red-400);">↩ Logout</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Order History -->
+        <div>
+          <div class="comp-label">My Orders</div>
+          <div class="order-summary-card">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+              <div>
+                <div style="font-weight:700;font-size:14px;color:var(--neutral-900);">#HM-669807A1</div>
+                <div style="font-size:12px;color:var(--neutral-400);">📅 08 May 2026, 02:49</div>
+              </div>
+              <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;">
+                <span class="badge badge-delivered">✓ Delivered</span>
+                <span style="font-size:11px;color:var(--neutral-400);">📍 Addis Ababa</span>
+                <span style="font-size:11px;color:var(--neutral-400);">💵 Cash On Delivery</span>
+              </div>
+            </div>
+            <div style="border-top:1px solid var(--neutral-100);padding-top:12px;">
+              <div class="order-item" style="margin-bottom:8px;">
+                <div class="order-item-img">☕</div>
+                <div class="order-item-name" style="flex:1;">Yirgacheffe Single Origin Coffee × 1</div>
+                <div class="order-item-price">ETB 450.00</div>
+              </div>
+              <div class="order-item">
+                <div class="order-item-img">👗</div>
+                <div class="order-item-name" style="flex:1;">Habesha Kemis (White Classic) × 1</div>
+                <div class="order-item-price">ETB 2,500.00</div>
+              </div>
+              <div style="border-top:1px solid var(--neutral-100);margin-top:12px;padding-top:10px;display:flex;justify-content:space-between;font-weight:700;font-size:15px;">
+                <span>Order Total</span><span style="color:var(--green-600);">ETB 3,000.00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────── SCREEN: ADMIN ─────────────────── -->
+    <section class="ds-section" id="screen-admin">
+      <div class="ds-section-header">
+        <div class="ds-section-tag">Screen · Admin</div>
+        <h1 class="ds-section-title">Admin Dashboard</h1>
+        <p class="ds-section-desc">A clean, data-dense admin panel with sidebar navigation. Dashboard overview, product catalogue management, orders tracking, and user management.</p>
+      </div>
+
+      <div class="comp-frame">
+        <div class="comp-frame-bar"><div class="comp-frame-dot"></div><div class="comp-frame-dot"></div><div class="comp-frame-dot"></div><div class="comp-frame-label">admin/index.php · HM Admin</div></div>
+
+        <!-- Admin Navbar -->
+        <div class="admin-nav">
+          <div class="admin-nav-logo">
+            <div class="admin-nav-mark">HM</div>
+            <span class="admin-nav-text">HM Admin</span>
+          </div>
+          <div class="admin-nav-actions">
+            <button class="btn btn-ghost btn-sm">↗ View Site</button>
+            <button class="btn btn-danger btn-sm">↩ Logout</button>
+          </div>
+        </div>
+
+        <!-- Admin Layout -->
+        <div class="admin-layout">
+          <!-- Admin Sidebar -->
+          <div class="admin-sidebar">
+            <div class="admin-sidebar-section">Dashboard</div>
+            <div class="admin-sidebar-item active">📊 Overview</div>
+            <div class="admin-sidebar-section">Catalogue</div>
+            <div class="admin-sidebar-item">📦 Products</div>
+            <div class="admin-sidebar-item">✦ Add Product</div>
+            <div class="admin-sidebar-section">Users & Orders</div>
+            <div class="admin-sidebar-item">📋 Orders</div>
+            <div class="admin-sidebar-item">👥 Users</div>
+            <div class="admin-sidebar-section">Account</div>
+            <div class="admin-sidebar-item">👤 My Profile</div>
+            <div class="admin-sidebar-item" style="color:var(--red-400);">↩ Logout</div>
+          </div>
+
+          <!-- Admin Content -->
+          <div class="admin-content">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;">
+              <h2 style="font-family:'Fraunces',serif;font-size:22px;font-weight:500;">Dashboard Overview</h2>
+              <button class="btn btn-primary btn-md">✦ Add Product</button>
+            </div>
+
+            <!-- Stat Cards -->
+            <div class="grid-4" style="margin-bottom:1.5rem;">
+              <div class="stat-card"><div class="stat-icon-wrap stat-icon-green">📦</div><div><div class="stat-value">21</div><div class="stat-label">Active Products</div></div></div>
+              <div class="stat-card"><div class="stat-icon-wrap stat-icon-amber">📋</div><div><div class="stat-value">1</div><div class="stat-label">Total Orders</div></div></div>
+              <div class="stat-card"><div class="stat-icon-wrap stat-icon-blue">👥</div><div><div class="stat-value">2</div><div class="stat-label">Customers</div></div></div>
+              <div class="stat-card"><div class="stat-icon-wrap stat-icon-red">💰</div><div><div class="stat-value" style="color:var(--green-600);font-size:18px;">ETB 3,000</div><div class="stat-label">Total Revenue</div></div></div>
+            </div>
+
+            <!-- Recent Orders + Low Stock -->
+            <div class="grid-2">
+              <div class="form-card" style="max-width:100%;">
+                <div style="font-size:15px;font-weight:600;margin-bottom:1rem;">Recent Orders</div>
+                <div class="table-wrap">
+                  <table class="ds-table">
+                    <thead><tr><th>#ID</th><th>Customer</th><th>Amount</th><th>Status</th><th>Date</th></tr></thead>
+                    <tbody>
+                      <tr>
+                        <td class="td-bold" style="color:var(--green-600);">#1</td>
+                        <td>Admin User</td>
+                        <td class="td-bold">ETB 3,000</td>
+                        <td><span class="badge badge-delivered" style="font-size:10px;">Delivered</span></td>
+                        <td style="font-size:12px;">May 08, 2026</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <button class="btn btn-ghost btn-sm" style="margin-top:1rem;">View All Orders →</button>
+              </div>
+              <div class="form-card" style="max-width:100%;">
+                <div style="font-size:15px;font-weight:600;margin-bottom:1rem;">⚠ Low Stock Alert</div>
+                <div class="notification notif-success" style="margin-bottom:0;">
+                  <span class="notification-icon">✓</span>
+                  <div><div class="notification-title">All products are well stocked</div></div>
+                </div>
+                <button class="btn btn-ghost btn-sm" style="margin-top:1rem;width:100%;">📦 Manage Products</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────── ACCESSIBILITY ─────────────────── -->
+    <section class="ds-section" id="accessibility">
+      <div class="ds-section-header">
+        <div class="ds-section-tag">Specs · Accessibility</div>
+        <h1 class="ds-section-title">Accessibility Guidelines</h1>
+        <p class="ds-section-desc">WCAG 2.1 AA compliance throughout. All interactive elements meet 4.5:1 contrast ratio, with 44×44px minimum tap targets for mobile.</p>
+      </div>
+
+      <div class="comp-grid-2">
+        <div>
+          <div class="comp-label">Contrast Ratios</div>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:1.5rem;">
+            <div style="background:var(--green-600);color:white;padding:10px 14px;border-radius:var(--radius-md);font-size:14px;display:flex;justify-content:space-between;"><span>Primary Green on White</span><span style="font-size:12px;opacity:.9;">8.2:1 ✓ AAA</span></div>
+            <div style="background:var(--neutral-900);color:white;padding:10px 14px;border-radius:var(--radius-md);font-size:14px;display:flex;justify-content:space-between;"><span>Body Text on White</span><span style="font-size:12px;opacity:.9;">19.1:1 ✓ AAA</span></div>
+            <div style="background:white;border:1px solid var(--neutral-200);color:var(--neutral-500);padding:10px 14px;border-radius:var(--radius-md);font-size:14px;display:flex;justify-content:space-between;"><span>Muted Text on White</span><span style="font-size:12px;">4.7:1 ✓ AA</span></div>
+            <div style="background:var(--green-100);color:var(--green-800);padding:10px 14px;border-radius:var(--radius-md);font-size:14px;display:flex;justify-content:space-between;"><span>Green Label on Green 100</span><span style="font-size:12px;">5.1:1 ✓ AA</span></div>
+          </div>
+          <div class="comp-label">Focus Indicators</div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <button class="btn btn-primary btn-md" style="outline:3px solid var(--amber-200);outline-offset:2px;">Focused State</button>
+            <input class="field-input" style="width:160px;outline:3px solid var(--green-400);outline-offset:1px;" value="Input focus">
+          </div>
+        </div>
+        <div>
+          <div class="comp-label">Tap Target Sizes</div>
+          <div style="font-size:13px;color:var(--neutral-600);line-height:2.2;background:var(--neutral-50);padding:1rem;border-radius:var(--radius-lg);border:1px solid var(--neutral-200);">
+            <div>✅ <b>Primary buttons</b> — 48px height (exceeds 44px min)</div>
+            <div>✅ <b>Secondary buttons</b> — 40px height</div>
+            <div>✅ <b>Form inputs</b> — 44px height</div>
+            <div>✅ <b>Cart/wishlist icon buttons</b> — 38px (34px + 4px padding area)</div>
+            <div>✅ <b>Navigation links</b> — 44px height with padding</div>
+            <div>✅ <b>Checkboxes</b> — 20px hit area, 44px label tap zone</div>
+          </div>
+          <div class="comp-label" style="margin-top:1.5rem;">Screen Reader Support</div>
+          <div style="font-size:13px;color:var(--neutral-600);line-height:2;background:var(--neutral-50);padding:1rem;border-radius:var(--radius-lg);border:1px solid var(--neutral-200);">
+            <div>✅ All images have descriptive alt text</div>
+            <div>✅ Form labels associated with inputs</div>
+            <div>✅ Error messages announced via aria-live</div>
+            <div>✅ Product badges use aria-label</div>
+            <div>✅ Cart count announced on update</div>
+            <div>✅ Modal dialogs trap focus correctly</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────── MOTION ─────────────────── -->
+    <section class="ds-section" id="motion">
+      <div class="ds-section-header">
+        <div class="ds-section-tag">Specs · Motion</div>
+        <h1 class="ds-section-title">Motion & Interactions</h1>
+        <p class="ds-section-desc">Purposeful animations that provide feedback without distraction. All animations respect prefers-reduced-motion.</p>
+      </div>
+
+      <div class="comp-grid-2">
+        <div>
+          <div class="comp-label">Timing Functions</div>
+          <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:2rem;">
+            <div style="background:var(--neutral-50);border:1px solid var(--neutral-200);border-radius:var(--radius-md);padding:12px 14px;">
+              <div style="font-size:13px;font-weight:600;color:var(--neutral-900);margin-bottom:2px;">ease-out · 150ms</div>
+              <div style="font-size:12px;color:var(--neutral-500);">Hover states, button feedback, badge appear</div>
+            </div>
+            <div style="background:var(--neutral-50);border:1px solid var(--neutral-200);border-radius:var(--radius-md);padding:12px 14px;">
+              <div style="font-size:13px;font-weight:600;color:var(--neutral-900);margin-bottom:2px;">ease-in-out · 250ms</div>
+              <div style="font-size:12px;color:var(--neutral-500);">Card elevation, nav link transitions</div>
+            </div>
+            <div style="background:var(--neutral-50);border:1px solid var(--neutral-200);border-radius:var(--radius-md);padding:12px 14px;">
+              <div style="font-size:13px;font-weight:600;color:var(--neutral-900);margin-bottom:2px;">spring(1, 100, 10) · 300ms</div>
+              <div style="font-size:12px;color:var(--neutral-500);">Product card hover lift, modal entrance</div>
+            </div>
+            <div style="background:var(--neutral-50);border:1px solid var(--neutral-200);border-radius:var(--radius-md);padding:12px 14px;">
+              <div style="font-size:13px;font-weight:600;color:var(--neutral-900);margin-bottom:2px;">ease-out · 500ms</div>
+              <div style="font-size:12px;color:var(--neutral-500);">Page transitions, skeleton-to-content reveal</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="comp-label">Interaction States</div>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:2rem;">
+            <div style="background:var(--neutral-50);border:1px solid var(--neutral-200);border-radius:var(--radius-md);padding:12px 14px;">
+              <div style="font-size:13px;font-weight:600;color:var(--neutral-900);">Product Card Hover</div>
+              <div style="font-size:12px;color:var(--neutral-500);">translateY(-4px) + shadow elevation upgrade</div>
+            </div>
+            <div style="background:var(--neutral-50);border:1px solid var(--neutral-200);border-radius:var(--radius-md);padding:12px 14px;">
+              <div style="font-size:13px;font-weight:600;color:var(--neutral-900);">Button Press</div>
+              <div style="font-size:12px;color:var(--neutral-500);">scale(0.97) + darken 10%</div>
+            </div>
+            <div style="background:var(--neutral-50);border:1px solid var(--neutral-200);border-radius:var(--radius-md);padding:12px 14px;">
+              <div style="font-size:13px;font-weight:600;color:var(--neutral-900);">Add to Cart Confirmation</div>
+              <div style="font-size:12px;color:var(--neutral-500);">Cart icon bounce + count badge pulse</div>
+            </div>
+            <div style="background:var(--neutral-50);border:1px solid var(--neutral-200);border-radius:var(--radius-md);padding:12px 14px;">
+              <div style="font-size:13px;font-weight:600;color:var(--neutral-900);">Wishlist Toggle</div>
+              <div style="font-size:12px;color:var(--neutral-500);">Heart fill animation + scale(1.3) pop</div>
+            </div>
+            <div style="background:var(--neutral-50);border:1px solid var(--neutral-200);border-radius:var(--radius-md);padding:12px 14px;">
+              <div style="font-size:13px;font-weight:600;color:var(--neutral-900);">Category Pill Hover</div>
+              <div style="font-size:12px;color:var(--neutral-500);">translateY(-2px) + border-color transition</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+  function showSection(id) {
+    document.querySelectorAll('.ds-section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.ds-nav-item').forEach(n => n.classList.remove('active'));
+    const target = document.getElementById(id);
+    if (target) {
+      target.classList.add('active');
+      document.querySelector('.ds-main').scrollTop = 0;
+    }
+    event.currentTarget.classList.add('active');
+  }
+</script>
+</body>
+</html>
