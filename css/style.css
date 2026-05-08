@@ -2,8 +2,7 @@
     Habesha Market — Simple Ethiopian Theme
     ============================================================ */
 
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Outfit:wght@100..900&display=swap");
 :root {
   --primary: #1f7a4a;
   --primary-dark: #155c38;
@@ -23,6 +22,7 @@
   --radius: 12px;
   --radius-sm: 8px;
   --transition: all 0.25s ease;
+  --heading-font: "Fraunces", serif;
 }
 
 * {
@@ -336,35 +336,25 @@ body {
 }
 
 .hero-title {
-  font-family: "Playfair Display", serif;
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  font-family: "Outfit", sans-serif;
+  font-family: var(--heading-font);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 0.96;
+  letter-spacing: -0.04em;
   animation: fadeInUp 0.8s ease 0.2s both;
-
-  html,
-  body,
-  button,
-  input,
-  select,
-  textarea {
-    font-family: "Outfit", sans-serif;
-  }
 }
 
 .hero-title .highlight {
   background: linear-gradient(135deg, var(--primary-light), #93c5fd);
   -webkit-background-clip: text;
-  /* -webkit-text-fill-color: transparent; */
+  font-style: italic;
   background-clip: text;
 }
 
 .hero-title .highlight-green {
   background: linear-gradient(135deg, var(--secondary), var(--primary));
   -webkit-background-clip: text;
-  /* -webkit-text-fill-color: transparent; */
+  font-style: italic;
   color: var(--text-secondary);
 
   background-clip: text;
@@ -375,6 +365,7 @@ body {
   color: var(--text-muted);
   line-height: 1.7;
   margin-bottom: 2.5rem;
+  margin-top: 1rem;
   animation: fadeInUp 0.8s ease 0.4s both;
 }
 
@@ -643,10 +634,10 @@ section {
 }
 
 .section-title {
-  font-family: "Playfair Display", serif;
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
-  font-weight: 800;
-  line-height: 1.2;
+  font-family: var(--heading-font);
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.08;
   margin-bottom: 1rem;
 }
 
@@ -1391,9 +1382,9 @@ section {
 }
 
 .form-title {
-  font-family: "Playfair Display", serif;
+  font-family: var(--heading-font);
   font-size: 1.8rem;
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 0.3rem;
 }
 
@@ -1544,9 +1535,9 @@ section {
 }
 
 .page-hero-title {
-  font-family: "Playfair Display", serif;
+  font-family: var(--heading-font);
   font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
@@ -2034,7 +2025,7 @@ section {
 }
 
 .counter-number {
-  font-family: "Playfair Display", serif;
+  font-family: var(--heading-font);
   font-size: 2.8rem;
   font-weight: 800;
   background: linear-gradient(135deg, var(--primary-light), var(--secondary));
@@ -2051,15 +2042,15 @@ section {
 }
 
 .newsletter-title {
-  font-family: "Playfair Display", serif;
+  font-family: var(--heading-font);
   /* font-size: 1.8rem; */
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 1rem;
 }
 .newsletter-loop {
-  font-family: "Playfair Display", serif;
+  font-family: var(--heading-font);
   font-size: 1.8rem;
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 0.5rem;
 }
 .newsletter-subtitle {
@@ -2099,6 +2090,7 @@ section {
 }
 
 .checkout-section-title {
+  font-family: var(--heading-font);
   font-weight: 700;
   font-size: 1rem;
   margin-bottom: 1.2rem;
@@ -2183,9 +2175,9 @@ section {
 }
 
 .admin-page-title {
-  font-family: "Playfair Display", serif;
+  font-family: var(--heading-font);
   font-size: 1.8rem;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .stat-cards {
@@ -3560,7 +3552,7 @@ section {
 }
 
 .success-title {
-  font-family: "Playfair Display", serif;
+  font-family: var(--heading-font);
   font-size: 2.2rem;
   font-weight: 800;
   margin-bottom: 0.8rem;
@@ -3904,9 +3896,9 @@ section {
 }
 
 .product-title-display {
-  font-family: "Playfair Display", serif;
+  font-family: var(--heading-font);
   font-size: clamp(1.5rem, 3vw, 2.2rem);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1rem;
 }
