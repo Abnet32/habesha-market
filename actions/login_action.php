@@ -2,6 +2,12 @@
 if (session_status() === PHP_SESSION_NONE) session_start();
 require_once '../connection.php';
 
+if (!isset($con) || !$con) {
+    $_SESSION['login_error'] = 'Database connection error.';
+    header('Location: ../login.php');
+    exit;
+}
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') { header('Location: ../login.php'); exit; }
 
 $email = trim($_POST['email'] ?? '');
