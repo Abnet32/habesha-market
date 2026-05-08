@@ -3,6 +3,17 @@ if (session_status() === PHP_SESSION_NONE) session_start();
 if (!isset($_SESSION['user_id'])) { header('Location: ../login.php'); exit; }
 require_once '../connection.php';
 
+// Ensure $con is available (some connection files use $conn or $mysqli)
+if (!isset($con)) {
+    if (isset($conn)) {
+        $con = $conn;
+    } elseif (isset($mysqli) && $mysqli instanceof mysqli) {
+        $con = $mysqli;
+    } else {
+        die('Database connection not found.');
+    }
+}
+
 $uid = (int)$_SESSION['user_id'];
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') { header('Location: ../checkout.php'); exit; }
