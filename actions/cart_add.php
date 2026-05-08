@@ -3,6 +3,8 @@ if (session_status() === PHP_SESSION_NONE) session_start();
 if (!isset($_SESSION['user_id'])) { header('Location: ../login.php'); exit; }
 require_once '../connection.php';
 
+if (!isset($con) || !$con) { header('Location: ../login.php'); exit; }
+
 $pid = (int)($_GET['id'] ?? 0);
 $uid = (int)$_SESSION['user_id'];
 
