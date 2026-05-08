@@ -22,7 +22,7 @@ require 'includes/header.php';
     </div>
 </div>
 
-<div class="container-custom" style="padding-bottom:5rem">
+<div class="container-custom page-pad-bottom-5">
     <?php if (mysqli_num_rows($orders) === 0): ?>
         <div class="empty-state">
             <div class="empty-icon"><i class="fas fa-box"></i></div>
@@ -55,10 +55,10 @@ require 'includes/header.php';
                 <span class="order-status <?= $status_class ?>">
                     <?= ucfirst($order['status']) ?>
                 </span>
-                <div style="font-size:0.82rem; color:var(--text-muted);">
+                <div class="text-82 text-muted">
                     <i class="fas fa-map-marker-alt fa-xs"></i> <?= htmlspecialchars($order['city']) ?>
                 </div>
-                <div style="font-size:0.82rem; color:var(--text-muted);">
+                <div class="text-82 text-muted">
                     <i class="fas fa-credit-card fa-xs"></i> <?= ucwords(str_replace('_', ' ', $order['payment_method'])) ?>
                 </div>
             </div>
