@@ -18,14 +18,14 @@ if (!isset($con) || !$con) {
     }
 }
 
-function cart_count($con, $uid) {
+function cart_count(mysqli $con, int $uid): int {
     $r = mysqli_query($con, "SELECT SUM(quantity) as c FROM cart_items WHERE user_id=$uid");
-    return (int)(mysqli_fetch_assoc($r)['c'] ?? 0);
+    return (int) (mysqli_fetch_assoc($r)['c'] ?? 0);
 }
 
-function cart_total($con, $uid) {
+function cart_total(mysqli $con, int $uid): float {
     $r = mysqli_query($con, "SELECT SUM(p.price * ci.quantity) as t FROM cart_items ci JOIN products p ON p.id=ci.product_id WHERE ci.user_id=$uid");
-    return (float)(mysqli_fetch_assoc($r)['t'] ?? 0);
+    return (float) (mysqli_fetch_assoc($r)['t'] ?? 0);
 }
 
 if (!isset($_SESSION['user_id'])) {
