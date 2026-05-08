@@ -99,17 +99,11 @@ body {
 .brand-icon {
   width: 42px;
   height: 42px;
-  /* border-radius: 12px; */
-  /* background: linear-gradient(
-    135deg,
-    var(--primary-dark),
-    var(--primary-light)
-  ); */
+  
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
-  /* box-shadow: 0 4px 15px rgba(14, 165, 233, 0.45); */
   padding: 5px;
 }
 
@@ -1520,9 +1514,10 @@ section {
 }
 
 .alert-error {
-  background: rgba(225, 29, 72, 0.12);
-  border: 1px solid rgba(225, 29, 72, 0.3);
-  color: #fb7185;
+  /* background: rgba(225, 29, 72, 0.12); */
+  /* border: 1px solid rgba(225, 29, 72, 0.3); */
+  /* color: #fb7185; */
+  color: var(--accent);
 }
 .alert-success {
   background: rgba(31, 122, 74, 0.12);
@@ -1693,20 +1688,20 @@ section {
 }
 
 .status-pending {
-  background: rgba(6, 182, 212, 0.15);
-  color: var(--secondary);
+  background: var(--secondary);
+  color: white;
 }
 .status-processing {
-  background: rgba(31, 122, 74, 0.15);
-  color: var(--primary-light);
+  background: var(--primary-light);
+  color: white;
 }
 .status-delivered {
   background: rgba(31, 122, 74, 0.12);
-  color: var(--primary-dark);
+  color: white;
 }
 .status-cancelled {
-  background: rgba(225, 29, 72, 0.15);
-  color: #fb7185;
+  background: var(--accent);
+  color: white;
 }
 
 .order-body {
@@ -1780,9 +1775,9 @@ section {
 }
 
 .social-btn:hover {
-  background: var(--primary);
-  border-color: var(--primary);
-  color: white;
+  color: var(--primary);
+  /* border-color: var(--primary); */
+  /* color: white; */
   transform: translateY(-3px);
 }
 
@@ -2538,7 +2533,6 @@ section {
 .nav-btn,
 .btn-primary-custom,
 .btn-add-cart,
-.social-btn:hover,
 .qty-btn:hover,
 .profile-avatar,
 .author-avatar {
@@ -2566,8 +2560,6 @@ section {
 }
 
 .nav-btn-logout,
-.status-cancelled,
-.alert-error,
 .remove-btn {
   background: rgba(185, 57, 45, 0.12) !important;
   color: var(--accent) !important;
@@ -2663,8 +2655,7 @@ section {
 
 .cat-icon.fashion,
 .stat-card-icon.cyan,
-.toast-msg.info,
-.status-pending {
+.toast-msg.info {
   background: rgba(217, 161, 26, 0.12);
 }
 
@@ -2718,10 +2709,7 @@ section {
   color: var(--primary) !important;
 }
 
-.alert-error,
-.status-cancelled {
-  color: var(--accent) !important;
-}
+
 
 .cart-table-header,
 .order-header,
@@ -2745,7 +2733,6 @@ section {
 .btn-accent,
 .profile-avatar,
 .author-avatar,
-.social-btn:hover,
 .qty-btn:hover,
 .feature-card::after,
 .testimonial-card::before,
@@ -2768,10 +2755,6 @@ section {
 .fc-icon.yellow,
 .feature-icon,
 .profile-header-card,
-.status-processing,
-.status-pending,
-.status-delivered,
-
 .alert-success,
 .alert-info {
   background-image: none !important;
@@ -2793,9 +2776,6 @@ section {
 .hero-orbit-dot,
 .hero-orbit-dot-2,
 .profile-header-card,
-.status-processing,
-.status-pending,
-.status-delivered,
 
 .alert-success,
 .alert-info {
@@ -2805,15 +2785,12 @@ section {
 .nav-btn-admin,
 .feature-icon,
 .fc-icon.yellow,
-.status-pending,
 .alert-info {
   background-color: #d9a11a !important;
 }
 
 .btn-accent,
 .btn-sm.delete,
-.status-cancelled,
-.alert-error,
 .remove-btn {
   background-color: var(--accent) !important;
 }
