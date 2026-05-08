@@ -1125,8 +1125,9 @@ section {
   justify-content: center;
   font-size: 1.8rem;
   margin: 0 auto 1.2rem;
-  background: rgba(14, 165, 233, 0.12);
+  /* background: rgba(14, 165, 233, 0.12); */
   border: 1px solid rgba(14, 165, 233, 0.22);
+  color: var(--primary);
 }
 
 .feature-title {
@@ -2646,7 +2647,6 @@ section {
 
 .cat-icon.coffee,
 .stat-card-icon.blue,
-.feature-icon,
 .profile-header-card,
 .status-processing,
 .toast-msg.success {
@@ -2753,7 +2753,6 @@ section {
 .hero-orbit-dot-2,
 .fc-icon.green,
 .fc-icon.yellow,
-.feature-icon,
 .profile-header-card,
 .alert-success,
 .alert-info {
@@ -2768,7 +2767,6 @@ section {
 .btn-accent,
 .profile-avatar,
 .author-avatar,
-.feature-icon,
 .fc-icon.green,
 .fc-icon.yellow,
 .hero-orbit,
@@ -2783,7 +2781,6 @@ section {
 }
 
 .nav-btn-admin,
-.feature-icon,
 .fc-icon.yellow,
 .alert-info {
   background-color: #d9a11a !important;
