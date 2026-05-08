@@ -70,22 +70,22 @@ require 'includes/header.php';
     </div>
 </div>
 
-<div class="container-custom" style="padding-bottom:5rem">
+<div class="container-custom page-pad-bottom-5">
     <div class="profile-layout">
         <!-- SIDEBAR -->
         <div class="profile-sidebar animate-in">
             <div class="profile-header-card">
                 <div class="profile-avatar"><?= strtoupper(substr($user['full_name'], 0, 1)) ?></div>
-                <div style="font-weight:700; font-size:1rem; color:white;"><?= htmlspecialchars($user['full_name']) ?></div>
-                <div style="font-size:0.8rem; color:white; margin-top:3px; "><?= htmlspecialchars($user['email']) ?></div>
-                <div style="display:flex; justify-content:center; gap:1.5rem; margin-top:1rem;">
-                    <div style="text-align:center;">
-                        <div style="font-weight:800; font-size:1.2rem; color:var(--secondary);"><?= $order_count ?></div>
-                        <div style="font-size:0.72rem; color:white;">Orders</div>
+                <div class="profile-header-name"><?= htmlspecialchars($user['full_name']) ?></div>
+                <div class="profile-header-email"><?= htmlspecialchars($user['email']) ?></div>
+                <div class="profile-meta-row">
+                    <div class="profile-meta-block">
+                        <div class="profile-meta-value"><?= $order_count ?></div>
+                        <div class="profile-meta-label">Orders</div>
                     </div>
-                    <div style="text-align:center;">
-                        <div style="font-weight:800; font-size:1.2rem; color:var(--secondary);"><?= $cart_count ?></div>
-                        <div style="font-size:0.72rem; color:white;">In Cart</div>
+                    <div class="profile-meta-block">
+                        <div class="profile-meta-value"><?= $cart_count ?></div>
+                        <div class="profile-meta-label">In Cart</div>
                     </div>
                 </div>
             </div>
@@ -99,7 +99,7 @@ require 'includes/header.php';
                 <a href="cart.php" class="profile-nav-item">
                     <i class="fas fa-shopping-cart"></i> My Cart
                 </a>
-                <a href="logout.php" class="profile-nav-item" style="color:var(--accent);">
+                <a href="logout.php" class="profile-nav-item profile-nav-item-danger">
                     <i class="fas fa-sign-out-alt"></i> Logout
                 </a>
             </nav>
@@ -115,23 +115,23 @@ require 'includes/header.php';
             <?php endif; ?>
 
             <!-- Profile Info -->
-            <div class="form-card" style="max-width:none; margin-bottom:1.5rem;" >
-                <h2 style="font-weight:700; font-size:1.1rem; margin-bottom:1.5rem; display:flex; align-items:center; gap:8px;">
-                    <i class="fas fa-user" style="color:var(--primary-light)"></i> Personal Information
+            <div class="form-card max-w-none mb-1-5" >
+                <h2 class="section-heading-inline">
+                    <i class="fas fa-user text-primary-light"></i> Personal Information
                 </h2>
                 <form method="POST">
                     <input type="hidden" name="update_profile" value="1">
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
-                        <div class="form-group-custom" style="grid-column:1/-1">
+                    <div class="grid-2">
+                        <div class="form-group-custom grid-full">
                             <label class="form-label-custom">Full Name</label>
                             <input type="text" name="full_name" class="form-control-custom"
                                 value="<?= htmlspecialchars($user['full_name']) ?>" required>
                         </div>
                         <div class="form-group-custom">
                             <label class="form-label-custom">Email Address</label>
-                            <input type="email" class="form-control-custom"
-                                value="<?= htmlspecialchars($user['email']) ?>" readonly style="opacity:0.6">
-                            <div class="field-msg" style="color:var(--text-muted)">Email cannot be changed</div>
+                            <input type="email" class="form-control-custom opacity-60"
+                                value="<?= htmlspecialchars($user['email']) ?>" readonly>
+                            <div class="field-msg text-muted">Email cannot be changed</div>
                         </div>
                         <div class="form-group-custom">
                             <label class="form-label-custom">Phone Number</label>
@@ -147,22 +147,22 @@ require 'includes/header.php';
                                 <?php endforeach; ?>
                             </select>
                         </div>
-                        <div class="form-group-custom" style="grid-column:1/-1">
+                        <div class="form-group-custom grid-full">
                             <label class="form-label-custom">Address</label>
                             <textarea name="address" class="form-control-custom" rows="2"
                                 placeholder="Kebele, Sub-city, Woreda..."><?= htmlspecialchars($user['address'] ?? '') ?></textarea>
                         </div>
                     </div>
-                    <button type="submit" class="btn-primary-custom" style="border:none; cursor:pointer; margin-top:0.5rem;">
+                    <button type="submit" class="btn-primary-custom btn-clean mt-0-5">
                         <span><i class="fas fa-save"></i> Save Changes</span>
                     </button>
                 </form>
             </div>
 
             <!-- Change Password -->
-            <div class="form-card" style="max-width:none;">
-                <h2 style="font-weight:700; font-size:1.1rem; margin-bottom:1.5rem; display:flex; align-items:center; gap:8px;">
-                    <i class="fas fa-lock" style="color:var(--primary-light)"></i> Change Password
+            <div class="form-card max-w-none">
+                <h2 class="section-heading-inline">
+                    <i class="fas fa-lock text-primary-light"></i> Change Password
                 </h2>
                 <form method="POST">
                     <input type="hidden" name="change_password" value="1">
@@ -174,7 +174,7 @@ require 'includes/header.php';
                             <i class="fas fa-eye toggle-icon"></i>
                         </div>
                     </div>
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+                    <div class="grid-2">
                         <div class="form-group-custom">
                             <label class="form-label-custom">New Password</label>
                             <div class="password-toggle">
@@ -192,7 +192,7 @@ require 'includes/header.php';
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="btn-primary-custom" style="border:none; cursor:pointer; margin-top:0.5rem;">
+                    <button type="submit" class="btn-primary-custom btn-clean mt-0-5">
                         <i class="fas fa-key"></i> Change Password
                     </button>
                 </form>
