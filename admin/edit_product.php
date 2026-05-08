@@ -23,16 +23,16 @@ $error   = $_GET['error']   ?? '';
 <div class="admin-page-header">
     <div>
         <h1 class="admin-page-title">Edit Product</h1>
-        <p style="color:var(--text-muted);font-size:0.88rem;margin-top:4px">
-            Editing: <strong style="color:var(--primary-light)"><?= htmlspecialchars($p['name']) ?></strong>
+        <p class="admin-page-note">
+            Editing: <strong class="admin-link-inline"><?= htmlspecialchars($p['name']) ?></strong>
         </p>
     </div>
-    <a href="products.php" class="btn-outline-custom" style="font-size:0.88rem;padding:0.55rem 1.3rem">
+    <a href="products.php" class="btn-outline-custom admin-form-tight-btn">
         <i class="fas fa-arrow-left"></i> Back to Products
     </a>
 </div>
 
-<?php if ($error): ?><div class="alert-custom alert-error" style="margin-bottom:1.5rem"><i class="fas fa-exclamation-circle"></i> <?= htmlspecialchars($error) ?></div><?php endif; ?>
+<?php if ($error): ?><div class="alert-custom alert-error admin-alert-spacing"><i class="fas fa-exclamation-circle"></i> <?= htmlspecialchars($error) ?></div><?php endif; ?>
 
 <div class="admin-form-wrap">
     <form method="POST" action="actions/save_product.php">
@@ -41,7 +41,7 @@ $error   = $_GET['error']   ?? '';
 
         <div class="admin-form-grid">
             <!-- Name -->
-            <div class="form-group-custom" style="grid-column:span 2">
+            <div class="form-group-custom admin-form-fullspan">
                 <label class="form-label-custom">Product Name *</label>
                 <input type="text" name="name" class="form-control-custom" required
                        value="<?= htmlspecialchars($p['name']) ?>">
@@ -95,7 +95,7 @@ $error   = $_GET['error']   ?? '';
             </div>
 
             <!-- Image URL -->
-            <div class="form-group-custom" style="grid-column:span 2">
+            <div class="form-group-custom admin-form-fullspan">
                 <label class="form-label-custom">Image URL *</label>
                 <input type="url" name="image_url" class="form-control-custom" required
                        id="image_url_input"
@@ -103,27 +103,27 @@ $error   = $_GET['error']   ?? '';
             </div>
 
             <!-- Image Preview -->
-            <div style="grid-column:span 2;margin-bottom:0.5rem" id="img-preview-wrap">
+            <div class="admin-preview-wrap" id="img-preview-wrap">
                 <label class="form-label-custom">Current Image Preview</label>
                 <img id="img-preview" src="<?= htmlspecialchars($p['image_url'] ?? '') ?>" alt="Preview"
-                     style="max-width:220px;max-height:180px;border-radius:var(--radius-sm);border:1px solid var(--glass-border);object-fit:cover"
-                     onerror="this.style.display='none'">
+                     class="admin-preview-img"
+                     onerror="this.hidden=true">
             </div>
 
             <!-- Description -->
-            <div class="form-group-custom" style="grid-column:span 2">
+            <div class="form-group-custom admin-form-fullspan">
                 <label class="form-label-custom">Description *</label>
                 <textarea name="description" class="form-control-custom" rows="4" required><?= htmlspecialchars($p['description'] ?? '') ?></textarea>
             </div>
         </div>
 
-        <div style="display:flex;gap:1rem;flex-wrap:wrap">
+        <div class="admin-btn-row">
             <button type="submit" class="btn-primary-custom">
                 <i class="fas fa-save"></i> <span>Save Changes</span>
             </button>
             <a href="products.php" class="btn-outline-custom">Cancel</a>
             <a href="actions/delete_product.php?id=<?= $p['id'] ?>"
-               class="btn-outline-custom" style="border-color:rgba(225,29,72,0.4);color:#fb7185"
+               class="btn-outline-custom btn-danger-outline"
                onclick="return confirm('Delete this product permanently?')">
                 <i class="fas fa-trash"></i> Delete
             </a>
@@ -138,9 +138,9 @@ imgInput.addEventListener('input', function () {
     const url = this.value.trim();
     if (url.startsWith('http')) {
         preview.src   = url;
-        preview.style.display = 'block';
+        preview.hidden = false;
     } else {
-        preview.style.display = 'none';
+        preview.hidden = true;
     }
 });
 </script>
