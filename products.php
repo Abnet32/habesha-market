@@ -44,7 +44,7 @@ if (isset($_SESSION['user_id'])) {
         <div class="section-badge"><i class="fas fa-shopping-bag"></i> Ethiopian Products</div>
         <h1 class="page-hero-title">
             <?php if ($search): ?>
-                Results for "<span style="color:var(--secondary)"><?= htmlspecialchars($search) ?></span>"
+                Results for "<span class="search-highlight"><?= htmlspecialchars($search) ?></span>"
             <?php elseif ($category): ?>
                 <?php
                 $cname = mysqli_query($con, "SELECT name FROM categories WHERE slug='$category'");
@@ -67,7 +67,7 @@ if (isset($_SESSION['user_id'])) {
     </div>
 </div>
 
-<div class="container-custom" style="padding-bottom:4rem">
+<div class="container-custom page-pad-bottom-4">
 
     <!-- SEARCH & FILTER BAR -->
     <div class="search-section">
@@ -102,7 +102,7 @@ if (isset($_SESSION['user_id'])) {
             </select>
 
             <?php if ($search || $category): ?>
-            <a href="products.php" class="btn-outline-custom" style="white-space:nowrap; padding:0.75rem 1.2rem; font-size:0.85rem">
+            <a href="products.php" class="btn-outline-custom btn-nowrap admin-filter-compact">
                 <i class="fas fa-times"></i> Clear
             </a>
             <?php endif; ?>
@@ -140,7 +140,7 @@ if (isset($_SESSION['user_id'])) {
                     <div class="product-rating">
                         <div class="stars">
                             <?php for ($i = 1; $i <= 5; $i++): ?>
-                                <i class="fas fa-star" style="<?= $i <= round($p['rating']) ? 'color:var(--secondary)' : 'color:rgba(255,255,255,0.15)' ?>"></i>
+                                <i class="fas fa-star <?= $i <= round($p['rating']) ? 'rating-star-filled' : 'rating-star-empty' ?>"></i>
                             <?php endfor; ?>
                         </div>
                         <span class="rating-count">(<?= $p['review_count'] ?>)</span>
