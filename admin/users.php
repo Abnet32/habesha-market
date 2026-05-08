@@ -24,7 +24,7 @@ $total = mysqli_num_rows($users);
 <div class="admin-page-header">
     <div>
         <h1 class="admin-page-title">Users</h1>
-        <p style="color:var(--text-muted);font-size:0.88rem;margin-top:4px"><?= $total ?> registered accounts</p>
+        <p class="admin-page-note"><?= $total ?> registered accounts</p>
     </div>
 </div>
 
@@ -45,17 +45,17 @@ $total = mysqli_num_rows($users);
         <tbody>
         <?php while ($u = mysqli_fetch_assoc($users)): ?>
         <tr>
-            <td style="color:var(--text-muted)"><?= $u['id'] ?></td>
+            <td class="table-cell-muted"><?= $u['id'] ?></td>
             <td>
-                <div style="display:flex;align-items:center;gap:10px">
-                    <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--primary-dark),var(--secondary));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;color:white;flex-shrink:0">
+                <div class="admin-avatar-row">
+                    <div class="admin-avatar-34">
                         <?= mb_strtoupper(mb_substr($u['full_name'], 0, 1)) ?>
                     </div>
                     <strong><?= htmlspecialchars($u['full_name']) ?></strong>
                 </div>
             </td>
-            <td style="font-size:0.85rem;color:var(--text-muted)"><?= htmlspecialchars($u['email']) ?></td>
-            <td style="font-size:0.85rem"><?= htmlspecialchars($u['phone'] ?? '—') ?></td>
+            <td class="text-85 table-cell-muted"><?= htmlspecialchars($u['email']) ?></td>
+            <td class="text-85"><?= htmlspecialchars($u['phone'] ?? '—') ?></td>
             <td>
                 <?php if ($u['role'] === 'admin'): ?>
                     <span class="tbl-badge new">Admin</span>
@@ -63,13 +63,13 @@ $total = mysqli_num_rows($users);
                     <span class="tbl-badge none">Customer</span>
                 <?php endif; ?>
             </td>
-            <td style="text-align:center"><?= (int)$u['order_count'] ?></td>
+            <td class="table-cell-center"><?= (int)$u['order_count'] ?></td>
             <td>ETB <?= number_format($u['total_spent'], 2) ?></td>
-            <td style="font-size:0.8rem;color:var(--text-muted)"><?= date('M d, Y', strtotime($u['created_at'])) ?></td>
+            <td class="text-80 table-cell-muted"><?= date('M d, Y', strtotime($u['created_at'])) ?></td>
         </tr>
         <?php endwhile; ?>
         <?php if ($total === 0): ?>
-        <tr><td colspan="8" style="text-align:center;padding:2.5rem;color:var(--text-muted)">No users found.</td></tr>
+        <tr><td colspan="8" class="table-empty-cell">No users found.</td></tr>
         <?php endif; ?>
         </tbody>
     </table>
