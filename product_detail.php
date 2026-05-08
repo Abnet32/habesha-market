@@ -51,7 +51,7 @@ $related = mysqli_query($con, "
 require 'includes/header.php';
 ?>
 
-<div class="page-hero" style="padding-bottom:2rem">
+<div class="page-hero page-pad-bottom-2">
     <div class="container-custom">
         <div class="breadcrumb-custom">
             <a href="index.php">Home</a> <i class="fas fa-chevron-right fa-xs"></i>
@@ -62,23 +62,21 @@ require 'includes/header.php';
     </div>
 </div>
 
-<div class="container-custom" style="padding-bottom:5rem">
+<div class="container-custom page-pad-bottom-5">
     <!-- Product Detail -->
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start; margin-bottom:4rem;" class="animate-in">
+    <div class="product-detail-grid animate-in">
 
         <!-- Image -->
-        <div style="position:relative;">
-            <div style="border-radius:var(--radius); overflow:hidden; background:var(--dark2); aspect-ratio:1; border:1px solid var(--glass-border);">
+        <div class="product-detail-media">
+            <div class="product-detail-image-wrap">
                 <img id="main-product-img"
                     src="<?= htmlspecialchars($product['image_url']) ?>"
                     alt="<?= htmlspecialchars($product['name']) ?>"
-                    style="width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease;"
-                    onerror="this.src='https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80'"
-                    onmouseover="this.style.transform='scale(1.04)'"
-                    onmouseout="this.style.transform='scale(1)'">
+                    class="product-detail-image"
+                    onerror="this.src='https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80'">
             </div>
             <?php if ($product['badge']): ?>
-                <div class="product-badge badge-<?= $product['badge'] ?>" style="position:absolute; top:16px; left:16px; font-size:0.85rem; padding:6px 16px;">
+                <div class="product-badge badge-<?= $product['badge'] ?> product-detail-badge">
                     <?= strtoupper($product['badge']) ?>
                 </div>
             <?php endif; ?>
@@ -86,35 +84,35 @@ require 'includes/header.php';
 
         <!-- Info -->
         <div>
-            <div class="product-category-tag" style="font-size:0.85rem; margin-bottom:0.8rem;">
+            <div class="product-category-tag product-category-compact">
                 <i class="fas fa-tag fa-xs"></i> <?= htmlspecialchars($product['cat_name']) ?>
             </div>
-            <h1 style="font-family:'Playfair Display',serif; font-size:clamp(1.5rem,3vw,2.2rem); font-weight:800; line-height:1.2; margin-bottom:1rem;">
+            <h1 class="product-title-display">
                 <?= htmlspecialchars($product['name']) ?>
             </h1>
 
             <!-- Rating -->
-            <div style="display:flex; align-items:center; gap:10px; margin-bottom:1.2rem;">
-                <div class="stars" style="font-size:1rem;">
+            <div class="product-rating-row">
+                <div class="stars stars-medium">
                     <?php for ($i = 1; $i <= 5; $i++): ?>
-                        <i class="fas fa-star" style="<?= $i <= round($product['rating']) ? 'color:var(--secondary)' : 'color:rgba(255,255,255,0.15)' ?>"></i>
+                        <i class="fas fa-star <?= $i <= round($product['rating']) ? 'rating-star-filled' : 'rating-star-empty' ?>"></i>
                     <?php endfor; ?>
                 </div>
-                <span style="font-weight:700; color:var(--secondary);"><?= $product['rating'] ?></span>
-                <span style="color:var(--text-muted); font-size:0.85rem;">(<?= $product['review_count'] ?> reviews)</span>
-                <span style="color:var(--text-muted); font-size:0.85rem;">|</span>
-                <span style="font-size:0.85rem; color:<?= $product['stock'] > 0 ? 'var(--primary-light)' : 'var(--accent)' ?>;">
-                    <?= $product['stock'] > 0 ? "<i class=\"fas fa-check-circle\" style=\"margin-right:4px;\"></i> In Stock ({$product['stock']} left)" : '<i class="fas fa-times-circle" style="margin-right:4px;"></i> Out of Stock' ?>
+                <span class="rating-value"><?= $product['rating'] ?></span>
+                <span class="product-meta">(<?= $product['review_count'] ?> reviews)</span>
+                <span class="product-meta">|</span>
+                <span class="stock-text <?= $product['stock'] > 0 ? 'stock-in' : 'stock-out' ?>">
+                    <?= $product['stock'] > 0 ? "<i class=\"fas fa-check-circle mr-4\"></i> In Stock ({$product['stock']} left)" : '<i class="fas fa-times-circle mr-4"></i> Out of Stock' ?>
                 </span>
             </div>
 
             <!-- Price -->
-            <div style="margin-bottom:1.5rem;">
-                <div style="font-size:2rem; font-weight:800; color:var(--secondary);">ETB <?= number_format($product['price'], 2) ?></div>
+            <div class="product-price-hero">
+                <div class="product-price-main">ETB <?= number_format($product['price'], 2) ?></div>
                 <?php if ($product['original_price']): ?>
-                    <div style="display:flex; align-items:center; gap:12px; margin-top:4px;">
-                        <span style="color:var(--text-muted); text-decoration:line-through; font-size:1rem;">ETB <?= number_format($product['original_price'], 2) ?></span>
-                        <span style="background:rgba(218,18,26,0.15); color:#ff8a80; border-radius:50px; padding:2px 10px; font-size:0.8rem; font-weight:700;">
+                    <div class="product-old-price-row">
+                        <span class="product-old-price">ETB <?= number_format($product['original_price'], 2) ?></span>
+                        <span class="discount-badge">
                             <?= round((1 - $product['price']/$product['original_price'])*100) ?>% OFF
                         </span>
                     </div>
@@ -122,19 +120,19 @@ require 'includes/header.php';
             </div>
 
             <!-- Description -->
-            <div style="color:var(--text-muted); line-height:1.8; margin-bottom:2rem; padding:1.2rem; background:var(--glass); border-radius:var(--radius-sm); border:1px solid var(--glass-border);">
+            <div class="product-description-box">
                 <?= nl2br(htmlspecialchars($product['description'])) ?>
             </div>
 
             <!-- Actions -->
             <?php if ($product['stock'] > 0): ?>
-                <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+                <div class="product-actions-row">
                     <?php if ($in_cart): ?>
                         <a href="cart.php" class="btn-primary-custom">
                             <span><i class="fas fa-check"></i> View in Cart</span>
                         </a>
                     <?php else: ?>
-                        <a href="#" class="btn-primary-custom add-to-cart-ajax" data-id="<?= $product['id'] ?>" style="text-decoration:none;">
+                        <a href="#" class="btn-primary-custom add-to-cart-ajax product-buy-link" data-id="<?= $product['id'] ?>">
                             <span><i class="fas fa-cart-plus"></i> Add to Cart</span>
                         </a>
                     <?php endif; ?>
@@ -147,17 +145,17 @@ require 'includes/header.php';
             <?php endif; ?>
 
             <!-- Delivery info -->
-            <div style="margin-top:1.5rem; display:flex; flex-direction:column; gap:8px; font-size:0.85rem; color:var(--text-muted);">
-                <div><i class="fas fa-truck" style="color:var(--primary-light); width:18px;"></i> Delivered in 2–5 business days across Ethiopia</div>
-                <div><i class="fas fa-undo" style="color:var(--primary-light); width:18px;"></i> 7-day return policy</div>
-                <div><i class="fas fa-shield-alt" style="color:var(--primary-light); width:18px;"></i> Authentic product guaranteed</div>
+            <div class="delivery-list">
+                <div><i class="fas fa-truck delivery-icon"></i> Delivered in 2–5 business days across Ethiopia</div>
+                <div><i class="fas fa-undo delivery-icon"></i> 7-day return policy</div>
+                <div><i class="fas fa-shield-alt delivery-icon"></i> Authentic product guaranteed</div>
             </div>
         </div>
     </div>
 
     <!-- REVIEWS SECTION -->
-    <div style="margin-bottom:4rem;">
-        <h2 class="section-title" style="font-size:1.5rem; margin-bottom:2rem;">
+    <div class="review-container">
+        <h2 class="section-title section-title-compact">
             Customer <span class="accent">Reviews</span>
         </h2>
 
@@ -166,16 +164,15 @@ require 'includes/header.php';
         <?php endif; ?>
 
         <?php if (isset($_SESSION['user_id'])): ?>
-        <div class="form-card" style="max-width:none; margin-bottom:2rem;">
-            <h3 style="font-weight:700; font-size:0.95rem; margin-bottom:1rem;">Write a Review</h3>
+        <div class="form-card review-card-wide">
+            <h3 class="review-heading">Write a Review</h3>
             <form method="POST">
                 <input type="hidden" name="submit_review" value="1">
                 <div class="form-group-custom">
                     <label class="form-label-custom">Rating</label>
-                    <div style="display:flex; gap:6px; font-size:1.5rem; cursor:pointer;" id="star-rating">
+                    <div class="star-rating-control" id="star-rating">
                         <?php for ($i = 1; $i <= 5; $i++): ?>
-                            <i class="fas fa-star" data-val="<?= $i ?>"
-                               style="color:<?= $i <= 4 ? 'var(--secondary)' : 'rgba(255,255,255,0.2)' ?>; transition:all 0.2s;"
+                            <i class="fas fa-star star-rating-icon <?= $i <= 4 ? 'active' : '' ?>" data-val="<?= $i ?>"
                                onmouseover="highlightStars(<?= $i ?>)"
                                onmouseout="resetStars()"
                                onclick="selectStar(<?= $i ?>)"></i>
@@ -188,31 +185,31 @@ require 'includes/header.php';
                     <textarea name="comment" class="form-control-custom" rows="3"
                         placeholder="Share your experience with this product..."></textarea>
                 </div>
-                <button type="submit" class="btn-primary-custom" style="border:none; cursor:pointer;">
+                <button type="submit" class="btn-primary-custom btn-clean review-submit">
                     <span><i class="fas fa-paper-plane"></i> Submit Review</span>
                 </button>
             </form>
         </div>
         <?php else: ?>
-        <div class="alert-custom alert-info" style="margin-bottom:1.5rem;">
-            <i class="fas fa-info-circle"></i> <a href="login.php" style="color:var(--primary-light)">Login</a> to write a review.
+        <div class="alert-custom alert-info review-alert">
+            <i class="fas fa-info-circle"></i> <a href="login.php" class="text-primary-light">Login</a> to write a review.
         </div>
         <?php endif; ?>
 
         <?php if (mysqli_num_rows($reviews) === 0): ?>
-            <div style="text-align:center; color:var(--text-muted); padding:2rem;">No reviews yet. Be the first!</div>
+            <div class="review-empty">No reviews yet. Be the first!</div>
         <?php else: ?>
             <div class="testimonials-grid">
                 <?php while ($rev = mysqli_fetch_assoc($reviews)): ?>
                 <div class="testimonial-card">
-                    <div class="stars" style="margin-bottom:0.8rem; font-size:0.9rem;">
+                    <div class="stars stars-small">
                         <?php for ($i = 1; $i <= 5; $i++): ?>
-                            <i class="fas fa-star" style="<?= $i <= $rev['rating'] ? 'color:var(--secondary)' : 'color:rgba(255,255,255,0.15)' ?>"></i>
+                            <i class="fas fa-star <?= $i <= $rev['rating'] ? 'rating-star-filled' : 'rating-star-empty' ?>"></i>
                         <?php endfor; ?>
                     </div>
                     <p class="testimonial-text"><?= htmlspecialchars($rev['comment'] ?: 'Great product!') ?></p>
                     <div class="testimonial-author">
-                        <div class="author-avatar" style="width:38px;height:38px;font-size:0.9rem;"><?= strtoupper(substr($rev['full_name'],0,1)) ?></div>
+                        <div class="author-avatar author-avatar-small"><?= strtoupper(substr($rev['full_name'],0,1)) ?></div>
                         <div>
                             <div class="author-name"><?= htmlspecialchars($rev['full_name']) ?></div>
                             <div class="author-location"><?= date('d M Y', strtotime($rev['created_at'])) ?></div>
@@ -227,10 +224,10 @@ require 'includes/header.php';
     <!-- RELATED PRODUCTS -->
     <?php if (mysqli_num_rows($related) > 0): ?>
     <div>
-        <h2 class="section-title" style="font-size:1.5rem; margin-bottom:2rem;">
+        <h2 class="section-title section-title-compact">
             You May Also <span class="accent-green">Like</span>
         </h2>
-        <div class="products-grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr))">
+        <div class="products-grid product-grid-narrow">
             <?php while ($rp = mysqli_fetch_assoc($related)): ?>
             <div class="product-card animate-in">
                 <div class="product-img-wrapper">
@@ -257,14 +254,14 @@ require 'includes/header.php';
 let selectedStar = 4;
 function highlightStars(n) {
     document.querySelectorAll('#star-rating i').forEach((s, i) => {
-        s.style.color = i < n ? 'var(--secondary)' : 'rgba(255,255,255,0.2)';
-        s.style.transform = i < n ? 'scale(1.2)' : 'scale(1)';
+        s.classList.toggle('active', i < n);
+        s.classList.toggle('hovered', i < n);
     });
 }
 function resetStars() {
     document.querySelectorAll('#star-rating i').forEach((s, i) => {
-        s.style.color = i < selectedStar ? 'var(--secondary)' : 'rgba(255,255,255,0.2)';
-        s.style.transform = 'scale(1)';
+        s.classList.toggle('active', i < selectedStar);
+        s.classList.remove('hovered');
     });
 }
 function selectStar(n) {
