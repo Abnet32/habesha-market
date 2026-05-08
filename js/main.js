@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const query = this.value.trim();
       clearTimeout(searchTimer);
       if (query.length < 2) {
-        resultsBox.style.display = "none";
+        resultsBox.hidden = true;
         return;
       }
       searchTimer = setTimeout(() => {
@@ -149,27 +149,27 @@ document.addEventListener("DOMContentLoaded", function () {
                 .map(
                   (item) => `
                                 <a class="live-result-item" href="product_detail.php?id=${item.id}">
-                                    <img class="live-result-img" src="${item.image}" alt="${item.name}" onerror="this.style.display='none'">
+                                    <img class="live-result-img" src="${item.image}" alt="${item.name}" onerror="this.hidden=true">
                                     <div>
                                         <strong>${item.name}</strong>
-                                        <div style="font-size:0.78rem;color:var(--primary-light)">${item.category} &mdash; ETB ${parseFloat(item.price).toLocaleString()}</div>
+                                      <div class="live-result-meta">${item.category} &mdash; ETB ${parseFloat(item.price).toLocaleString()}</div>
                                     </div>
                                 </a>
                             `,
                 )
                 .join("");
             }
-            resultsBox.style.display = "block";
+            resultsBox.hidden = false;
           })
           .catch(() => {
-            resultsBox.style.display = "none";
+            resultsBox.hidden = true;
           });
       }, 300);
     });
 
     document.addEventListener("click", (e) => {
       if (!searchInput.contains(e.target) && !resultsBox.contains(e.target)) {
-        resultsBox.style.display = "none";
+        resultsBox.hidden = true;
       }
     });
   }
@@ -404,7 +404,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     if (badge) {
       badge.textContent = count;
-      badge.style.display = count > 0 ? "inline-flex" : "none";
+      badge.hidden = count <= 0;
     }
   }
 
