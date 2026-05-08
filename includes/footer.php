@@ -2,7 +2,7 @@
     <div class="container-custom">
         <div class="footer-grid">
             <div>
-                <a href="index.php" class="navbar-brand-custom" style="text-decoration:none">
+                <a href="index.php" class="navbar-brand-custom footer-brand-link">
                     <div class="brand-icon"><img class="logo" src="assets/glow-cart.svg" alt="Habesha Market"> </div>
                     <span class="brand-text">Habesha Market</span>
                 </a>
@@ -48,16 +48,16 @@
 
         <div class="footer-bottom">
             <div class="footer-bottom-text">
-                &copy; <?= date('Y') ?> Habesha Market. All Rights Reserved. &nbsp;|&nbsp; Made with <i class="fas fa-heart" style="color:var(--accent); font-size:0.85rem;"></i> in Ethiopia
+                &copy; <?= date('Y') ?> Habesha Market. All Rights Reserved. &nbsp;|&nbsp; Made with <i class="fas fa-heart footer-heart"></i> in Ethiopia
             </div>
             <div class="footer-flag">
-                <div class="flag-stripe" style="background:#155c38"></div>
-                <div class="flag-stripe" style="background:#d9a11a"></div>
-                <div class="flag-stripe" style="background:#b9392d"></div>
+                <div class="flag-stripe flag-stripe-green"></div>
+                <div class="flag-stripe flag-stripe-yellow"></div>
+                <div class="flag-stripe flag-stripe-red"></div>
             </div>
             <div class="footer-bottom-text">
-                <a href="#" style="color:var(--text-muted);text-decoration:none;margin-right:1rem;">Privacy Policy</a>
-                <a href="#" style="color:var(--text-muted);text-decoration:none;">Terms of Service</a>
+                <a href="#" class="footer-link-muted footer-link-spaced">Privacy Policy</a>
+                <a href="#" class="footer-link-muted">Terms of Service</a>
             </div>
         </div>
     </div>
