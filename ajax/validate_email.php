@@ -2,7 +2,7 @@
 header('Content-Type: application/json');
 require_once '../connection.php';
 
-// Normalize connect
+// Normalize connec
 if (!isset($con) && isset($conn)) {
 	$con = $conn;
 }
