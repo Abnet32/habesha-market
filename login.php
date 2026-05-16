@@ -62,10 +62,10 @@ require 'includes/header.php';
             <a href="signup.php" class="auth-footer-link"> Create one free</a>
         </div>
 
-        <div class="auth-note">
+        <!-- <div class="auth-note">
             <strong class="auth-note-title">Demo accounts:</strong><br>
             Email: <code class="auth-code">abebe@example.com</code> &nbsp;|&nbsp; Password: <code class="auth-code">password</code>
-        </div>
+        </div> -->
     </div>
 </div>
 
