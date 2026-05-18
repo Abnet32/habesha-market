@@ -284,8 +284,9 @@ document.addEventListener("DOMContentLoaded", function () {
         {
           id: "password",
           msgId: "pass-msg",
-          validate: (v) => v.length >= 8,
-          msg: "Password must be at least 8 characters.",
+          validate: (v) =>
+            /(?=.*[A-Za-z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}/.test(v),
+          msg: "Password must be at least 8 characters and include letters, numbers, and a special character.",
         },
         {
           id: "confirm_password",
