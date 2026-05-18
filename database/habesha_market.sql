@@ -9,6 +9,7 @@ USE habesha_market;
 -- ============================================================
 -- TABLE: users
 -- ============================================================
+
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     full_name VARCHAR(150) NOT NULL,
@@ -181,4 +182,3 @@ CREATE TABLE IF NOT EXISTS reviews (
 -- ('Admin User', 'admin@habeshamarket.et', '+251911000001', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Addis Ababa', 'admin'),
 -- ('Abebe Girma', 'abebe@example.com', '+251912345678', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Addis Ababa', 'customer'),
 -- ('Tigist Bekele', 'tigist@example.com', '+251923456789', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Hawassa', 'customer');
-
