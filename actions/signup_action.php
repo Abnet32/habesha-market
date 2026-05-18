@@ -30,6 +30,11 @@ if (strlen($password) < 8) {
     $_SESSION['signup_error'] = 'Password must be at least 8 characters.';
     header('Location: ../signup.php'); exit;
 }
+// Require at least one letter, one number, and one special character
+if (!preg_match('/[A-Za-z]/', $password) || !preg_match('/\d/', $password) || !preg_match('/[^A-Za-z0-9]/', $password)) {
+    $_SESSION['signup_error'] = 'Password must contain at least one letter, one number, and one special character.';
+    header('Location: ../signup.php'); exit;
+}
 if ($password !== $confirm) {
     $_SESSION['signup_error'] = 'Passwords do not match.';
     header('Location: ../signup.php'); exit;
