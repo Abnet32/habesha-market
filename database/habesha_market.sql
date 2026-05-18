@@ -27,6 +27,7 @@ CREATE TABLE IF NOT EXISTS users (
 -- ============================================================
 -- TABLE: categories
 -- ============================================================
+
 CREATE TABLE IF NOT EXISTS categories (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -40,6 +41,7 @@ CREATE TABLE IF NOT EXISTS categories (
 -- ============================================================
 -- TABLE: products
 -- ============================================================
+
 CREATE TABLE IF NOT EXISTS products (
     id INT AUTO_INCREMENT PRIMARY KEY,
     category_id INT NOT NULL,
@@ -61,6 +63,7 @@ CREATE TABLE IF NOT EXISTS products (
 -- ============================================================
 -- TABLE: cart_items
 -- ============================================================
+
 CREATE TABLE IF NOT EXISTS cart_items (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
@@ -75,6 +78,7 @@ CREATE TABLE IF NOT EXISTS cart_items (
 -- ============================================================
 -- TABLE: orders
 -- ============================================================
+
 CREATE TABLE IF NOT EXISTS orders (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
@@ -94,6 +98,7 @@ CREATE TABLE IF NOT EXISTS orders (
 -- ============================================================
 -- TABLE: order_items
 -- ============================================================
+
 CREATE TABLE IF NOT EXISTS order_items (
     id INT AUTO_INCREMENT PRIMARY KEY,
     order_id INT NOT NULL,
@@ -108,6 +113,7 @@ CREATE TABLE IF NOT EXISTS order_items (
 -- ============================================================
 -- TABLE: reviews
 -- ============================================================
+
 CREATE TABLE IF NOT EXISTS reviews (
     id INT AUTO_INCREMENT PRIMARY KEY,
     product_id INT NOT NULL,
@@ -174,3 +180,4 @@ CREATE TABLE IF NOT EXISTS reviews (
 -- ('Admin User', 'admin@habeshamarket.et', '+251911000001', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Addis Ababa', 'admin'),
 -- ('Abebe Girma', 'abebe@example.com', '+251912345678', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Addis Ababa', 'customer'),
 -- ('Tigist Bekele', 'tigist@example.com', '+251923456789', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Hawassa', 'customer');
+
