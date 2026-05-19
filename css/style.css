@@ -3368,6 +3368,7 @@ section {
 /* ============ LAYOUT FIXES ============ */
 .page-hero .breadcrumb-custom {
   margin-top: 1.2rem;
+  margin-bottom: 0.6rem;
   padding-top: 0.4rem;
 }
 
@@ -3378,6 +3379,10 @@ section {
 }
 
 .page-hero + .container-custom.page-pad-bottom-4 {
+  padding-top: 2rem;
+}
+
+.page-hero + .container-custom.page-pad-bottom-5 {
   padding-top: 2rem;
 }
 
@@ -3398,14 +3403,21 @@ section {
 
   .page-hero .breadcrumb-custom {
     margin-top: 1rem;
+    margin-bottom: 0.5rem;
     padding-top: 0.25rem;
   }
 
   .product-detail-grid {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
     padding: 0;
     border-radius: var(--radius-sm);
     overflow: hidden;
+  }
+
+  .product-detail-grid > * {
+    width: 100%;
   }
 
   .product-detail-media {
@@ -3440,6 +3452,10 @@ section {
   }
 
   .page-hero + .container-custom.page-pad-bottom-4 {
+    padding-top: 1.2rem;
+  }
+
+  .page-hero + .container-custom.page-pad-bottom-5 {
     padding-top: 1.2rem;
   }
 
@@ -4640,4 +4656,52 @@ section {
   color: var(--text-muted);
   padding: 0 0.25rem;
   font-weight: 600;
+}
+
+/* ============ FINAL PRODUCT DETAIL MOBILE FIX ============ */
+@media (max-width: 768px) {
+  .product-detail-page .product-detail-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 2rem;
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  .product-detail-page .product-detail-grid > * {
+    width: 100%;
+  }
+
+  .product-detail-page .product-detail-media {
+    margin-bottom: 0;
+  }
+
+  .product-detail-page .product-detail-image-wrap {
+    border: none;
+    border-radius: 0;
+    aspect-ratio: 4 / 3;
+  }
+
+  .product-detail-page .product-detail-info {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-detail-page .product-detail-grid {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+  }
+
+  .product-detail-page .product-detail-info {
+    padding: 0.95rem;
+  }
 }
