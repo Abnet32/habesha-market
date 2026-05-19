@@ -106,13 +106,20 @@ $cats = mysqli_query($con, "SELECT c.*, COUNT(p.id) as product_count FROM catego
         </div>
         <div class="categories-grid animate-in">
             <?php
-            $cat_icons = ['coffee' => 'fas fa-mug-hot', 'fashion' => 'fas fa-shirt', 'spices' => 'fas fa-hotdog', 'crafts' => 'fas fa-leaf', 'jewelry' => 'fas fa-ring', 'books' => 'fas fa-book'];
+            $cat_visuals = [
+                'coffee' => ['icon' => 'fas fa-mug-hot', 'tone' => 'coffee'],
+                'fashion' => ['icon' => 'fas fa-shirt', 'tone' => 'fashion'],
+                'spices' => ['icon' => 'fas fa-pepper-hot', 'tone' => 'spices'],
+                'crafts' => ['icon' => 'fas fa-basket-shopping', 'tone' => 'crafts'],
+                'jewelry' => ['icon' => 'fas fa-gem', 'tone' => 'jewelry'],
+                'books' => ['icon' => 'fas fa-book-open', 'tone' => 'books']
+            ];
             while ($cat = mysqli_fetch_assoc($cats)):
-                $icon_class = $cat['slug'] ?? 'coffee';
-                $fa_icon = $cat_icons[$cat['slug']] ?? 'fas fa-box';
+                $cat_key = $cat['icon'] ?: ($cat['slug'] ?? 'coffee');
+                $cat_visual = $cat_visuals[$cat_key] ?? $cat_visuals['coffee'];
             ?>
             <a href="products.php?category=<?= urlencode($cat['slug']) ?>" class="category-card">
-                <div class="cat-icon <?= $icon_class ?>"><i class="<?= $fa_icon ?>"></i></div>
+                <div class="cat-icon <?= $cat_visual['tone'] ?>"><i class="<?= $cat_visual['icon'] ?>"></i></div>
                 <div class="cat-name"><?= htmlspecialchars($cat['name']) ?></div>
                 <div class="cat-count"><?= $cat['product_count'] ?> items</div>
             </a>
