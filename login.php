@@ -64,7 +64,7 @@ require 'includes/header.php';
 
         <div class="auth-note">
             <strong class="auth-note-title">Demo accounts:</strong><br>
-            Email: <code class="auth-code">abebe@gmail.com</code> &nbsp;|&nbsp; Password: <code class="auth-code">password</code>
+            Email: <code class="auth-code">abebe@gmail.com</code> &nbsp;|&nbsp; Password: <code class="auth-code">abebe123@#$</code>
         </div>
     </div>
 </div>
