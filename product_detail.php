@@ -83,7 +83,7 @@ require 'includes/header.php';
         </div>
 
         <!-- Info -->
-        <div>
+        <div class="product-detail-info">
             <div class="product-category-tag product-category-compact">
                 <i class="fas fa-tag fa-xs"></i> <?= htmlspecialchars($product['cat_name']) ?>
             </div>
