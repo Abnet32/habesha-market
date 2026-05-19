@@ -62,7 +62,7 @@ require 'includes/header.php';
     </div>
 </div>
 
-<div class="container-custom page-pad-bottom-5">
+<div class="container-custom page-pad-bottom-5 product-detail-page">
     <!-- Product Detail -->
     <div class="product-detail-grid animate-in">
 
