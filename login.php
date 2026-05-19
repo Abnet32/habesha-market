@@ -12,7 +12,7 @@ require 'includes/header.php';
         <div class="auth-header">
             <div class="auth-icon"><i class="fas fa-store"></i></div>
             <h1 class="form-title">Welcome Back</h1>
-            <p class="form-subtitle">Sign in</p>
+            <p class="form-subtitle">Sign i</p>
         </div>
 
         <?php if ($error): ?>
