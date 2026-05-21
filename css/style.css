@@ -1386,14 +1386,9 @@ section {
 
 /* ============ FORMS ============ */
 .form-card {
-  /* background: var(--glass); */
-  /* border: 1px solid var(--glass-border); */
-  /* border-radius: var(--radius-sm); */
   padding: 2.5rem;
-  /* backdrop-filter: blur(20px); */
   max-width: 500px;
   margin: 0 auto;
-  /* box-shadow: var(--shadow); */
 }
 
 /* ============ AUTH SPLIT LAYOUT ============ */
@@ -1402,7 +1397,6 @@ section {
   grid-template-columns: 1fr 1fr;
   min-height: 100vh;
   height: 100vh;
-  /* overflow: hidden; */
 }
 .auth-visual {
   position: relative;
@@ -1416,16 +1410,18 @@ section {
 }
 /* ensure visual and form panels occupy equal full-viewport space */
 .auth-visual,
-.auth-form-panel { min-height: 100vh; height: 100vh; }
-.auth-form-panel { display:flex; align-items:center; justify-content:center; }
+.auth-form-panel {
+  min-height: 100vh;
+  height: 100vh;
+}
+.auth-form-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .auth-visual-overlay {
   position: absolute;
   inset: 0;
-  /* background: linear-gradient(
-    135deg,
-    rgba(31, 122, 74, 0.6),
-    rgba(11, 124, 140, 0.45)
-  ); */
 }
 .auth-visual-content {
   position: relative;
