@@ -21,9 +21,9 @@
                 <ul class="footer-links">
                     <li><a href="index.php"><i class="fas fa-chevron-right fa-xs"></i> Home</a></li>
                     <li><a href="products.php"><i class="fas fa-chevron-right fa-xs"></i> Shop</a></li>
-                    <li><a href="products.php?category=coffee"><i class="fas fa-chevron-right fa-xs"></i> Ethiopian Coffee</a></li>
-                    <li><a href="products.php?category=fashion"><i class="fas fa-chevron-right fa-xs"></i> Traditional Fashion</a></li>
-                    <li><a href="products.php?category=spices"><i class="fas fa-chevron-right fa-xs"></i> Spices & Food</a></li>
+                    <li><a href="products.php?category=ethiopian-coffee"><i class="fas fa-chevron-right fa-xs"></i> Ethiopian Coffee</a></li>
+                    <li><a href="products.php?category=traditional-fashion"><i class="fas fa-chevron-right fa-xs"></i> Traditional Fashion</a></li>
+                    <li><a href="products.php?category=spices-and-food"><i class="fas fa-chevron-right fa-xs"></i> Spices & Food</a></li>
                 </ul>
             </div>
             <div>
