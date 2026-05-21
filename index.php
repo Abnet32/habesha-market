@@ -29,7 +29,7 @@ $cats = mysqli_query($con, "SELECT c.*, COUNT(p.id) as product_count FROM catego
                 From the highlands of Yirgacheffe to the markets of Addis Ababa — shop handcrafted goods, organic coffee, traditional fashion and more, delivered across Ethiopia.
             </p>
             <div class="hero-actions">
-                <a href="products.php" class="btn-primary-custom">
+                <a href="produfcts.php" class="btn-primary-custom">
                     <span><i class="fas fa-store"></i> Shop Now</span>
                 </a>
                 <a href="products.php?category=ethiopian-coffee" class="btn-outline-custom">
