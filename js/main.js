@@ -266,8 +266,8 @@ document.addEventListener("DOMContentLoaded", function () {
         {
           id: "full_name",
           msgId: "name-msg",
-          validate: (v) => v.trim().length >= 3,
-          msg: "Name must be at least 3 characters.",
+          validate: isValidFullName,
+          msg: "Name can only contain letters and spaces.",
         },
         {
           id: "email",
@@ -278,8 +278,8 @@ document.addEventListener("DOMContentLoaded", function () {
         {
           id: "phone",
           msgId: "phone-msg",
-          validate: (v) => /^[+\d\s-]{9,15}$/.test(v),
-          msg: "Enter a valid phone number.",
+          validate: isValidPhone,
+          msg: "Enter a valid phone number like +251911000000.",
         },
         {
           id: "password",
@@ -414,6 +414,16 @@ document.addEventListener("DOMContentLoaded", function () {
   // ===== HELPERS =====
   function isValidEmail(v) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  }
+
+  function isValidFullName(v) {
+    const value = v.trim();
+    return value.length >= 2 && /^\p{L}+(?: \p{L}+)*$/u.test(value);
+  }
+
+  function isValidPhone(v) {
+    const normalized = v.trim().replace(/[\s-]/g, "");
+    return /^(?:\+251|0)9\d{8}$/.test(normalized);
   }
 
   function setFieldState(input, msgEl, state, msg) {
