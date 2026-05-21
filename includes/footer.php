@@ -1,3 +1,4 @@
+<?php if (empty($hide_site_chrome)): ?>
 <footer class="footer-custom">
     <div class="container-custom">
         <div class="footer-grid">
@@ -62,6 +63,7 @@
         </div>
     </div>
 </footer>
+<?php endif; ?>
 
 <script src="js/main.js"></script>
 </body>
