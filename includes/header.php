@@ -24,8 +24,9 @@ if (isset($_SESSION['user_id'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="<?= trim(($body_class ?? '') . ' ' . ($page_class ?? '')) ?>">
 
+<?php if (empty($hide_site_chrome)): ?>
 <canvas id="particles-canvas"></canvas>
 
 <!-- NAVBAR -->
@@ -65,3 +66,4 @@ if (isset($_SESSION['user_id'])) {
 
 <!-- Blue accent stripe -->
 <div class="hero-stripe"><span></span><span></span><span></span></div>
+<?php endif; ?>
