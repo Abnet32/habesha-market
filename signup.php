@@ -17,7 +17,6 @@ require 'includes/header.php';
         <div class="auth-panel-inner">
             <div class="form-card form-card-wide auth-card animate-in">
                 <div class="auth-header">
-                    <!-- <div class="auth-icon"><i class="fas fa-star"></i></div> -->
                     <h1 class="form-title">Create Account</h1>
                     <p class="form-subtitle">Join thousands of Ethiopian shoppers on Habesha Market</p>
                 </div>
@@ -110,11 +109,6 @@ require 'includes/header.php';
                             <div class="field-msg" id="cpass-msg"></div>
                         </div>
                     </div>
-
-                    <!-- <div class="auth-checkbox-row">
-                        <input type="checkbox" id="terms" name="terms" required class="auth-checkbox">
-                        <label for="terms">I agree to the <a href="#" class="auth-terms-link">Terms of Service</a> and <a href="#" class="auth-terms-link">Privacy Policy</a>.</label>
-                    </div> -->
 
                     <button type="submit" class="btn-primary-custom auth-submit-no-top">
                         <span><i class="fas fa-user-plus"></i> Create My Account</span>
