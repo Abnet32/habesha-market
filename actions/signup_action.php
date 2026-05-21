@@ -17,9 +17,27 @@ $address = trim($_POST['address'] ?? '');
 $password = $_POST['password'] ?? '';
 $confirm = $_POST['confirm_password'] ?? '';
 
+function is_valid_full_name(string $value): bool {
+    $value = trim($value);
+    return $value !== '' && preg_match('/^\p{L}+(?: \p{L}+)*$/u', $value);
+}
+
+function normalize_phone(string $value): string {
+    return preg_replace('/[\s-]+/', '', trim($value));
+}
+
+function is_valid_phone(string $value): bool {
+    $value = normalize_phone($value);
+    return preg_match('/^(?:\+251|0)9\d{8}$/', $value);
+}
+
 // Validation
-if (strlen($full_name) < 3) {
-    $_SESSION['signup_error'] = 'Name must be at least 3 characters.';
+if (!is_valid_full_name($full_name)) {
+    $_SESSION['signup_error'] = 'Name can only contain letters and spaces.';
+    header('Location: ../signup.php'); exit;
+}
+if (!is_valid_phone($phone)) {
+    $_SESSION['signup_error'] = 'Please enter a valid phone number like +251911000000.';
     header('Location: ../signup.php'); exit;
 }
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
