@@ -1,136 +1,89 @@
 # Project Documentation
 
-## 1. Objective
+## 1. Overview
 
-This update focused on:
+Habesha Market is a PHP-based e-commerce application backed by MariaDB/MySQL. The repository contains the storefront, authentication flows, cart and checkout logic, user profile and order pages, plus an admin area for managing catalog and users.
 
-- cleaning unused repository artifacts,
-- preserving runtime-critical dependencies,
-- implementing a cohesive light aqua storefront/admin color system based on the provided design direction,
-- validating functionality after cleanup.
+## 2. Runtime Flow
 
-## 2. Dependency and Usage Analysis
+- `start.sh` prepares the local database and launches the PHP built-in server.
+- `router.php` handles routing for the built-in PHP server.
+- `connection.php` centralizes the database connection.
+- Shared UI is loaded through `includes/header.php` and `includes/footer.php`.
+- Client interactions live in `js/main.js` and call the `ajax/` endpoints.
 
-### 2.1 Verified runtime entry points
+## 3. Page Structure
 
-- `start.sh` boots MariaDB, seeds `habesha_market`, and starts PHP built-in server.
-- `router.php` is required by the PHP built-in server command.
-- `connection.php` is required by runtime pages/actions for DB access.
+### Public storefront
 
-### 2.2 Verified UI/runtime asset dependencies
+- `index.php`: homepage and featured content
+- `products.php`: catalog listing with filters and sorting
+- `product_detail.php`: product detail view and reviews
+- `cart.php`: cart view and quantity controls
+- `checkout.php`: checkout form
+- `order_success.php`: post-checkout confirmation
+- `orders.php`: order history
+- `profile.php`: profile management
 
-- Shared templates load:
-  - `css/style.css`
-  - `js/main.js`
-  - CDN fonts and Font Awesome
-- AJAX endpoints used by client JS:
-  - `ajax/search.php`
-  - `ajax/cart_action.php`
-  - `ajax/validate_email.php`
+### Authentication
 
-### 2.3 Database dependency checks
+- `login.php`: sign-in page
+- `signup.php`: registration page
+- `logout.php`: session cleanup and redirect
 
-- Runtime DB is `habesha_market` (configured in `connection.php`).
-- Seed data in `start.sh` and `database/habesha_market.sql` uses external image URLs.
-- No runtime code path references legacy `store` schema.
+### Admin area
 
-## 3. Cleanup Changes
+- `admin/index.php`: admin dashboard
+- `admin/products.php`: product management list
+- `admin/add_product.php`: add product form
+- `admin/edit_product.php`: edit product form
+- `admin/orders.php`: order management
+- `admin/users.php`: user management
 
-### 3.1 Removed as unused
+### Action and async endpoints
 
-- `bootstrap/` (entire folder): legacy Bootstrap assets not referenced by any runtime templates.
-- `img/` (entire folder): legacy local product images not referenced by runtime code or current seeded DB.
-- `database/store.sql`: obsolete legacy schema (`store`) not used by current runtime (`habesha_market`).
-- `attached_assets/` (entire folder): design/instruction artifacts not part of runtime.
+- `actions/login_action.php`
+- `actions/signup_action.php`
+- `actions/checkout_action.php`
+- `actions/cart_add.php`
+- `actions/cart_remove.php`
+- `ajax/search.php`
+- `ajax/cart_action.php`
+- `ajax/validate_email.php`
 
-### 3.2 Kept intentionally
+## 4. Shared Assets
 
-- `start.sh`, `router.php`: active startup/server flow.
-- `replit.md`, `replit.nix`: environment metadata and setup context (not runtime-critical, but useful for workspace reproducibility).
-- `database/habesha_market.sql`: current schema snapshot.
+- `css/style.css`: global theme, layout, and responsive rules
+- `js/main.js`: UI behavior, validation, particles, and AJAX hooks
+- `assets/`: shared images and icons used by the pages
 
-## 4. Updated Design System
+## 5. UI Notes
 
-### 4.1 Theme direction
+- The auth pages use a dedicated split-screen layout with a visual panel on the left and forms on the right.
+- The shared site chrome is hidden on auth pages so login and signup remain focused.
+- The signup layout is tightened so the form fits in the viewport more cleanly.
 
-Implemented a light, e-commerce-oriented aqua palette matching the provided reference intent:
+## 6. Database
 
-- bright white/light-cyan surfaces,
-- teal primary actions,
-- warm accent for destructive/highlight states,
-- removed purple-heavy accents for consistency.
+- Current database name: `habesha_market`
+- Schema snapshot: `database/habesha_market.sql`
+- Database connection: `connection.php`
 
-### 4.2 Core token updates
+## 7. Cleanup Notes
 
-In `css/style.css`, the root color tokens were migrated to a light theme:
+Low-risk cleanup was limited to removing obvious commented-out leftovers from the auth template and stylesheet. No runtime code path was removed unless it was clearly unused or dead.
 
-- `--dark` / `--dark2` now represent light surface/background values.
-- Primary/secondary/accent values tuned for aqua + orange contrast.
-- Shadows and glass values adjusted for light surfaces.
+## 8. Validation
 
-### 4.3 Component-level visual updates
+Recommended checks after code changes:
 
-- Navbar surface moved from dark translucent to light translucent.
-- Hero gradient/background changed to light atmospheric gradients.
-- Footer, admin sidebar, and mobile nav surfaces shifted to light mode.
-- Purple admin/jewelry accents replaced by aqua-consistent accents.
-- JS particle colors adjusted for visibility on a light background.
+```bash
+find . -name '*.php' -print0 | xargs -0 -n1 php -l
+bash -n start.sh
+```
 
-## 5. File Roles (Post-Update)
+For quick reference scans:
 
-### 5.1 Public storefront pages
-
-- `index.php`: homepage and featured sections.
-- `products.php`: shop listing and filters.
-- `product_detail.php`: item detail and reviews.
-- `cart.php`: cart state and quantity controls.
-- `checkout.php`: shipping/payment form.
-- `orders.php`: user orders.
-- `profile.php`: profile and password updates.
-- `order_success.php`: successful checkout confirmation.
-
-### 5.2 Authentication and action handlers
-
-- `login.php`, `signup.php`, `logout.php`.
-- `actions/login_action.php`, `actions/signup_action.php`, `actions/checkout_action.php`, `actions/cart_add.php`, `actions/cart_remove.php`.
-
-### 5.3 Admin area
-
-- `admin/index.php`: dashboard overview.
-- `admin/products.php`, `admin/add_product.php`, `admin/edit_product.php`.
-- `admin/orders.php`, `admin/users.php`.
-- `admin/actions/save_product.php`, `admin/actions/delete_product.php`.
-
-### 5.4 Shared and client assets
-
-- `includes/header.php`, `includes/footer.php`.
-- `css/style.css`.
-- `js/main.js`.
-- `ajax/*.php` endpoints.
-
-### 5.5 Configuration and infrastructure
-
-- `connection.php`: DB connection.
-- `start.sh`: local DB+server bootstrap.
-- `router.php`: built-in PHP routing behavior.
-
-## 6. Configuration Notes
-
-- DB name: `habesha_market`.
-- Server command is centralized in `start.sh`.
-- No build pipeline, package manager, or asset compilation step required.
-
-## 7. Testing and Validation
-
-Recommended validation commands after each major change:
-
-- `find . -name '*.php' -print0 | xargs -0 -n1 php -l`
-- `bash -n start.sh`
-- reference scan for removed artifacts:
-  - `rg -n "bootstrap/|img/|attached_assets|database/store.sql"`
-
-This ensures:
-
-- PHP syntax integrity,
-- startup script validity,
-- no stale file references post-cleanup.
+```bash
+rg -n "bootstrap/|attached_assets|database/store.sql|commented-out" .
+```
