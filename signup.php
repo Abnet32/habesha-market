@@ -28,7 +28,8 @@ require 'includes/header.php';
                         <i class="fas fa-user text-primary-light"></i> Full Name
                     </label>
                     <input type="text" id="full_name" name="full_name" class="form-control-custom"
-                        placeholder="Abebe Girma" required>
+                        placeholder="Abebe Girma" required autocomplete="name"
+                        title="Use letters and spaces only">
                     <div class="field-msg" id="name-msg"></div>
                 </div>
 
@@ -46,7 +47,8 @@ require 'includes/header.php';
                         <i class="fas fa-phone text-primary-light"></i> Phone
                     </label>
                     <input type="tel" id="phone" name="phone" class="form-control-custom"
-                        placeholder="+251 911 000 000" required>
+                        placeholder="+251 911 000 000" required inputmode="tel"
+                        title="Use an Ethiopian mobile number like +251911000000 or 0911000000">
                     <div class="field-msg" id="phone-msg"></div>
                 </div>
 
