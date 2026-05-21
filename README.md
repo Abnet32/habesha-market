@@ -1,67 +1,69 @@
-# Habesha Market (PHP + MariaDB)
+# Habesha Market
 
-Habesha Market is a full-stack e-commerce course project for authentic Ethiopian products. The app includes storefront browsing, cart and checkout flows, profile management, and an admin dashboard for products, orders, and users.
+Habesha Market is a PHP + MariaDB e-commerce project for Ethiopian products. It includes a storefront, cart and checkout flow, user authentication, profile/order pages, and an admin area for managing products, orders, and users.
 
-## Stack
+## Features
 
-- PHP 8.2 (built-in server)
-- MariaDB/MySQL (MySQLi)
+- Product browsing, search, and category filtering
+- Product detail pages with reviews
+- Cart, checkout, and order confirmation flow
+- User signup, login, logout, and profile updates
+- Admin dashboard with product, order, and user management
+- AJAX helpers for search, cart actions, and email validation
+- Split-screen auth pages with a left visual panel and right form panel
+
+## Tech Stack
+
+- PHP 8.2
+- MariaDB / MySQLi
 - Vanilla JavaScript
-- Custom CSS theme (light aqua e-commerce style)
-- Font Awesome (CDN)
+- Custom CSS in `css/style.css`
+- Font Awesome CDN
+- Google Fonts CDN
 
-## Quick Start
+## Run Locally
 
-1. Run `bash start.sh`
-2. Open `http://localhost:5000`
+1. Start the app:
 
-`start.sh` initializes MariaDB data, creates the `habesha_market` database if missing, seeds core tables/data, and starts the PHP server using `router.php`.
+```bash
+bash start.sh
+```
 
-## Runtime Configuration
+2. Open the site:
 
-- Database connection: `connection.php`
-- Default DB name: `habesha_market`
-- Socket fallback: `/tmp/mysql.sock`, then TCP
-- PHP server: `php -S 0.0.0.0:5000 -t . router.php`
+```text
+http://localhost:5000
+```
 
-## Main Project Structure
+`start.sh` prepares the local database and starts the PHP built-in server using `router.php`.
 
-- `index.php`: Home page (hero, categories, featured products, testimonials)
-- `products.php`: Product listing with filter/search/sort
-- `product_detail.php`: Product details and reviews
-- `cart.php`: Cart management
-- `checkout.php`: Checkout and payment method submission
-- `orders.php`: User order history
-- `profile.php`: Account profile and password update
-- `login.php`, `signup.php`, `logout.php`: Authentication pages
-- `order_success.php`: Post-checkout confirmation
-- `actions/`: Form/action handlers (auth, cart, checkout)
-- `ajax/`: Async endpoints (`search`, `cart_action`, `validate_email`)
-- `admin/`: Admin dashboard and product/order/user management
-- `includes/`: Shared header/footer templates
-- `css/style.css`: Global theme and component styles
-- `js/main.js`: Client-side interactions, animations, AJAX hooks
-- `database/habesha_market.sql`: Current schema/data snapshot
+## Main Structure
 
-## Dependencies
+- `index.php`: home page
+- `products.php`: product listing, filtering, and sorting
+- `product_detail.php`: individual product details
+- `cart.php`: cart management
+- `checkout.php`: checkout form
+- `orders.php`: order history
+- `profile.php`: account settings
+- `login.php`, `signup.php`, `logout.php`: authentication pages
+- `actions/`: form handlers for auth, cart, and checkout
+- `ajax/`: asynchronous endpoints used by JavaScript
+- `admin/`: admin dashboard and management screens
+- `includes/`: shared header and footer templates
+- `css/style.css`: global styling and responsive layout
+- `js/main.js`: UI behavior, validation, and AJAX interactions
+- `database/habesha_market.sql`: schema and seed data
 
-- External CDN:
-  - Google Fonts (`Poppins`, `Playfair Display`)
-  - Font Awesome 6
-- No npm/build pipeline required.
+## Validation
 
-## Validation and Quality Checks
+```bash
+find . -name '*.php' -print0 | xargs -0 -n1 php -l
+bash -n start.sh
+```
 
-- PHP syntax check:
-  - `find . -name '*.php' -print0 | xargs -0 -n1 php -l`
-- Startup script syntax check:
-  - `bash -n start.sh`
+## Notes
 
-## Cleanup and Theme Update Notes
-
-See `PROJECT_DOCUMENTATION.md` for:
-
-- file/folder cleanup decisions and removed artifacts,
-- dependency/reference analysis summary,
-- full documentation of design token and color scheme changes,
-- post-change testing results.
+- No frontend build step is required.
+- Database connection settings live in `connection.php`.
+- Auth pages use a dedicated split-screen layout and hide the shared site chrome while they are open.
