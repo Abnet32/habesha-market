@@ -32,7 +32,7 @@ $cats = mysqli_query($con, "SELECT c.*, COUNT(p.id) as product_count FROM catego
                 <a href="products.php" class="btn-primary-custom">
                     <span><i class="fas fa-store"></i> Shop Now</span>
                 </a>
-                <a href="products.php?category=coffee" class="btn-outline-custom">
+                <a href="products.php?category=ethiopian-coffee" class="btn-outline-custom">
                     <i class="fas fa-coffee"></i> Explore Coffee
                 </a>
             </div>
