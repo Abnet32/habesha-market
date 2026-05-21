@@ -1386,14 +1386,247 @@ section {
 
 /* ============ FORMS ============ */
 .form-card {
-  background: var(--glass);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-sm);
+  /* background: var(--glass); */
+  /* border: 1px solid var(--glass-border); */
+  /* border-radius: var(--radius-sm); */
   padding: 2.5rem;
-  backdrop-filter: blur(20px);
+  /* backdrop-filter: blur(20px); */
   max-width: 500px;
   margin: 0 auto;
-  box-shadow: var(--shadow);
+  /* box-shadow: var(--shadow); */
+}
+
+/* ============ AUTH SPLIT LAYOUT ============ */
+.auth-shell {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  height: 100vh;
+  /* overflow: hidden; */
+}
+.auth-visual {
+  position: relative;
+  background-image: url("../assets/hero.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 3rem;
+}
+/* ensure visual and form panels occupy equal full-viewport space */
+.auth-visual,
+.auth-form-panel { min-height: 100vh; height: 100vh; }
+.auth-form-panel { display:flex; align-items:center; justify-content:center; }
+.auth-visual-overlay {
+  position: absolute;
+  inset: 0;
+  /* background: linear-gradient(
+    135deg,
+    rgba(31, 122, 74, 0.6),
+    rgba(11, 124, 140, 0.45)
+  ); */
+}
+.auth-visual-content {
+  position: relative;
+  z-index: 2;
+  max-width: 420px;
+}
+/* stronger overlay for login so left-panel text is highly readable */
+.auth-visual-login .auth-visual-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.6),
+    rgba(31, 122, 74, 0.55)
+  );
+}
+.auth-visual-signup .auth-visual-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.6),
+    rgba(31, 122, 74, 0.55)
+  );
+}
+.auth-visual-content {
+  text-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+.auth-visual-content h2,
+.auth-visual-content p {
+  color: #fff;
+}
+.auth-visual-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  font-size: 1.25rem;
+}
+.auth-visual-badge {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+.auth-visual h2 {
+  font-size: 1.6rem;
+  margin: 1rem 0;
+  color: #fff;
+}
+.auth-visual p {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1.25rem;
+}
+.auth-visual-points {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.auth-form-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+}
+.auth-panel-inner {
+  width: 100%;
+  max-width: 560px;
+}
+.auth-card {
+  max-width: 100%;
+  padding: 1rem;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* Signup-specific visual: push text to bottom and change color for contrast */
+.auth-page-signup .auth-visual {
+  align-items: flex-end;
+  padding: 2.5rem 3rem 3.5rem 3rem;
+}
+.auth-page-signup .auth-visual-content {
+  margin-bottom: 0;
+}
+.auth-page-signup .auth-visual-content h2 {
+  color: var(--secondary);
+  font-weight: 700;
+}
+.auth-page-signup .auth-visual-content p {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* Ensure signup panel shows all fields: allow internal scroll and tighter spacing */
+.auth-page-signup .auth-panel-inner {
+  max-height: 98vh;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-right: 6px;
+}
+.auth-page-signup .auth-card {
+  padding: 0.6rem !important;
+}
+.auth-page-signup .form-group-custom {
+  margin-bottom: 0.5rem !important;
+}
+.auth-page-signup .form-control-custom {
+  padding: 0.45rem 0.6rem;
+  font-size: 0.84rem;
+}
+.auth-page-signup .grid-2 {
+  gap: 0.5rem;
+}
+.auth-page-signup .form-subtitle {
+  margin-bottom: 0.6rem;
+}
+
+.auth-page-signup .auth-panel-inner::-webkit-scrollbar {
+  width: 6px;
+}
+.auth-page-signup .auth-panel-inner::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 6px;
+}
+
+/* make sure no vertical scroll appears */
+html,
+body {
+  height: 100%;
+}
+
+@media (max-width: 900px) {
+  .auth-shell {
+    grid-template-columns: 1fr;
+  }
+  .auth-visual {
+    display: none;
+  }
+  .auth-form-panel {
+    padding: 1rem;
+  }
+}
+
+/* Compact form adjustments so all content fits without scrolling */
+body.auth-page {
+  height: 100vh;
+  overflow: hidden;
+}
+.auth-shell {
+  gap: 0;
+}
+.auth-form-panel {
+  align-items: center;
+}
+.auth-panel-inner {
+  max-height: 92vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.auth-panel-inner .form-card {
+  width: 100%;
+}
+.form-card .form-group-custom {
+  margin-bottom: 0.6rem;
+}
+.form-title {
+  font-size: 1.35rem;
+  margin-bottom: 0.2rem;
+}
+.form-subtitle {
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+}
+.form-control-custom {
+  padding: 0.56rem 0.75rem;
+  font-size: 0.88rem;
+}
+.btn-primary-custom,
+.btn-outline-custom {
+  padding: 0.6rem 0.9rem;
+  font-size: 0.95rem;
+}
+.auth-visual-content h2 {
+  font-size: 1.25rem;
+  margin-top: 0.6rem;
+}
+
+@media (max-height: 720px) {
+  .auth-panel-inner {
+    max-height: 88vh;
+  }
+  .form-card {
+    padding: 0.75rem;
+  }
+  .form-control-custom {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.85rem;
+  }
 }
 
 .form-card-wide {
@@ -2818,7 +3051,7 @@ section {
 /* ============ SIMPLE ETHIOPIAN THEME OVERRIDES ============ */
 .navbar-custom,
 .navbar-custom.scrolled,
-.form-card,
+/* .form-card, */
 .search-section,
 .page-hero,
 .counter-section,
@@ -2958,7 +3191,7 @@ section {
 /* .hero-center-image, */
 .floating-card,
 .search-section,
-.form-card,
+/* .form-card, */
 .admin-form-wrap,
 .cart-table,
 .cart-summary,
@@ -3201,7 +3434,7 @@ section {
   height: 380px;
 }
 
-.form-card,
+/* .form-card, */
 .search-section,
 .admin-form-wrap,
 .cart-summary,
@@ -3253,7 +3486,7 @@ section {
 .navbar-custom.scrolled,
 /* .nav-links, */
 
-.form-card,
+/* .form-card, */
 .search-section,
 .page-hero,
 .counter-section,
