@@ -1,5 +1,2 @@
 .local/
-replit.nix
-.replit
-replit.md
 .env
