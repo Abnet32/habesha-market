@@ -26,7 +26,7 @@ $cats = mysqli_query($con, "SELECT c.*, COUNT(p.id) as product_count FROM catego
                 <span class="highlight-green">Ethiopian</span> Products
             </h1>
             <p class="hero-subtitle">
-                From the highlands of Yirgacheffe to the markets of Addis Ababa — shop handcrafted goods, organic coffee, traditional fashion and more, delivered across Ethiopi
+                From the highlands of Yirgacheffe to the markets of Addis Ababa — shop handcrafted goods, organic coffee, traditional fashion and more, delivered across Ethiop
             </p>
             <div class="hero-actions">
                 <a href="produfcts.php" class="btn-primary-custom">
