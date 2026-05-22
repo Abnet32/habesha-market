@@ -43,6 +43,7 @@
                     <li><a href="tel:+251911000000"><i class="fas fa-phone fa-xs"></i> +251 911 000 000</a></li>
                     <li><a href="mailto:info@habeshamarket.et"><i class="fas fa-envelope fa-xs"></i> info@habeshamarket.et</a></li>
                     <li><a href="#"><i class="fas fa-clock fa-xs"></i> Mon–Sat, 8AM–8PM</a></li>
+                    <li><a href="documentation/design.html" target="_blank"><i class="fas fa-file-alt fa-xs"></i> UI design documentation</a></li>
                 </ul>
             </div>
         </div>
