@@ -6,16 +6,6 @@ This README gives a concise overview, quick-start setup instructions, demo accou
 
 ---
 
-## Quick Links
-
-- Documentation (HTML): `HABESHA_MARKET_DOCUMENTATION.html`
-- Full markdown docs: `DOCUMENTATION.md`
-- Enhanced README: `README_ENHANCED.md`
-- Submission checklist: `SUBMISSION_CHECKLIST.md`
-- Setup & guide: `DOCUMENTATION_GUIDE.md`
-
----
-
 ## Features
 
 - Product browsing, category filtering and sorting
@@ -40,41 +30,33 @@ This README gives a concise overview, quick-start setup instructions, demo accou
 
 ---
 
-## Quick Start — Local Development
+## Quick Start — Local Development (XAMPP)
 
-Choose one of the following ways to run the project locally.
+This project is designed to run on a standard PHP + MySQL stack. The recommended, standard approach for local development is to install XAMPP and run the app under Apache + MySQL provided by XAMPP.
 
-1. Recommended: use the provided helper script (sets up DB and starts built-in PHP server)
+1. Download and install XAMPP from https://www.apachefriends.org/ (Windows, macOS, Linux).
+
+2. Start Apache and MySQL using the XAMPP Control Panel (or start the services on macOS/Linux).
+
+3. Copy the project folder to XAMPP's web root:
+
+- Windows: `C:\xampp\htdocs\habesha-market`
+- macOS (XAMPP): `/Applications/XAMPP/htdocs/habesha-market`
+- Linux (XAMPP): `/opt/lampp/htdocs/habesha-market`
+
+4. Import the database using phpMyAdmin (`http://localhost/phpmyadmin`) or the MySQL CLI:
 
 ```bash
-# from project root
-bash start.sh
-
-# open in browser
-http://localhost:5000
-```
-
-2. Manual (import DB + PHP built-in server)
-
-```bash
-# 1. Import the database
-# replace USER and PATH as appropriate
 mysql -u root -p < database/habesha_market.sql
-
-# 2. Configure database credentials in connection.php
-#    - open connection.php and set DB_HOST, DB_USER, DB_PASSWORD, DB_NAME
-
-# 3. Start the PHP built-in server
-php -S localhost:8000 router.php
-
-# 4. Visit the site
-http://localhost:8000
 ```
 
-Notes:
+5. Update `connection.php` with your database credentials. Default XAMPP credentials are typically `user=root` and an empty password (or as configured in your XAMPP installation).
 
-- `start.sh` prepares the local DB and starts the PHP server using `router.php`.
-- If you use Apache/Nginx, point the document root to the project folder and ensure `mod_rewrite`/routing rules allow the app's URLs.
+6. Open the site in your browser:
+
+- http://localhost/habesha-market/
+
+If you prefer a different environment (native Apache/Nginx or PHP built-in server), you can still host the project there — just ensure the document root points at the project folder and that the database is imported and configured.
 
 ---
 
@@ -90,18 +72,6 @@ $dbName = getenv('DB_NAME') ?: 'habesha_market';
 ```
 
 - Ensure `mysqli` extension is enabled in your PHP installation.
-
----
-
-## Demo Accounts
-
-Use these accounts for testing the app locally:
-
-| Role     | Email                  | Password |
-| -------- | ---------------------- | -------- |
-| Admin    | admin@habeshamarket.et | password |
-| Customer | abebe@example.com      | password |
-| Customer | tigist@example.com     | password |
 
 ---
 
@@ -135,26 +105,14 @@ Use these accounts for testing the app locally:
 
 ## Testing & Validation
 
-Run a quick PHP syntax check and validate the helper script:
+Run a quick PHP syntax check:
 
 ```bash
 find . -name '*.php' -print0 | xargs -0 -n1 php -l
-bash -n start.sh
 ```
 
 ---
 
-## Documentation & Submission
-
-- Primary: `HABESHA_MARKET_DOCUMENTATION.html` (open in browser — print-friendly)
-- Markdown: `DOCUMENTATION.md` (GitHub-ready)
-- Quick README: `README_ENHANCED.md`
-- Checklist: `SUBMISSION_CHECKLIST.md`
-- Usage guide: `DOCUMENTATION_GUIDE.md`
-
-Please include these files when creating the submission ZIP.
-
----
 
 ## Contributing & Notes
 
