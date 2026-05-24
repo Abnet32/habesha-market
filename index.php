@@ -19,7 +19,7 @@ $cats = mysqli_query($con, "SELECT c.*, COUNT(p.id) as product_count FROM catego
         <div class="hero-text">
             <div class="hero-badge">
                 <span class="dot"></span>
-                #1 Ethiopian Online Mark
+                #1 Ethiopian Online Mar
             </div>
             <h1 class="hero-title">
                 Discover <span class="highlight">Authentic</span><br>
