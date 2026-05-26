@@ -1,9 +1,8 @@
 <?php
 $page_title = 'Orders';
-require_once 'includes/admin_header.php';
 require_once '../connection.php';
 
-// Ensure $con is available (some connection files use different variable names)
+// Ensure $con is available
 if (!isset($con)) {
     if (isset($conn)) {
         $con = $conn;
@@ -20,18 +19,26 @@ if (!isset($con)) {
 if (isset($_GET['set_status']) && isset($_GET['id'])) {
     $oid    = (int)$_GET['id'];
     $status = mysqli_real_escape_string($con, $_GET['set_status']);
+
     $allowed = ['pending','processing','delivered','cancelled'];
+
     if (in_array($status, $allowed)) {
         mysqli_query($con, "UPDATE orders SET status='$status' WHERE id=$oid");
     }
-    header('Location: orders.php?success=1'); exit;
+
+    header('Location: orders.php?success=1');
+    exit;
 }
+
+require_once 'includes/admin_header.php';
 
 $orders = mysqli_query($con,
     "SELECT o.*, u.full_name, u.email
-     FROM orders o JOIN users u ON o.user_id=u.id
+     FROM orders o
+     JOIN users u ON o.user_id=u.id
      ORDER BY o.created_at DESC"
 );
+
 $total = mysqli_num_rows($orders);
 $success = $_GET['success'] ?? '';
 ?>
